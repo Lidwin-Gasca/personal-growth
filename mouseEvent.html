@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>how to use window.onload</title>
+  </head>
+  <style>
+      #canvas
+      {
+        border: 5px solid black;
+        background-size: 100%;
+      }
+
+  </style>
+  <body bgcolor = "lightblue">
+    <center>
+      <h1>HTML5 CANVAS - MOUSEOVER AND OUT</h1>
+    </center>
+
+    <center>
+      <canvas id='canvas' height='500' width='500'>
+        NOT SUPPORTED.
+      </canvas>
+    </center>
+
+    <script>
+      window.onload = function(){
+        canvasEvent();
+      }
+
+      function canvasEvent()
+      {
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        ctx.rect(0,0,500,500);
+        ctx.stroke();
+
+        c.addEventListener("mouseover", hover, false);
+        c.addEventListener("mouseout", hoverOut, false);
+      }
+
+      function hover (e)
+      {
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fill();
+      }
+
+      function hoverOut (e)
+      {
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "green";
+        ctx.fill();
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>how to use window.onload</title>
+  </head>
+  <body>
+    <canvas id='ltpCanvas' height='350' width='350'> </canvas>
+    <script>
+      window.onload = function(){
+        var ltpC = document.getElementById('ltpCanvas');
+        var context = ltpC.getContext('2d');
+        ltpC.addEventListener('mousedown',onDown,false);
+      }
+      function onDown(event) {
+        cx = event.pageX;
+        cy = event.pageY;
+        alert("x,y = "+cx+','+cy);
+      }
+
+    </script>
+  </body>
+</html>
