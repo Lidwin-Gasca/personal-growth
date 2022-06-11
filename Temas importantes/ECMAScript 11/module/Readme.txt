@@ -1,0 +1,1 @@
+esta carpeta llamdo "module" es sobre un ejemplo del uso del mismo, las nexportaciones e importaciones de los modulos fue empleado a javaScript en el ECMAScript2020 tambien conocido como ecmaScript 11
