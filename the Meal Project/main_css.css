@@ -1,1 +1,180 @@
+p {
+    color:aqua;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: large;
+}
+
+body {
+    background-color: rgb(149, 102, 63);
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;  /* no se que significa el fr pero aqui se usa*/
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr; /*Aqui tambien*/
+    grid-template-areas: /* esto de aqui es importante, el orden que escribas es el orden que se tomara tus divs en las columnas y filas*/
+      "nav nav nav nav"
+      "sidebar main main main"
+      "sidebar content1 content2 content3"
+      "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+  }
+
+
+  
+  nav {
+    background: #a7ffeb;
+    grid-area: nav; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+
+  main {
+    background: #84ffff;
+    grid-area: main; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  #sidebar {
+    background: #18ffff;
+    grid-area: sidebar; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  #content1 {
+    background: #6fffd2;
+    grid-area: content1; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  #content2 {
+    background: #64ffda;
+    grid-area: content2; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  #content3 {
+    background: #73ffba;
+    grid-area: content3; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  footer {
+    background: #1de9b6;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  a {
+    text-align: center;
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+      grid-template-areas:
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+  }
+  /* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
+  
+
+  /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+
+
+  * {box-sizing: border-box;}
+
+  .mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+/*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+
+
+
 
