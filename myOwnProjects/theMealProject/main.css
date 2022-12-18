@@ -1,9 +1,9 @@
-p {
+/* p {
     color:#002aff;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
     font-size: small;
-}
+} */
 
 body {
     background-color: rgb(149, 102, 63);
@@ -35,6 +35,8 @@ body {
     grid-area: nav; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    font-family: cursive;
+    font-size: medium;
   }
 
   main {
@@ -42,6 +44,7 @@ body {
     grid-area: main; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    font-family: cursive;
   }
   
   #sidebar {
@@ -58,6 +61,8 @@ body {
     grid-area: content1; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    min-height: 100px;
+    font-family: cursive;
   }
   
   #content2 {
@@ -65,6 +70,7 @@ body {
     grid-area: content2; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    font-family: cursive;
   }
   
   #content3 {
@@ -72,6 +78,7 @@ body {
     grid-area: content3; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    font-family: cursive;
   }
   
   footer {
@@ -128,9 +135,60 @@ body {
     background-color: white;
     color: black;
     border: 2px solid #555555;
-
+  }
+  .opcionDeAccesoDirecto {
+    cursor: pointer;
+  }
 
 /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
 
 
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat";
+  font-size: 20px;
+}
+/* section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  background-color: rgb(37, 37, 37);
+  flex-direction: column;
+  padding: 50px 0;
+}
+section h1 {
+  color: rgba(255, 255, 255, 0.322);
+  text-align: center;
+  width: 100%;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+section p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.322);
+  width: 100%;
+  margin-bottom: 40px;
+} */
+.contenedor {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.texts p {
+  color: black;
+  /* text-align: left;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px; */
+}
+/* .texts p.replay {
+  text-align: right;
+} */
