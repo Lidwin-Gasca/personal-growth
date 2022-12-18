@@ -103,13 +103,12 @@ body {
       grid-template-columns: 1fr;
       grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
       grid-template-areas:
-        "nav"
-        "sidebar"
-        "main"
-        "content1"
-        "content2"
-        "content3"
-        "footer";
+        "nav nav"
+        "sidebar main"
+        "sidebar content1"
+        "sidebar content2"
+        "sidebar content3"
+        "footer footer";
     }
   }
 
@@ -119,9 +118,7 @@ body {
   .buttonRound {border-radius: 12px;}
 
   .buttonCursor {
-    background-color: #4CAF50; /* Green */
     border: none;
-    color: white;
     padding: 3px 10%;
     text-align: center;
     text-decoration: none;
@@ -133,11 +130,28 @@ body {
 
   .buttonBorder {
     background-color: white;
-    color: black;
+    color: black; /*color de la letra en el boton*/
     border: 2px solid #555555;
   }
-  .opcionDeAccesoDirecto {
+
+
+  .buttonRoundtemp {border-radius: 12px;}
+
+  .buttonCursortemp {
+    border: none;
+    padding: 3px 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
     cursor: pointer;
+  }
+
+  .buttonBordertemp {
+    background-color: white;
+    color: black; /*color de la letra en el boton*/
+    border: 2px solid #555555;
   }
 
 /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
@@ -148,10 +162,10 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-html {
+/* html {
   font-family: "Montserrat";
   font-size: 20px;
-}
+} */
 /* section {
   min-height: 100vh;
   width: 100%;
@@ -174,21 +188,21 @@ section p {
   width: 100%;
   margin-bottom: 40px;
 } */
-.contenedor {
+/* .contenedor {
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
   justify-content: center;
-}
-.texts p {
+} */
+/* .texts p {
   color: black;
-  /* text-align: left;
+  text-align: left;
   width: 100%;
   background-color: white;
   padding: 10px;
   border-radius: 8px;
-  margin-bottom: 10px; */
-}
+  margin-bottom: 10px;
+} */
 /* .texts p.replay {
   text-align: right;
 } */
