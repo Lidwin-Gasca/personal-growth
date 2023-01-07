@@ -9,6 +9,14 @@ body {
     background-color: rgb(149, 102, 63);
     font-family: "Inter", sans-serif;
 }
+img {
+  border-radius: 8px;
+  /* border: 1px solid #ddd;
+  padding: 5px; */
+  object-fit: cover;
+  width: 80%;
+  height: 80%;
+}
 
 .container {
     display: grid;

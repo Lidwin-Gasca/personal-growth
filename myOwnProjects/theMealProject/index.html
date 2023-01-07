@@ -16,7 +16,7 @@
     <div class="container">
         <nav>Que puedo cocinar?</nav>
         <main>acceso directo de ingredientes
-            <br/> <button type="button" id="Huevop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Huevo');">Huevo</button>
+            <br/> <button type="button" id="Huevop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Huevo'); console.log(ingrSeleccionados); checkImageLoad()">Huevo</button>
              <button type="button" id="Quesop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Queso');">Queso</button>
             <br/> <button type="button" id="Tocinop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Tocino');">Tocino</button>
              <button type="button" id="Lechugap" class=" buttonCursor buttonRound buttonBorder" onclick="check('Lechuga');">Lechuga</button>
@@ -40,14 +40,12 @@
             <br/> <button type="button" id="Carne molidap" class=" buttonCursor buttonRound buttonBorder" onclick="check('Carne molida');">Carne molida</button>
              <button type="button" id="Carne en filetep" class=" buttonCursor buttonRound buttonBorder" onclick="check('Carne en filete');">Carne en filete</button>
             <br/> <button type="button" id="Carne en filete de pollop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Carne en filete de pollo');">Carne en filete de pollo</button>
-            <br/> <button type="button" id="Carne en trozop" class=" buttonCursor buttonRound buttonBorder" onclick="check('carne en trozo');">Carne en trozo</button>
+            <br/> <button type="button" id="Carne en trozop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Carne en trozo');">Carne en trozo</button>
             <button type="button" id="Carne de pollop" class=" buttonCursor buttonRound buttonBorder" onclick="check('Carne de pollo');">Carne de pollo</button>
             <br/> <button type="button" id="Salchichap" class=" buttonCursor buttonRound buttonBorder" onclick="check('Salchicha');">Salchicha</button>
     
         </main>
-        <div id="sidebar">Ingredientes Seleccionados
-            
-        </div>
+        <div id="sidebar">Ingredientes Seleccionados</div>
         <div id="content1">Podrias cocinar</div>       
         <div id="content2">Existe potencial para</div>
         <div id="content3">Incluso</div>

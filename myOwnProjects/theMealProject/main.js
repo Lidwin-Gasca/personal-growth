@@ -3,13 +3,13 @@ let HamburguesaRequisito = ['Pan de hamburguesa', 'Carne molida', 'Mayonesa', 'Q
 let HamburguesaExtras = ['Lechuga', 'cebolla', 'Jitomate', 'Tocino', 'Huevo']
 let HotdogRequisito = ['Pan de hotdog', 'Salchicha', 'Mayonesa'];
 let HotdogExtras = ['cebolla', 'Jitomate', 'Tocino', 'Queso'];
-let TacosRequisitos = ['Tortilla', 'Harina de maiz', 'Harina de Trigo'];
+let TacosRequisito = ['Tortilla', 'Harina de maiz', 'Harina de Trigo'];
 let TacoCarnes = ['Carne molida', 'Carne en filete', 'Carne en filete de pollo', 'Carne en trozo', 'Carne de pollo'];
 let TacosExtras = ['Limon', 'Cebolla', 'Jitomate', 'Sal', 'Chile fresco'];
 let contadorDeHamburguesa = 0;
 
 function loadIngSel(item){          
-    document.getElementById('sidebar').innerHTML += `<br id="${item}1">` + `<button type="button" id="${item}" class=" buttonCursortemp buttonRoundtemp buttonBordertemp" onclick="check('${item}');">${item}</button>`
+    document.getElementById('sidebar').innerHTML += `<br id="${item}1">` + `<button type="button" id="${item}" class=" buttonCursortemp buttonRoundtemp buttonBordertemp" onclick="check('${item}');">${item}</button>`;
 }
 
 function unLoadIngSel(item){
@@ -38,30 +38,78 @@ function check(item){
     }
 }
 
+  function checkImageLoad() {
+    setTimeout(
+        function printImage(firstArray, secondArray) {
+            firstArray = HamburguesaRequisito;
+            secondArray = ingrSeleccionados;
+            let allElementsPresent = true;
+            for (const element of firstArray) {
+              if (!secondArray.includes(element)) {
+                allElementsPresent = false;
+                break;
+              }
+            }
+            if (allElementsPresent) {
+              // Print hamburger image here
+              document.getElementById('content1').innerHTML += '<img id="hamburguesa" src="./images/content/hamburger.jpg" alt="Hamburguesa">';
+            } else {
+                if (document.getElementById("hamburguesa") == true){
+                    parentNode.removeChild(document.getElementById("hamburguesa"));
+                }
+            }
+          }, 2000);
+          setTimeout(
+            function printImage(firstArray, secondArray) {
+                firstArray = HotdogRequisito;
+                secondArray = ingrSeleccionados;
+                let allElementsPresent = true;
+                for (const element of firstArray) {
+                  if (!secondArray.includes(element)) {
+                    allElementsPresent = false;
+                    break;
+                  }
+                }
+                if (allElementsPresent) {
+                  // Print hamburger image here
+                  document.getElementById('content2').innerHTML += '<img id="hotdog" src="./images/content/Hotdog.jpg" alt="Hotdog">';
+                } else {
+                    if (document.getElementById("hotdog") == true){
+                        console.log("quitalo");
+                        parentNode.removeChild(document.getElementById("hotdog"));
+                    }
+                }
+              }, 2000);
+              setTimeout(
+                function printImage(firstArray, secondArray) {
+                    firstArray = TacoCarnes;
+                    secondArray = ingrSeleccionados;
+                    let allElementsPresent = true;
+                    for (const element of firstArray) {
+                      if (!secondArray.includes(element)) {
+                        allElementsPresent = false;
+                        break;
+                      }
+                    }
+                    if (allElementsPresent) {
+                      // Print hamburger image here
+                      console.log("a ver");
+                      if (!document.getElementById("taco") == true){
+                          document.getElementById('content3').innerHTML += '<img id="taco" src="./images/content/taco.jpg" alt="Tacos">';
+                          console.log("sera que funciona");
+                      }
+                     else {
+                        console.log("o quiza");
+                        if (document.getElementById("hotdog") == true){
+                            parentNode.removeChild(document.getElementById("taco"));
+                            console.log("no funciona");
+                            }
+                        }
+                    }
+                  }, 2000);
+  }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-// function 
-// let i = 0;
-// while (ingrSeleccionados[i]){
-//     if (HamburguesaRequisito.includes(ingrSeleccionados[i]) != true){
-        
-//     }
-//     else{
-//         contadorDeHamburguesa = contadorDeHamburguesa + 1
-//     }
-//     i ++;
-// }
-
-// ingrSeleccionados.includes(HamburguesaRequisito[i])
