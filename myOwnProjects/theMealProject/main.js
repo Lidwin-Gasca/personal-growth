@@ -1,5 +1,12 @@
 let ingrSeleccionados = [];
-let it;
+let HamburguesaRequisito = ['Pan de hamburguesa', 'Carne molida', 'Mayonesa', 'Queso']
+let HamburguesaExtras = ['Lechuga', 'cebolla', 'Jitomate', 'Tocino', 'Huevo']
+let HotdogRequisito = ['Pan de hotdog', 'Salchicha', 'Mayonesa'];
+let HotdogExtras = ['cebolla', 'Jitomate', 'Tocino', 'Queso'];
+let TacosRequisitos = ['Tortilla', 'Harina de maiz', 'Harina de Trigo'];
+let TacoCarnes = ['Carne molida', 'Carne en filete', 'Carne en filete de pollo', 'Carne en trozo', 'Carne de pollo'];
+let TacosExtras = ['Limon', 'Cebolla', 'Jitomate', 'Sal', 'Chile fresco'];
+let contadorDeHamburguesa = 0;
 
 function loadIngSel(item){          
     document.getElementById('sidebar').innerHTML += `<br id="${item}1">` + `<button type="button" id="${item}" class=" buttonCursortemp buttonRoundtemp buttonBordertemp" onclick="check('${item}');">${item}</button>`
@@ -17,7 +24,7 @@ function unLoadIngSel(item){
 
 function check(item){
     if (ingrSeleccionados.includes(item)){
-        j = ingrSeleccionados.indexOf(item);
+        let j = ingrSeleccionados.indexOf(item);
         ingrSeleccionados.splice(j,1);
         unLoadIngSel(item)
         document.getElementById(`${item}p`).style.backgroundColor = 'White';
@@ -30,3 +37,31 @@ function check(item){
         document.getElementById(`${item}p`).style.color = '#b8b8b8';
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function 
+// let i = 0;
+// while (ingrSeleccionados[i]){
+//     if (HamburguesaRequisito.includes(ingrSeleccionados[i]) != true){
+        
+//     }
+//     else{
+//         contadorDeHamburguesa = contadorDeHamburguesa + 1
+//     }
+//     i ++;
+// }
+
+// ingrSeleccionados.includes(HamburguesaRequisito[i])
