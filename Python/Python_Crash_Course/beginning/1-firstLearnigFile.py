@@ -109,3 +109,17 @@ import this #corre esta linea de codigo en tu consola.
 
 #CHAPTER 3
 
+    #What Is A List ?
+
+bicycles = ['trek', 'cannondale', 'redline', 'specialized'] #this is a list
+print(bicycles)
+
+    # Accessing Elements In A List
+
+print(bicycles[0]) #los elementos de una lista tienen un  numerado de lista, un indice, no im porta el valor de el 
+#elementro de una lista, el primer elemento en ella tendra el indice "0", el sgundo el indice "1" el tercero el 
+# indice "2" y asi sucesivamente, por ejmplo el elemento de la lista en el lugar octavo, tendria un indice de "7"
+#otgro ejemplo: un elemento en el lugar 32 de la lista tendra un indice "31".
+#al escribir el nombre de la variable que tiene una lista como su valor, si escribes el caracter de las casillas 
+# #"[]" con un numero adentro, ese numero representara el indice del elemento que deseas visualizar o seleccionar
+print(bicycles[0].title()) #tambien puedes alterar los valores/elementos de una lista.
