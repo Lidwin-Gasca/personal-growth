@@ -123,3 +123,36 @@ print(bicycles[0]) #los elementos de una lista tienen un  numerado de lista, un 
 #al escribir el nombre de la variable que tiene una lista como su valor, si escribes el caracter de las casillas 
 # #"[]" con un numero adentro, ese numero representara el indice del elemento que deseas visualizar o seleccionar
 print(bicycles[0].title()) #tambien puedes alterar los valores/elementos de una lista.
+
+    # Modifying Elements In A List
+#por ejemplo tenemos una lista de motocicletas, el primer item de la lista en 'honda', Como cambiarias el valor de 
+# el primer item?
+motorcycles = ['honda', 'yamacha', 'suzuki']
+print(motorcycles)
+#en la linea debajo esta cambiaremos el valor de el primer item de la lista.
+motorcycles[0] = 'ducati'
+print(motorcycles)
+
+# Adding Elements To The List
+    
+    #`1- Appending Elements To The End Of A List
+motorcycles.append('subaru')
+print(motorcycles)  #el metodo append.() agrega un nuevo valor al final de la lista sin afectar ningun elemento en la lista.
+    
+    #`2- Inserting Elements Into A List
+motorcycles.insert(0, 'kia')    #para usar el metodo insert.() en necesario especificar los parametros del mismo, este 
+#metodo tiene dos parametros los cuales se respetan su orden y significado, el primer parametro es para tu como usuario 
+#escogas la posicion de el nuevo elemento que estas insertando, vas a declar en que indice deseas posicionar tu nuevo 
+#valor. El segundo parametro es para definir el valor que esta siendo insertado/agregado.
+print(motorcycles)
+
+# Removing Elements From A List
+    
+    #`1- Removing An Item Using The 'del' Statement
+del motorcycles[0] #con el statement/declaracion 'del' puedes eliminar el elemento de alguna posicion de la lista, 
+print(motorcycles)  #siempre y cuando estas conciente de que conoces el indice del elemento que deseas eliminar.
+
+    #`2- Removing An Item Using the 'pop()' Method
+
+
+
