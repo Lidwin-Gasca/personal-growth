@@ -146,13 +146,35 @@ motorcycles.insert(0, 'kia')    #para usar el metodo insert.() en necesario espe
 #valor. El segundo parametro es para definir el valor que esta siendo insertado/agregado.
 print(motorcycles)
 
-# Removing Elements From A List
+    # Removing Elements From A List
     
-    #`1- Removing An Item Using The 'del' Statement
+        #`1- Removing An Item Using The 'del' Statement
 del motorcycles[0] #con el statement/declaracion 'del' puedes eliminar el elemento de alguna posicion de la lista, 
 print(motorcycles)  #siempre y cuando estas conciente de que conoces el indice del elemento que deseas eliminar.
 
-    #`2- Removing An Item Using the 'pop()' Method
+        #`2- Removing An Item Using the 'pop()' Method
+popped_motorcycle = motorcycles.pop()
+print(popped_motorcycle)    #el metodo .pop() elimina el ultimo elemento de una lista. Y a su vez lo toma y guarda en 
+print(motorcycles)          #otro lugar si asi lo deseas.
+
+        #`3- Popping Items From Any Position In A List
+position_popped_motorcycle = motorcycles.pop(0)
+print(position_popped_motorcycle)   #Introduciendo un numero/parametro (el cual representa un indice) indicamos a que elemento 
+#se eliminará, mediante su posicion de indice, en el caso preparado se aplico el metodo .pop() al indice 0  ".pop(0)"
+
+        #`4- Removing An Item By Value
+motorcycles = ['honda', 'yamacha', 'suzuki', 'ducati', 'kia', 'subaru']
+motorcycles.remove('ducati')# el metodo .remove() remueve el elemento que tenga como valor el mismo valor indicado en el 
+print(motorcycles)          # parametro del metodo mencionado, en este caso 'ducati'
+#otra manera de hacerlo es con una variable que tenga el valor/elemento que se quiere eliminar de la lista:
+una_buena_moto = 'honda'
+motorcycles.pop(una_buena_moto)
+print(motorcycles)
 
 
+    # Organizing A List
 
+        #`1-Sorting a List Permanently with the sort() Method
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort() #el metodo .sort() ordena de manera alfabetica los elementos de la lista en el orden del alfabeto (A-Z). [valga la redundancia].
+print(cars)
