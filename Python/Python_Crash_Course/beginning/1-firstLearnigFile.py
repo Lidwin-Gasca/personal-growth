@@ -178,3 +178,31 @@ print(motorcycles)
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 cars.sort() #el metodo .sort() ordena de manera alfabetica los elementos de la lista en el orden del alfabeto (A-Z). [valga la redundancia].
 print(cars)
+#otra manera de hacer es en el orden contrario de el alfabeto:
+cars.sort(reverse=True)
+print(cars) #es muy util estos datos.
+
+        #`2-Soting a List Temporarily with the sorted() Function
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print("Here is the original list:")
+print(cars)
+
+print("\nHere is the sorted list:")     #esto crea una array completamente nuevo y momentaneo si es que no lo guardas como variable.
+print(sorted(cars))
+
+print("\nHere is the original liest again:")
+print(cars)
+
+        #`4- Printing a List in Reverse Order
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars)
+cars.reverse()#a la variable cars se le voltea por completo la lista, haciendo los ultimos elementos en los primeros en los primeros en ultimos.
+print(cars)
+
+        #`5- Finding the Length of a List
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(len(cars))    # len(car) te da el largo de la lista, cuantos elementos de largo está. len proviene de a palabra en ingles length
+
+# Dato curioso, si como indice pornes numeros en negativos te mostrara en orden reverrso los elementos de la lista, por ejemplo:
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars[-1]) #saldra el ultimo elemento, 'subaru'.
