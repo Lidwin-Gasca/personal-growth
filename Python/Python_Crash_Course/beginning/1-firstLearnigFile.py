@@ -287,3 +287,17 @@ print(players[-3])
 # Si se incluye un tercer valor, esto le dice a Python cuántos elementos omitir entre elementos en el rango especificado.
 
         #`4- Looping through a Slice
+players = ['charles', 'martina', 'micael', 'florence', 'eli']
+print("Here are the first three players on mly team:")
+for player in players[:3]:
+    print(player.title())
+
+        #`5- Copying a List
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods[:]
+
+print("My favorite foods are:")
+print(my_foods)
+
+print("\nMy friend's favorite foods are:")
+print(friend_foods)
