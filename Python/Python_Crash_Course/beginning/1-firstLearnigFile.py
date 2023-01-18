@@ -301,3 +301,30 @@ print(my_foods)
 
 print("\nMy friend's favorite foods are:")
 print(friend_foods)
+
+    #Tuples
+
+        #`1- Defining a Tuple
+dimensions = (200, 50)
+print(dimensions[0])
+print(dimensions[1])
+
+dimensions[0] = 250
+print(dimensions[0])
+print(dimensions[1])
+
+        #`2- Looping through all values in a Tuple
+dimensions = (200, 50)
+for dimension in dimensions:
+    print(dimension)
+
+        #`3- Writing over a Tuple
+dimensions = (200, 50)
+print("Original dimension:")
+for dimension in dimensions:
+    print(dimension)
+
+dimensions = (400, 100)
+print("\nModified dimension:")
+for dimension in dimensions:
+    print(dimension)
