@@ -107,7 +107,7 @@ MAX_CONNECTIONS = 5000
 import this #corre esta linea de codigo en tu consola.
 
 
-#CHAPTER 3
+#CHAPTER 3                                                                      3️⃣
 
     #What Is A List ?
 
@@ -209,7 +209,7 @@ cars = ['bmw', 'audi', 'toyota', 'subaru']
 print(cars[-1]) #saldra el ultimo elemento, 'subaru'.
 
 
-    # CHAPTER 4: 
+    # CHAPTER 4:                                                        4️⃣ 
     
     #Working with List
 
@@ -328,3 +328,61 @@ dimensions = (400, 100)
 print("\nModified dimension:")
 for dimension in dimensions:
     print(dimension)
+
+    #CHAPTER 5                                                                          5️⃣
+
+#IF STATEMENTS
+
+    #A Simple Example
+cars = ['audi', 'bmw', 'subaru', 'toyota']
+for car in cars:
+    if car == 'bmw':
+        print(car.upper())
+    else:
+        print(car.title())
+
+#Conditional Test
+    
+        #`1- Checking for equality
+car = 'bmw'
+car == 'bmw' #True
+ 
+car = 'audi'
+car == 'bmw' #False
+
+        #`2- Ignoring case when cheking for equality
+car = 'Audi'
+car == 'audi' #False
+
+car = 'Audi'
+car.lower() == 'audi' #True
+
+        #`3- Checking inequality
+requested_topping = 'mushrooms'
+if requested_topping != 'anchovies':
+    print("Hold the anchovies!")
+
+        #`4- Numnerical comparisons
+
+age = 18
+age == 18 #True
+
+answer = 17
+if answer != 42:
+    print("that is not the correct answer. Please try again!")
+
+age = 19
+age < 21 #True
+age <= 21 #True
+age > 21 #False
+age >= 21 #False
+
+        #`5- Using to check multiple conditions
+age_0 = 22
+age_1 = 18
+age_0 >= 21 and age_1 >= 21 #False
+
+age_1 = 22
+age_0 >= 21 and age_1 >= 21 #True
+
+#para mejorar la lectura de el codico de multiple condicionales ecribirlo asi "(age_0 >= 21) and (age_1 >= 21)"
