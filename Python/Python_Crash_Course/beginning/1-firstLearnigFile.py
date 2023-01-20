@@ -1,5 +1,5 @@
 #CHAPTER 2
-    #Changing Case In String In Methods#
+    #🐍Changing Case In String In Methods#
 
 name = "tu mamaTambien"
 print (name.title())  #al poner el .title hace que la primera letra de cada palabra sea mayuscula, 
@@ -7,7 +7,7 @@ print (name.title())  #al poner el .title hace que la primera letra de cada pala
 print (name.upper())    #al poner .upper convierte todas las letras en mayusculas.
 print (name.lower())    #al poner .lower convierte toda letra de las palabras en minusculas.
 
-    #Using Variables in Strings#
+    #🦴Using Variables in Strings#
 
 first_name = "Lidwin" #delaramos los valores de esta manera, poniendo simplemente el nombre de la variable 
 #y su valor. En esto caso, un valor en formato "String"
@@ -22,7 +22,7 @@ print(f"Hello, {full_name.title()}!")
 messege = f"Hello, {full_name.title()}!" #tambien pudo ser al estilo viejito full_name = "{}{}".format(first_name, last_name)
 print(messege)
 
-    #Adding Whitespace To Strings with Tabs or Newlines
+    #🦴Adding Whitespace To Strings with Tabs or Newlines
 
 print("Python") #para agregar un tabulador a tu texto, usa una combinacion de caracteres como el mostrado 
 #abajo de esta linea \t .
@@ -32,7 +32,7 @@ print("Languages:\nPython\nC\nJavaScript")
 print("Languages:\n\tPython\n\tC\n\tJavaScript") #  tambien se pueden combinar ambas combinaciones.
 
 
-    #Stripping Whitespace
+    #🦴Stripping Whitespace
 
 favorite_language = ' python '
 print(favorite_language)    #imprimimos el valor tal cual sin alterar.
@@ -45,12 +45,12 @@ print(fav_left_lang)                        #a la izquierda de el valor de nuest
                                             #de formato string claro).
 
 
-    # Avoiding Syntax Errors With Strings
+    #🦴 Avoiding Syntax Errors With Strings
 #here's how to use a single and double quotes correctly. apostrophe
 messege_1 = "One of Python's strengths is its diverse community."
 print(messege_1)
 
-    # Integers/Enteros
+    #🦴 Integers/Enteros
 #you can add (+), subtract (-), multiply (*), snd divide (/) integers in Python.
 #puedes sumar, restar, multiplicar y dividir enteros en Python.
 print(f"(2 + 3) es igual a:\n {2 + 3}")
@@ -66,7 +66,7 @@ print(10**6)
 print(2 + 3 * 4)
 print((2+3)* 4)
 
-    # Floats
+    #🦴Floats
 #python llama a cualquier numero que contenga un decimal, Float. En su mayor parte, puedes escribir decimales 
 #sin preocuparte de su comportamiento, simplemente ingresa los numeros que desees, y python se encargara de 
 #de hacer lo que esperas que haga (a veces no lo hará, mas informacion adelante).
@@ -79,7 +79,7 @@ print((2+3)* 4)
 0.2 + 0.1 ##0.30000000000000004
 print(f"(3 * 0.1) es igual a:\n {3 * 0.1}") ##0.30000000000000004
 
-    #Integers and Floats
+    #🦴Integers and Floats
 #cuando divides dos numeros, incluso si son numeros enteros, y que reultado tambien da numero entero, sin 
 #imprtar ello, el resultado arrojado por Python sera en formato Float, es decir decimal.Ejemplo:
 4/2 ##2.0
@@ -87,17 +87,17 @@ print(f"Cuatro entre dos da como resultado:\n {4/2}") ##2.0
 #si revuelves enteros (integer) con decimales (float) en cualquier operacion, aun asi recibiras tu resultado
 #arrojado en formato Float (decimal).
 
-    #Underscores In Numbers
+    #🦴Underscores In Numbers
 universe_age = 14_000_000_000
 #pudes usar guiones bajos en los numeros largos o incluso cortos, siempre y cuando no terminen en los extremos, 
 #ya sea izquierda o derecha.
 print(14_000_000_000) ##14000000000
 
-    #Multiple Assignment
+    #🦴Multiple Assignment
 x, y, z = 0, 0, 0  #puedes inicializar varias variables en la misma linea, en decir crear variables y darle valor
 #debes separar las variables con comas, al inicializar el valor seguir el orden de las variables al dar el valor
 
-    #Constants/constantes
+    # 🦴Constants/constantes
 #una contante es aquella variable cuyo valor jamás cambiara durante la vida del programa, como buena practica 
 #los programadores usan todas la letras en el nombre de cuya variable en mayusculas. De esta manera quien lo lea
 #en un futuro sabra que es una constante. Un ejemplo seria el siguiente:
@@ -109,12 +109,12 @@ import this #corre esta linea de codigo en tu consola.
 
 #CHAPTER 3                                                                      3️⃣
 
-    #What Is A List ?
+    #🐍What Is A List ?
 
 bicycles = ['trek', 'cannondale', 'redline', 'specialized'] #this is a list
 print(bicycles)
 
-    # Accessing Elements In A List
+    #🦴 Accessing Elements In A List
 
 print(bicycles[0]) #los elementos de una lista tienen un  numerado de lista, un indice, no im porta el valor de el 
 #elementro de una lista, el primer elemento en ella tendra el indice "0", el sgundo el indice "1" el tercero el 
@@ -124,7 +124,7 @@ print(bicycles[0]) #los elementos de una lista tienen un  numerado de lista, un 
 # #"[]" con un numero adentro, ese numero representara el indice del elemento que deseas visualizar o seleccionar
 print(bicycles[0].title()) #tambien puedes alterar los valores/elementos de una lista.
 
-    # Modifying Elements In A List
+    #🦴 Modifying Elements In A List
     
 #por ejemplo tenemos una lista de motocicletas, el primer item de la lista en 'honda', Como cambiarias el valor de 
 # el primer item?
@@ -134,7 +134,7 @@ print(motorcycles)
 motorcycles[0] = 'ducati'
 print(motorcycles)
 
-# Adding Elements To The List
+    #🦴 Adding Elements To The List
     
     #`1- Appending Elements To The End Of A List
 motorcycles.append('subaru')
@@ -147,7 +147,7 @@ motorcycles.insert(0, 'kia')    #para usar el metodo insert.() en necesario espe
 #valor. El segundo parametro es para definir el valor que esta siendo insertado/agregado.
 print(motorcycles)
 
-    # Removing Elements From A List
+    #🦴 Removing Elements From A List
     
         #`1- Removing An Item Using The 'del' Statement
 del motorcycles[0] #con el statement/declaracion 'del' puedes eliminar el elemento de alguna posicion de la lista, 
@@ -173,7 +173,7 @@ motorcycles.pop(una_buena_moto)
 print(motorcycles)
 
 
-    # Organizing A List
+    #🦴 Organizing A List
 
         #`1-Sorting a List Permanently with the sort() Method
 cars = ['bmw', 'audi', 'toyota', 'subaru']
@@ -211,7 +211,7 @@ print(cars[-1]) #saldra el ultimo elemento, 'subaru'.
 
     # CHAPTER 4:                                                        4️⃣ 
     
-    #Working with List
+    #🦴 Working with List
 
         #`1- Looping Through An Entire List
 magicians = ['alice', 'david', 'carolina']  #definimos la lista.
@@ -235,7 +235,7 @@ print("Thank you, everyone. That was a great magic show!")  #como habras notado 
 #de codigo que termina con dos puntos ":". Todo lo que este con esa identacion, ser repetira en el Loop.
 
 
-    # Making Numerical List
+    #🦴 Making Numerical List
 
         #`1- Using the range() Function
 for value in range(1,5):
@@ -286,13 +286,13 @@ print(players[-3])
 #Puede incluir un tercer valor entre paréntesis que indique un sector/slice/corte. 
 # Si se incluye un tercer valor, esto le dice a Python cuántos elementos omitir entre elementos en el rango especificado.
 
-        #`4- Looping through a Slice
+        #`5- Looping through a Slice
 players = ['charles', 'martina', 'micael', 'florence', 'eli']
 print("Here are the first three players on mly team:")
 for player in players[:3]:
     print(player.title())
 
-        #`5- Copying a List
+        #`6- Copying a List
 my_foods = ['pizza', 'falafel', 'carrot cake']
 friend_foods = my_foods[:]
 
@@ -302,25 +302,24 @@ print(my_foods)
 print("\nMy friend's favorite foods are:")
 print(friend_foods)
 
-    #Tuples
+    #🦴 Tuples
 
         #`1- Defining a Tuple
 dimensions = (200, 50)
-print(dimensions[0])
-print(dimensions[1])
+print(dimensions[0])        #Que es un Tuple?   Un tuple es una lista ineditable, no lo puedes modificar, la diferencia grafica es que la 
+print(dimensions[1])        #lista de un Tuple en vez de llevar brakets/corchetes-cuadrados lleva parentesis. Otra forma de hacerlo para
+                            #cuando solo en un elemento, y no nesesariamente una lista, es poner un coma "," , de esta manera estas avisando
+dimensions[0] = 250         #que es inmodificable, que es un Tuple. #por ejemplo: dimensions = 200,
 
-dimensions[0] = 250
-print(dimensions[0])
-print(dimensions[1])
 
         #`2- Looping through all values in a Tuple
 dimensions = (200, 50)
-for dimension in dimensions:
+for dimension in dimensions:        #los tuple son manipulables como las listas convencionales, cuando de retornar valores de trata.
     print(dimension)
 
         #`3- Writing over a Tuple
 dimensions = (200, 50)
-print("Original dimension:")
+print("Original dimension:")            #no puedes modificar un Tuple, mas sin embargo puedes reasignar el valor de la variable que solia ser un Tuple.
 for dimension in dimensions:
     print(dimension)
 
@@ -331,9 +330,9 @@ for dimension in dimensions:
 
     #CHAPTER 5                                                                          5️⃣
 
-#IF STATEMENTS
+#🐍IF STATEMENTS
 
-    #A Simple Example
+    #🦴 A Simple Example
 cars = ['audi', 'bmw', 'subaru', 'toyota']
 for car in cars:
     if car == 'bmw':
@@ -341,7 +340,11 @@ for car in cars:
     else:
         print(car.title())
 
-#Conditional Test
+    #🦴 Conditional Test
+                    # En el corazón de cada declaración if hay una expresión que se puede evaluar como verdadera o falsa y se llama prueba condicional. 
+                    # Python usa los valores True y False para decidir si se debe ejecutar el código en una declaración if. 
+                    # Si una prueba condicional se evalúa como True, Python ejecuta el código que sigue a la instrucción if. 
+                    # Si la prueba se evalúa como Falso, Python ignora el código que sigue a la instrucción if.
     
         #`1- Checking for equality
 car = 'bmw'
@@ -377,7 +380,12 @@ age <= 21 #True
 age > 21 #False
 age >= 21 #False
 
-        #`5- Using to check multiple conditions
+    #🦴 Checking Multiple Conditions
+                                                        #You may want to check multiple conditions at the same time. For example, sometimes 
+                                                        # you might need two conditions to be True to take an action. Other times you might 
+                                                        # be satisfied with just one condition being True. The keywords and and or can help 
+                                                        # you in these situations.
+        #`1- Using "and" to check multiple conditions.
 age_0 = 22
 age_1 = 18
 age_0 >= 21 and age_1 >= 21 #False
@@ -385,4 +393,96 @@ age_0 >= 21 and age_1 >= 21 #False
 age_1 = 22
 age_0 >= 21 and age_1 >= 21 #True
 
-#para mejorar la lectura de el codico de multiple condicionales ecribirlo asi "(age_0 >= 21) and (age_1 >= 21)"
+#para mejorar la lectura de el codico de multiple condicionales, ecribirlo asi: "(age_0 >= 21) and (age_1 >= 21)"
+
+        #`2- Using "or" to check multiple conditions.
+age_0 = 22
+age_1 = 18
+age_0 >= 21 or age_1 >= 21  #True
+
+age_0 = 18
+age_0 >= 21 or age_1 >=21   #False
+
+
+    #🦴Checking Whether a Value Is "in" a List
+                                                # Comprobar si un valor está en una lista, a veces es importante comprobar si una lista contiene 
+                                                # un determinado valor antes de realizar una acción. Por ejemplo, es posible que desee verificar 
+                                                # si ya existe un nuevo nombre de usuario en una lista de nombres de usuario actuales antes de 
+                                                # completar el registro de alguien en un sitio web. En un proyecto de mapeo, es posible que desee 
+                                                # verificar si una ubicación enviada ya existe en una lista de ubicaciones conocidas.
+
+#Para averiguar si un valor en particular ya está en una lista, use la palabra clave in. Consideremos un código que podría escribir para una pizzería. 
+# Haremos una lista de ingredientes que un cliente ha solicitado para una pizza y luego verificaremos si ciertos ingredientes están en la lista:
+requested_topping = ['mushrooms', 'onieons', 'pineapple']
+'mushrooms' in requested_topping    #True   ➡   print('mushrooms' in requested_topping)
+'pepperoni' in requested_topping    #False  ➡   print('pepperoni' in requested_topping)
+
+
+
+    #🦴 Checking Whether A Value Is Not "in" A List.
+
+banned_users = ['andrew', 'carolina', 'david']
+user = 'merie'
+
+if user not in banned_users:
+    print(f"{user.title()}, you can post a response if you wish.")
+
+
+    #🦴 Boolean Expression
+                        # A medida que aprenda más sobre programación, escuchará el término expresión booleana en algún momento. Una expresión 
+                        # booleana es solo otro nombre para una prueba condicional. Un valor booleano es verdadero o falso, al igual que el valor
+                        #  de una expresión condicional después de haberla evaluado.
+                        #Los valores booleanos a menudo se usan para realizar un seguimiento de ciertas condiciones, como si un juego se está 
+                        # ejecutando o si un usuario puede editar cierto contenido en un sitio web:
+game_active = True
+can_edit = False
+#Los valores booleanos proporcionan una manera eficiente de rastrear el estado de un programa o una condición particular que es importante en su programa.
+
+
+
+
+
+
+
+
+    #🦴 "if" Statements
+                    # Cuando comprenda las pruebas condicionales, puede comenzar a escribir sentencias if. 
+                    # Existen varios tipos diferentes de sentencias, y su elección de cuál usar depende de la cantidad de condiciones que necesita probar. 
+                    # Viste varios ejemplos de declaraciones if en la discusión sobre pruebas condicionales, pero ahora profundicemos en el tema.
+
+        #`1- Simple "if" statements
+# El condicional de "if" mas sencillo es el de solo una accion:
+#       --|if conditional_test:     |--
+#       --|    hacer algo           |--
+
+#Puede poner cualquier prueba condicional en la primera línea y casi cualquier acción en el bloque sangrado que sigue a la prueba. 
+# Si la prueba condicional se evalúa como True, Python ejecuta el código que sigue a la instrucción if. Si la prueba se evalúa como Falso, 
+# Python ignora el código que sigue a la instrucción if.
+
+#Digamos que tenemos una variable que representa la edad de una persona y queremos saber si esa persona tiene la edad suficiente para votar. 
+# El siguiente código prueba si la persona puede votar:
+age = 19
+if age >= 18:
+    print("You are old enough to vote!")
+
+
+        #`2- "if-else" statements
+#A menudo, deseará realizar una acción cuando pase una prueba condicional y una acción diferente en todos los demás casos. 
+# La sintaxis if-else de Python lo hace posible. Un bloque if-else es similar a una declaración if simple, pero la 
+# declaración else le permite definir una acción o un conjunto de acciones que se ejecutan cuando falla la prueba condicional.
+
+#Mostraremos el mismo mensaje que teníamos anteriormente si la persona tiene la edad suficiente para votar, pero esta vez 
+# agregaremos un mensaje para cualquiera que no tenga la edad suficiente para votar:
+age = 17
+if age >= 18:
+    print("You are odl enough to vot!")
+    print("Have you registered to vote yet!")
+else: 
+    print("Sorry, you are too young to vote.")
+    print("Please register to vote as soon as you turn 18")     #Este código funciona porque solo tiene dos situaciones posibles para evaluar: 
+    # Una persona tiene la edad suficiente para votar o no tiene la edad suficiente para votar. 
+    # La estructura if-else funciona bien en situaciones en las que desea que Python siempre ejecute una de dos acciones posibles. 
+    # En una cadena if-else simple como esta, siempre se ejecutará una de las dos acciones.
+
+
+        #`3- The "if-else-if" chain
