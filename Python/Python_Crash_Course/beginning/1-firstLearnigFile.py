@@ -486,3 +486,127 @@ else:
 
 
         #`3- The "if-else-if" chain
+                                    #A menudo, deberá probar más de dos situaciones posibles y, para evaluarlas, puede usar 
+                                    # la sintaxis if-elif-else de Python. Python ejecuta solo un bloque en una cadena if-elif-else. 
+                                    # Ejecuta cada prueba condicional en orden hasta que pasa una. Cuando pasa una prueba, 
+                                    # se ejecuta el código que sigue a esa prueba y Python omite el resto de las pruebas.
+
+# Muchas situaciones del mundo real involucran más de dos condiciones posibles. 
+# Por ejemplo, considere un parque de diversiones que cobra diferentes tarifas para diferentes grupos de edad:
+
+#   💨La entrada para cualquier persona menor de 4 años es gratuita.
+#   💨La entrada para cualquier persona entre las edades de 4 y 18 años es de $25.
+#   💨La entrada para cualquier persona mayor de 18 años es de $40.
+
+#¿Cómo podemos usar una declaración if para determinar la tasa de admisión de una persona? 
+# El siguiente código prueba el grupo de edad de una persona y luego imprime un mensaje de precio de admisión:
+
+age = 12
+if age < 4:
+    print("Your admission cost is $0.")
+elif age < 18:
+    print("Your admission cost is $25.")
+else:
+    print("Your admission cost is $40.")
+
+# Cualquier edad mayor de 17 años haría que las dos primeras pruebas fallaran. 
+# En estas situaciones, se ejecutaría el bloque else y el precio de admisión sería de $40.
+
+#En lugar de imprimir el precio de la entrada dentro del bloque if-elif-else sería más 
+# conciso establecer solo el precio dentro de la cadena if-elif-else y luego tener una 
+# simple llamada print() que se ejecute después de que la cadena haya sido evaluado:
+
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 25
+else:
+    price = 40
+
+print(f"Your admission cost is ${price}")
+
+
+
+        #`4- Using multiple "elif" blocks
+
+#Puede usar tantos bloques elif en su código como desee. Por ejemplo, si el parque de diversiones 
+# implementara un descuento para personas mayores, podría agregar una prueba condicional más al 
+# código para determinar si alguien califica para el descuento para personas mayores. 
+# Digamos que cualquier persona mayor de 65 años paga la mitad de la entrada regular, o $20:
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 25
+elif age < 65:
+    price = 40
+else:
+    price = 20
+
+print(f"Your admission cost is ${price}")
+
+
+
+        #`5- Omitting the else block
+
+#Python no requiere un bloque else al final de una cadena if-elif. A veces, un bloque else es útil; 
+# a veces es más claro usar una declaración elif adicional que capte la condición específica de interés:
+age = 12
+if age < 4:              #--- El bloque else es una declaración general. ---#
+    price = 0                                  
+elif age < 18:           #Coincide con cualquier condición que no haya coincidido con una prueba if o elif específica,
+    price = 25           # y que a veces puede incluir datos no válidos o incluso maliciosos.
+elif age < 65:           # Si tiene una condición final específica que está probando, considere usar un bloque elif final y omita el bloque else.
+    price = 40           # Como resultado, obtendrá una mayor confianza en que su código se ejecutará
+elif age >= 65:          # solo en las condiciones correctas.
+    price = 20
+
+
+
+        #`6- Testing multiple conditions
+
+#La cadena if-elif-else es poderosa, pero solo es apropiada para usar cuando solo necesita pasar una prueba. 
+# Tan pronto como Python encuentra una prueba que pasa, salta el resto de las pruebas. 
+# Este comportamiento es beneficioso porque es eficiente y le permite probar una condición específica.
+
+#Sin embargo, a veces es importante verificar todas las condiciones de interés. 
+# En este caso, debe usar una serie de declaraciones if simples sin bloques elif o else. 
+# Esta técnica tiene sentido cuando más de una condición puede ser Verdadera y desea actuar en cada condición que sea Verdadera.
+
+#   💨 Reconsideremos el ejemplo de la pizzería 🍕. 
+# Si alguien solicita una pizza con dos ingredientes, deberá asegurarse de incluir ambos ingredientes en su pizza:
+
+requested_topping = ['mushrooms', 'extra chesse']
+
+if 'mushrooms' in requested_topping:
+    print("Adding mushrooms")
+if 'pepperoni' in requested_topping:
+    print("Adding pepperoni.")
+if 'extra cheese' in requested_topping:
+    print("Adding extra cheese.")
+
+print("\nFinished making your pizza!")
+
+
+
+
+
+    #🦴 Using "if" Statement With Lists
+                                            #Puede hacer un trabajo interesante cuando combina listas y sentencias if. 
+                                            # Puede buscar valores especiales que deben tratarse de manera diferente a otros valores en la lista. 
+                                            # Puede administrar las condiciones cambiantes de manera eficiente, como la disponibilidad de ciertos 
+                                            # artículos en un restaurante durante un turno. También puede comenzar a probar que su código funciona 
+                                            # como espera en todas las situaciones posibles.
+
+        #`1- Checking for special Items
+
+#Este capítulo comenzó con un ejemplo simple que mostraba cómo manejar un valor especial como 'bmw', que necesitaba imprimirse en un formato 
+# diferente al de otros valores en la lista. Ahora que tiene una comprensión básica de las pruebas condicionales y las sentencias if, echemos 
+# un vistazo más de cerca a cómo puede observar valores especiales en una lista y manejar esos valores apropiadamente.
+
+#Sigamos con el ejemplo de la pizzería. La pizzería muestra un mensaje cada vez que se agrega un aderezo a su pizza, mientras se prepara. 
+# El código para esta acción se puede escribir de manera muy eficiente haciendo una lista de ingredientes que el cliente ha solicitado y 
+# usando un bucle para anunciar cada ingrediente a medida que se agrega a la pizza:
+
+requested_topping = ['mushrooms', 'green peppers', 'extra cheese']
