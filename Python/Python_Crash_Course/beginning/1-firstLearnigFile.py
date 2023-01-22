@@ -169,8 +169,9 @@ motorcycles.remove('ducati')# el metodo .remove() remueve el elemento que tenga 
 print(motorcycles)          # parametro del metodo mencionado, en este caso 'ducati'
 #otra manera de hacerlo es con una variable que tenga el valor/elemento que se quiere eliminar de la lista:
 una_buena_moto = 'honda'
-motorcycles.pop(una_buena_moto)
+motorcycles.remove(una_buena_moto)
 print(motorcycles)
+print(f"\nLa moto {una_buena_moto.title()} es muy caro para mi presupuesto.")
 
 
     #🦴 Organizing A List
@@ -609,4 +610,69 @@ print("\nFinished making your pizza!")
 # El código para esta acción se puede escribir de manera muy eficiente haciendo una lista de ingredientes que el cliente ha solicitado y 
 # usando un bucle para anunciar cada ingrediente a medida que se agrega a la pizza:
 
-requested_topping = ['mushrooms', 'green peppers', 'extra cheese']
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+
+for requested_topping in requested_toppings:
+    print(f"Adding {requested_topping}.")
+
+print("\nFinished making your pizza!")
+
+#Pero, ¿y si la pizzería se queda sin pimientos verdes? 
+# Una declaración if dentro del bucle for puede manejar esta situación de manera adecuada:
+
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+
+for requested_topping in requested_toppings:
+    if requested_topping == 'green peppers':
+        print("Sorry, we are out of green peppers right now.")
+    else:
+        print(f"Adding {requested_topping}.")
+
+print("\nFinished making your pizza!")
+
+
+
+        #`2- Checking that a List is not empty.
+
+                #Hemos hecho una suposición simple sobre cada lista con la que hemos trabajado hasta ahora: 
+                # hemos asumido que cada lista tiene al menos un elemento. Pronto permitiremos que los usuarios proporcionen la información que 
+                # está almacenada en una lista, por lo que no podremos asumir que una lista contiene elementos cada vez que se ejecuta un bucle. 
+                # En esta situación, es útil verificar si una lista está vacía antes de ejecutar un bucle/loop "for".
+
+#Como ejemplo, verifiquemos si la lista de ingredientes solicitados está vacía antes de construir la pizza. 
+# Si la lista está vacía, le preguntaremos al usuario y nos aseguraremos de que quiera una pizza normal. 
+# Si la lista no está vacía, construiremos la pizza tal como lo hicimos en los ejemplos anteriores:
+requested_toppings = []
+
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print(f"Adding {requested_topping}.")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza?")
+
+
+
+        #`3- Using multiple Lists
+
+                        #People will as for just avout anything, especially when it comes from pizza toppings. 
+                        # What if a customer actually wants french fries on their pizza? You can use lists and "if" 
+                        # statements to make sure your input makes sense before you act on it.
+
+#Let's watch out for unusual topping requests before we build a pizza.
+# The following example defines two lists. The first is a list of available 
+# toppings at pizzeria, and the second is the list of toppings that the user has requested. 
+# This time, each item in requested_toppings is checked against the list of available toppings before it's added to the pizza:
+
+available_toppings = ['mushrooms', 'olives', 'green peppes',
+                      'pepperoni', 'pineapple', 'extra cheese']
+
+requested_toppings = ['mushrooms', 'frech fries', 'extra cheese']
+
+for requested_topping in requested_toppings:
+    if requested_topping in available_toppings:
+        print(f"Adding {requested_topping}.")
+    else:
+        print(f"Sorry, we don't have {requested_topping}.")
+
+print("\nFinished making your pizza!")
