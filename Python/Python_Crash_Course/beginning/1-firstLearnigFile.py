@@ -676,3 +676,72 @@ for requested_topping in requested_toppings:
         print(f"Sorry, we don't have {requested_topping}.")
 
 print("\nFinished making your pizza!")
+
+
+
+
+    #🦴Styling Your "if" Statement
+
+#En cada ejemplo de este capítulo, ha visto buenos hábitos de estilo. 
+# La única recomendación que proporciona PEP 8 para la prueba condicional de estilo es 
+# un solo espacio alrededor de los operadores de comparación, como ==, >=, <=. Por ejemplo:
+
+#if age < 4: is better than: if age<4: 
+
+
+
+
+#CHAPTER 6
+            #🐍DICTIONARIES🐍
+
+        #🦴A Simple Dictionary
+
+                                #Considere un juego con extraterrestres que pueden tener diferentes colores y valores de puntos. 
+                                # Este diccionario simple almacena información sobre un extraterrestre en particular:
+alien_0 = {'color': 'green', 'points': 5}
+
+print(alien_0['color'])
+print(alien_0['points'])
+
+        #🦴Working with Dictionaries
+
+                        #Un diccionario en Python es una colección de "key-value pair"/"pares clave-valor". 
+                        # Cada clave está conectada a un valor, y puede usar una clave/llave para acceder al valor asociado con esa clave.
+                        # El valor de una clave puede ser un número, una cadena, una lista o incluso otro diccionario. 
+                        # De hecho, puede usar cualquier objeto que pueda crear en Python como un valor en un diccionario.
+
+                        #En Python, un diccionario está entre llaves, {}, con una serie de pares 
+                        # clave-valor dentro de las llaves, como se muestra en el ejemplo anterior:
+
+alien_0 = {'color': 'green', 'points': 5}
+
+                        #Un "par clave-valor" es un conjunto asociado entre sí. 
+                        # Cuando proporciona una clave, Python devuelve el valor asociado con esa clave. 
+                        # Cada clave está conectada a su valor por dos puntos (:), y los pares clave-valor individuales están separados por comas. 
+                        # Puede almacenar tantos pares clave-valor como desee en un diccionario.
+
+#El diccionario más simple tiene exactamente un par clave-valor, 
+# como se muestra en esta versión modificada del diccionario alien_0:
+alien_0 = {'color': 'green'}
+#Este diccionario almacena una pieza de información sobre alien_0, a saber, el color del alienígena. 
+# La cadena 'color' es una clave en este diccionario, y su valor asociado es 'verde'.
+
+
+        #`1-Accessing Value In A Dictionary
+
+#Para obtener el valor asociado con una clave, ingrese el nombre del diccionario 
+# y luego coloque la clave dentro de un conjunto de corchetes, como se muestra aquí:
+alien_0 = {'color' : 'green'}
+print(alien_0['color'])
+#Esto devuelve el valor asociado con la clave 'color' del diccionario alien_0:  GREEN/verde
+
+#Puede tener un número ilimitado de pares clave-valor en un diccionario.
+#Por ejemplo, aquí está el diccionario alien_0 original con dos pares clave-valor:
+alien_0 = {'color': 'green', 'points': 5}
+new_points = alien_0['points']
+print(f"You just earned {new_points} points!")
+ #Si ejecuta este código cada vez que se derriba a un alienígena, se recuperará el valor en puntos del alienígena.
+
+
+
+        #`2- Adding new key-value Pairs / par clave valor.
