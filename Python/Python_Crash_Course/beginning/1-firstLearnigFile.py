@@ -745,3 +745,150 @@ print(f"You just earned {new_points} points!")
 
 
         #`2- Adding new key-value Pairs / par clave valor.
+
+#Dictionaries are dynamic structures, and you can add new key-value pairs to a dictionary at any time. 
+# For example, to add a new key-value pair, you would give the name of the dictionary followed by the new 
+# key in square brackets along with the new value.
+
+#Let's add two new pieces of information to the alien a dictionary: the alien's x- and y-coordinates, 
+# which will help us display the alien in a particular position on the screen. 
+# Let's place the alien on the left edge of the screen, 25 pixels down from the top. 
+# Because screen coordinates usually start at the upper-left corner of the screen, we'll place the alien 
+# on the left edge of the screen by setting the x-coordinate to 0 and 25 pixels from the top by setting 
+# its y-coordinate to positive 25, as shown here:
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+alien_0['x_position'] = 0
+alien_0['y_position'] = 25
+print(alien_0)
+#The final version of the dictionary contains four key-value pairs. 
+# The original two specify color and point value, and two more specify the alien position.
+
+#NOTE
+#As of Python 3.7, dictionaries retain the order in which they were defined. 
+# When you print a dictionary or loop through its elements, you will see the elements in the order in which they were added to the dictionary.
+
+
+
+
+        #`3- Starting with an Empty Dictionary
+
+#It's sometimes convenient, or even necessary, to start with an empty diction ary and then add each new item to it. 
+# To start filling an empty dictionary define a dictionary with an empty set of braces and then add each key-value pair on its own line. 
+# For example, here's how to build the alien a dictionary using this approach:
+alien_0 = {}
+
+alien_0['color'] = 'green'
+alien_0['points'] = 5
+
+print(alien_0)
+#Typically, you'll use empty dictionaries when storing user-supplied data in a dictionary or when you write code 
+# that generates a large number of key-value pairs automatically.
+
+
+
+
+        #`4- Modifying Values in a Dictionary
+
+#To modify a value in a dictionary, give the name of the dictionary with the key in square brackets 
+# and then the new value you want associated with that key. 
+# For example, consider an alien that changes from green to yellow as a game progresses:
+alien_0 = {'color': 'green'}
+print(f"The alien is {alien_0['color']}.")
+
+alien_0['color'] = 'yellow'
+print(f"The alien is now {alien_0['color']}.")
+#We first define a dictionary for alien_o that contains only the alien's color; 
+# then we change the value associated with the key 'color' to 'yellow'. 
+# The output shows that the alien has indeed changed from green to yellow:
+
+alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
+print(f"Original position: {alien_0['x_position']}")
+
+#Move the alien to the right.
+    #Determine how far  to move the alien based on its current speed.
+if alien_0['speed'] == 'slow':                                      #At 0, an if-elif-else chain determines how far the alien should move to the 
+    x_increment = 1                                               #right and assigns this value to the variable x_increment. If the alien's 
+elif alien_0['speed'] == 'medium':                               #speed is 'slow', it moves one unit to the right; if the speed is 'medium', 
+    x_increment = 2                                             #it moves two units to the right; and if it's 'fast', it moves three units 
+else:                                                          #to the right. Once the increment has been calculated, it's added to the 
+    #this must be fast alien.                                 #value of x_position at @, and the result is stored in the dictionary's x_position.                          
+    x_increment = 3                                                     
+#the new posittion is the old position plus the increment.          
+alien_0['x_position'] = alien_0['x_position'] + x_increment         
+                                    
+print(f"New position: {alien_0['x_position']}")                         
+#We start by defining an alien with an initial x position and y position, and a speed of 'medium'. 
+# We've omitted the color and point values ​​for the sake of simplicity, but this example would work 
+# the same way if you included those key-value pairs as well. 
+# We also print the original value of x_position to see how far the alien moves to the right.
+
+#This technique is pretty cool: by changing one value in the alien's dic- tionary, you can change the overall behavior of the alien. 
+# For example, to turn this medium-speed alien into a fast alien, you would add the line:
+alien_0['speed'] = 'fast'
+#El bloque if-elif-else asignaría un valor mayor a x_increment la próxima vez que se ejecute el código.
+
+
+
+
+        #`5- Removing key-value pairs
+
+#Cuando ya no necesite una parte de la información almacenada en un diccionario, 
+# puede usar la declaración delta para eliminar por completo un par clave-valor. 
+# Todo lo que necesita es el nombre del diccionario y la clave que desea eliminar.
+
+#Por ejemplo, eliminemos los puntos clave del diccionario alien o junto con su valor:
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+del alien_0['points']
+print(alien_0)
+
+
+
+
+        #`6- A Dictionary of similar Objects
+
+#The previous example involved storing different kinds of information about one object, an alien in a game. 
+# You can also use a dictionary to store one kind of information about many objects. For example, say you want 
+# to poll a number of people and ask them what their favorite programming language is. A dictionary is useful 
+# for storing the results of a simple poll, like this:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+#Como puede ver, hemos dividido un diccionario más grande en varias líneas. 
+# Cada clave es el nombre de una persona que respondió a la encuesta y cada valor es su elección de idioma. 
+# Cuando sepa que necesitará más de una línea para definir un diccionario, presione ENTER después de la llave de apertura. 
+# Luego, sangra la línea siguiente un nivel (cuatro espacios) y escribe el primer par clave-valor, seguido de una coma. 
+# A partir de este punto, cuando presione ENTER, su editor de texto debería sangrar automáticamente 
+# todos los pares clave-valor subsiguientes para que coincidan con el primer par clave-valor.
+
+#Una vez que haya terminado de definir el diccionario, agregue una llave de cierre en una nueva línea después del último par 
+# clave-valor y sangre un nivel para que se alinee con las claves del diccionario. También es una buena práctica incluir una 
+# coma después del último par clave-valor, de modo que esté listo para agregar un nuevo par clave-valor en la siguiente línea.
+#NOTE
+#La mayoría de los editores tienen alguna funcionalidad que le ayuda a formatear listas extendidas y diccionarios de manera 
+# similar a este ejemplo. También hay disponibles otras formas aceptables de formatear diccionarios largos, por lo que es 
+# posible que vea un formato ligeramente diferente en su editor o en otras fuentes.
+
+#To use this dictionary, given the name of a took the poll, you can easily look up their favorite language:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+language = favorite_languages['sarah'].title()
+print(f"Sarah's favorite language is {language}.")
+#Puede usar esta misma sintaxis con cualquier individuo representado en el diccionario.
+
+
+
+
+
+        #`7- Using get() to acces Values
