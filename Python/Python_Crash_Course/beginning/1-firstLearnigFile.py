@@ -703,7 +703,7 @@ alien_0 = {'color': 'green', 'points': 5}
 print(alien_0['color'])
 print(alien_0['points'])
 
-        #🦴Working with Dictionaries
+        #📝Working with Dictionaries
 
                         #Un diccionario en Python es una colección de "key-value pair"/"pares clave-valor". 
                         # Cada clave está conectada a un valor, y puede usar una clave/llave para acceder al valor asociado con esa clave.
@@ -892,3 +892,95 @@ print(f"Sarah's favorite language is {language}.")
 
 
         #`7- Using get() to acces Values
+
+#El uso de claves entre paréntesis cuadrados para recuperar el valor que le interesa de un diccionario puede causar un problema potencial: 
+# si la clave que solicita no existe, obtendrá un error.
+
+#Veamos qué sucede cuando pides el valor en puntos de un extraterrestre que no tiene establecido un valor en puntos:
+alien_0 = {'color': 'green', 'speed': 'slow'}
+print(alien_0['points'])    #esto resulta en un rastreo, mostrando un keyError. NOTE: para solucionar esto usa el metodo get()
+
+#Aprenderá más sobre cómo manejar errores como este en género en el Capítulo 10. 
+# Para los diccionarios, específicamente, puede usar el método get() para establecer 
+# un valor predeterminado que se devolverá si la clave solicitada no existe.
+
+#El método get() requiere una clave como primer argumento. 
+# Como segundo argumento opcional, puede pasar el valor que se devolverá si la clave no existe:
+alien_0 = {'color': 'green', 'speed': 'slow'}
+
+point_value = alien_0.get('points', 'No points value assigned.')
+print (point_value)
+
+#Si omite el segundo argumento en la llamada a get() y la clave no existe, Python devolverá el valor Ninguno. 
+# El valor especial Ninguno significa que "no existe ningún valor". 
+# Esto no es un error: es un valor especial destinado a indicar la ausencia de un valor. Verá más usos para Ninguno en el Capítulo 8.
+
+
+
+
+
+    # 📝LOOPING THROUGH A DICTIONARY
+                                        #Un solo diccionario de Python puede contener solo unos pocos pares clave-valor o millones de pares. 
+                                        # Debido a que un diccionario puede contener grandes cantidades de datos, Python le permite recorrer 
+                                        # un diccionario. Los diccionarios se pueden utilizar para almacenar información de diversas formas; 
+                                        # por lo tanto, existen varias formas diferentes de recorrerlos. Puede recorrer todos los pares 
+                                        # clave-valor de un diccionario, sus claves o sus valores.
+
+        #`1- Looping throug all Key-Values pairs
+
+#Antes de explorar los diferentes enfoques de los bucles, consideremos un nuevo
+# diccionario diseñado para almacenar información sobre un usuario en un sitio web. 
+
+# El siguiente diccionario almacenaría el nombre de usuario, el nombre y el apellido de una persona:
+user_0 = {
+    'username': 'efermi',
+    'first': 'enrico',
+    'last': 'fermi',
+ }
+#Puede acceder a cualquier pieza de información sobre el usuario 0 en función de lo que ya ha aprendido en este capítulo. Pero, ¿y si 
+# quisiera ver todo lo almacenado en el diccionario de este usuario? Para hacerlo, puede recorrer el diccionario usando un bucle for:
+user_0 = {
+    'username': 'efermi',
+    'first': 'enrico',
+    'last': 'fermi',
+ }
+ 
+for clave, valor in user_0.items():
+    print(f"\nKey: {clave}")
+    print(f"Value: {valor}")
+
+#Recorrer todos los pares clave-valor funciona particularmente bien para diccionarios como el ejemplo de 
+# favourite_languages.py en la página 97, que almacena el mismo tipo de información para muchas claves diferentes. 
+# Si recorre el diccionario de idiomas_favoritos, obtiene el nombre de cada persona en el diccionario y su 
+# lenguaje de programación favorito. Debido a que las claves siempre se refieren al nombre de una persona y 
+# el valor siempre es un idioma, usaremos las variables nombre e idioma en el bucle en lugar de clave y valor. 
+# Esto hará que sea más fácil seguir lo que sucede dentro del ciclo:
+
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+for nombre , lenguaje, in favorite_languages.items():                     #Este tipo de ciclos/looping funcionaria incluso con miles
+    print(f"{nombre.title()}'s favorite language is {lenguaje.title()}.")       # y millones de item/elementos (parejas clave-valor)
+
+
+
+        
+
+        #`- Looping through all the keys in a Dictionary
+
+#El método keys() es útil cuando no necesita trabajar con todos los valores en un diccionario. 
+# Recorramos el diccionario de idiomas_favoritos e imprimamos los nombres de todos los que respondieron la encuesta:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+for nombre in favorite_languages.keys():
+    print(nombre.title())
+    
