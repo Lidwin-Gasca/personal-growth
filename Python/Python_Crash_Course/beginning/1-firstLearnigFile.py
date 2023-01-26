@@ -983,4 +983,109 @@ favorite_languages = {
 
 for nombre in favorite_languages.keys():
     print(nombre.title())
-    
+#Recorrer las teclas es en realidad el comportamiento predeterminado cuando se recorre un diccionario, 
+# por lo que este código tendría exactamente el mismo resultado si escribiera...
+for nombre in favorite_languages:
+    print(nombre)
+    #en vez de
+for nombre in favorite_languages.keys():
+    print(nombre)
+    #Puede optar por usar el método keys() explícitamente si hace que su código sea más fácil de leer, o puede omitirlo si lo desea.
+#Puede acceder al valor asociado con cualquier clave que le interese dentro del bucle utilizando la clave actual. 
+# Imprimamos un mensaje para un par de amigos sobre los idiomas que eligieron. 
+# Recorreremos los nombres en el diccionario como lo hicimos anteriormente, 
+# pero cuando el nombre coincida con uno de nuestros amigos, mostraremos un mensaje sobre su idioma favorito:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+friends = ['phil', 'sarah']
+for nombre in favorite_languages.keys():
+    print(f"Hi {nombre.title()}.")
+
+    if nombre in friends:
+        language = favorite_languages[nombre].title()
+        print(f"\t{nombre.title()}, I see you love {language}!")
+        #todos los nombres de favorite_language son mecionados, pero los de la lista friends reciben un mensaje especial.
+
+#Tambien podemos usar el metodo keys() para encontrar si alguien en particular no esta en el diccionario, de la siguiente manera:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+if 'erin' not in favorite_languages.keys():
+    print(f"Erin, porfavor toma tu voto de leguaje de programacion preferido")
+
+
+
+
+
+    #Looping Through a Dictionary's Keys in a Particular Oder
+
+#A partir de Python 3.7, recorrer un diccionario devuelve los elementos en el mismo orden en que se insertaron. 
+# A veces, sin embargo, querrá recorrer un diccionario en un orden diferente.
+
+#Una forma de hacer esto es ordenar las claves a medida que se devuelven en el bucle for. 
+# Puede usar la función sorted() para obtener una copia de las claves en orden:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+for name in sorted(favorite_languages.keys()):
+    print(f"{name.title()}, thank you for taking the poll.")
+
+
+
+
+    # Looping Through All Values in a Dictionary
+
+#Si está interesado principalmente en los valores que contiene un diccionario, puede usar el método de valores() 
+# para devolver una lista de valores sin ninguna clave. Por ejemplo, digamos que simplemente queremos una lista 
+# de todos los idiomas elegidos en nuestra encuesta de lenguajes de programación sin el nombre de la persona que eligió cada idioma:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+print("The following languages have been mentioned:")
+for language in favorite_languages.values():
+    print(language.title())         #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅-
+    #La declaración for aquí extrae cada valor del diccionario y lo asigna a la variable idioma.     ⬆
+    # Cuando se imprimen estos valores, obtenemos una lista de todos los idiomas elegidos:  ➡➡➡➡➡-
+
+
+#Este enfoque extrae todos los valores del diccionario sin verificar si hay repeticiones. 
+# Eso podría funcionar bien con una pequeña cantidad de valores, pero en una encuesta con 
+# una gran cantidad de encuestados, esto daría como resultado una lista muy repetitiva. 
+# Para ver cada idioma elegido sin repetición, podemos usar un conjunto Un conjunto es una colección en la que cada elemento debe ser único:
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python'
+}
+
+print("The following languages have been mentioned:")
+for language in set(favorite_languages.values()):
+    print(language.title())
+#A medida que continúe aprendiendo sobre Python, a menudo encontrará una característica 
+# integrada del lenguaje que lo ayuda a hacer exactamente lo que quiere con sus datos.
+
+#Puedes construir un conjunto directamente usando llaves y separando los elementos con comas:
+    languages = {'python', 'ruby', 'python', 'c'}
+    languages
+{'ruby', 'python', 'c'}
+#NOTE
+#It's easy to mistake sets for dictionaries because they're both wrapped in braces. 
+# When you see braces but no key-value pairs, you're probably looking at a set. 
+# Unlike Ests and dictionaries, sets do not retain items in any specific order
