@@ -1089,3 +1089,116 @@ for language in set(favorite_languages.values()):
 #It's easy to mistake sets for dictionaries because they're both wrapped in braces. 
 # When you see braces but no key-value pairs, you're probably looking at a set. 
 # Unlike Ests and dictionaries, sets do not retain items in any specific order
+
+
+
+
+
+
+#NESTING
+
+                    #A veces querrá almacenar varios diccionarios en una lista, o una lista de elementos como un valor dentro 
+                    # de un diccionario, o incluso un diccionario dentro de otro diccionario. El anidamiento es una característica 
+                    # poderosa, como lo demostrarán los siguientes ejemplos.
+
+ 
+
+
+
+    # A Listf Of Dictionaries
+
+#El diccionario alien_0 contiene una variedad de información sobre un extraterrestre, pero no tiene espacio para almacenar 
+# información sobre un segundo extraterrestre, y mucho menos una pantalla llena de extraterrestres. ¿Cómo puedes manejar una 
+# flota de extraterrestres? Una forma es hacer una lista de extraterrestres en la que cada extraterrestre sea un diccionario 
+# de información sobre ese extraterrestre. Por ejemplo, la siguiente lista de compilación de código de tres alienígenas:
+
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
+
+aliens = {'color': 'red', 'points': 15}
+
+for alien in aliens:
+    print(alien)
+
+#Un ejemplo más realista involucraría a más de tres alienígenas con un código que genera automáticamente cada alienígena. 
+# En el siguiente ejemplo, usamos range() para crear una flota de 30 alienígenas:
+
+#Make an empty list for storing aliens.
+aliens = []
+
+#Make 30 green aliens.
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+#Show the first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+#Show how many aliens have been created.
+print(f"Total number of aliens: {len(aliens)}")
+
+#Todos estos alienígenas tienen las mismas características, pero Python considera a cada uno un objeto separado, lo que nos permite 
+# modificar cada alienígena individualmente.
+
+
+#¿Cómo podrías trabajar con un grupo de extraterrestres como este? Imagina que un aspecto de un juego tiene algo para cambiar los 
+# colores, podemos usar un bucle for y una declaración if para cambiar el color de los alienígenas. Por ejemplo, para cambiar los 
+# primeros tres extraterrestres a extraterrestres amarillos de velocidad media que valen 10 puntos cada uno, podríamos hacer esto:
+aliens = []
+#Make 30 green aliens.
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:3]:                #Porque queremos modificar los primeros tres alienígenas. 
+    if alien['color'] == 'green':       #Todos los alienígenas son verdes ahora, pero ese no siempre será el caso, 
+        alien['color'] == 'yellow'      # por lo que escribimos una declaración if para asegurarnos de que solo estamos modificando 
+        alien['speed'] == 'medium'      # alienígenas verdes. Si el alienígena es verde, cambiamos el color a 'amarillo', la 
+        alien['points'] == 10           # velocidad a 'media' y el valor de puntos a 10, como se muestra en el siguiente resultado:
+#Show the first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+#Puede expandir este ciclo agregando un bloque "elif" que convierte a los alienígenas amarillos en rojos, que se 
+# mueven rápidamente, con un valor de 15 puntos cada uno. Sin volver a mostrar todo el programa, ese bucle se vería así:
+for alien in aliens[:3]:                
+    if alien['color'] == 'green':       
+        alien['color'] == 'yellow'      
+        alien['speed'] == 'medium'      
+        alien['points'] == 10           
+    elif alien['color'] == 'yellow':
+        alien['color'] == 'red'
+        alien['speed'] == 'fast'
+        alien['points'] == 15
+
+
+
+
+
+
+# A List In A Dictionary
+
+                #En lugar de poner el diccionario dentro de una lista, a veces es útil poner una lista dentro del diccionario. 
+                # Por ejemplo, considere cómo podría describir una pizza que alguien está ordenando. Si tuviera que usar solo una 
+                # lista, todo lo que realmente podría almacenar es una lista de los ingredientes de la pizza. con un diccionario, 
+                # una lista de ingredientes puede ser solo un aspecto de la pizza que estás describiendo.
+
+#En el siguiente ejemplo, se almacenan dos tipos de información para cada pizza: un tipo de corteza y una lista 
+# de ingredientes. La lista de toppings es un valor asociado a la clave 'toppings'. Para utilizar los elementos 
+# de la lista, le damos el nombre del diccionario y la tecla 'toppings', como haríamos con cualquier valor del 
+# diccionario. En lugar de devolver un solo valor, obtenemos una lista de ingredientes:
+pizza = {#Store information about a pizza being ordered.
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+}
+#Summarize the order.
+print(f"You ordered a {pizza['crust']}-crust pizza"
+    "with the following topping:")
+
+for topping in pizza['toppings']:
+    print(f"\t{topping}")
+
