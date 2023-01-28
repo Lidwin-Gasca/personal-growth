@@ -51,3 +51,84 @@ glosario['set()'] = 'En lenguaje de programacion Python:\n[puede ser usado en la
 
 for variable_clave, variable_valor in glosario.items():
     print(f"\n{variable_clave}:\n  {variable_valor}")
+
+
+
+
+
+
+
+
+
+
+
+
+    #6-5 Rios
+
+#Haz un diccionario que contenga tres ríos 
+# principales y el país por el que pasa cada río. 
+# Un par clave-valor podría ser 'nilo': 'egipto'
+
+#           • Use un bucle para imprimir una oración sobre cada río, como El Nilo atraviesa Egipto.
+
+#           • Utilice un bucle para imprimir el nombre de cada río incluido en el diccionario.
+
+#           • Utilice un bucle para imprimir el nombre de cada país incluido en el diccionario.
+rivers = {}
+rivers['nilo'] = 'egipto'
+rivers['amazon'] = 'brasil'
+rivers['bravo'] = 'mexico'
+rivers['volga'] = 'russia'
+rivers['mississippi'] = 'usa'
+
+for clave_key, valor_value in rivers.items():
+    if len(valor_value) == 3:
+        print(f"El rio {clave_key.title()} corre por el pais {valor_value.upper()}.")
+    else:
+        print(f"El rio {clave_key.title()} corre por el pais {valor_value.title()}.")
+
+print('\nNombres de los rios:')
+for key in rivers.keys():
+    print(f"\t{key.title()}")
+
+print('\nNombres de los paises:')
+for value in rivers.values():
+    print(f"\t{value.title()}")
+
+
+
+    
+    
+    
+    
+
+    #6-6. Encuesta: 
+    
+# Use el código en favorite_languages.py (página 97 de el libro -Crash Python Course -Erick Matthes-).
+
+#           • Haz una lista de las personas que deberían participar en la encuesta de idiomas favoritos. 
+
+#           • Incluye algunos nombres que ya estén en el diccionario y otros que no.
+
+#           • Recorra la lista de personas que deberían realizar la encuesta. 
+#             Si ya han realizado la encuesta, imprima un mensaje agradeciéndoles por responder.
+#             Si no han realizado la encuesta, imprima un mensaje invitándoles a realizar la encuesta.
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python',
+}
+favorite_languages['omar'] = 'html'
+favorite_languages['abelardo'] = 'java'
+favorite_languages['erique'] = 'jacva script'
+favorite_languages['marvin'] = 'plc'
+
+print(favorite_languages)
+
+for key, value in favorite_languages.items():
+    print(f"\n{key.title()} voto por el lenguaje {value.title()}")
+
+if 'erin' not in favorite_languages.keys():
+    print(f"\nErin, porfavor toma tu voto de leguaje de programacion preferido")
+    
