@@ -99,6 +99,12 @@ for value in rivers.values():
 
     
     
+
+
+
+
+
+
     
     
 
@@ -132,3 +138,95 @@ for key, value in favorite_languages.items():
 if 'erin' not in favorite_languages.keys():
     print(f"\nErin, porfavor toma tu voto de leguaje de programacion preferido")
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #6-7. People:
+#Comience con el programa que escribió para el ejercicio 6-1 (página 99). 
+# Cree dos nuevos diccionarios que representen a diferentes personas y almacene los tres diccionarios en una lista llamada personas. 
+# Recorra su lista de personas. Mientras recorre la lista, imprima todo lo que sabe sobre cada persona. 
+
+
+
+
+
+
+
+
+
+
+    #6-8. Pets:
+
+#Haga varios diccionarios, donde cada diccionario represente una mascota diferente. 
+# En cada diccionario, incluya el tipo de animal y el nombre del dueño. Guarde estos diccionarios en una lista llamada mascotas. 
+# A continuación, recorra su lista y, mientras lo hace, imprima todo lo que sepa sobre cada mascota.
+
+
+
+
+
+
+
+
+
+
+
+    #6-9. Favorite Places:
+
+#Haz un diccionario llamado lugares_favoritos. 
+# Piense en tres nombres para usar como claves en el diccionario y almacene de uno a tres lugares favoritos para cada persona. 
+# Para hacer este ejercicio un poco más interesante, pídales a algunos amigos que mencionen algunos de sus lugares favoritos. 
+# Recorre el diccionario e imprime el nombre de cada persona y sus lugares favoritos.
+
+
+
+
+
+
+
+
+
+
+    #6-10. Favorite Numbers:
+
+#Modifique su programa del Ejercicio 6-2 (página 99) para que cada persona pueda tener más de un número favorito. 
+# Luego escriba el nombre de cada persona junto con sus números favoritos.
+
+
+
+
+
+
+
+
+
+    #6-11 Cities:
+
+#Haz un diccionario llamado ciudades. Usa los nombres de tres ciudades como claves en tu diccionario. 
+# Cree un diccionario de información sobre cada ciudad e incluya el país en el que se encuentra la 
+# ciudad, su población aproximada y un dato sobre esa ciudad. Las claves para el diccionario de cada 
+# ciudad deben ser algo como país, población y hecho. Imprime el nombre de cada ciudad y toda la 
+# información que tengas guardada sobre ella.
+
+
+
+
+
+
+
+
+    #6-12. Extensions:
+
+#Ahora estamos trabajando con ejemplos que son lo suficientemente complejos como para que puedan extenderse de muchas maneras. 
+# Utilice uno de los programas de ejemplo de este capítulo y amplíelo agregando nuevas claves y valores, 
+# cambiando el contexto del programa o mejorando el formato de la salida.

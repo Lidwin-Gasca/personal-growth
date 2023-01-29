@@ -1300,6 +1300,10 @@ for username, user_info in users.items():
 # Cuando su programa necesite un nombre, podrá pedirle al usuario un nombre. Cuando su programa necesite una 
 # lista de nombres, podrá solicitar al usuario una serie de nombres. Para ello, utilizará la función input().
 
+#You'll also learn how to keep programs running as long as users want them to, so they can enter as much 
+# information as they need to; then, your program can work with that information. 
+# You'll use Python's while loop to keep programs running as long as certain conditions remain true.
+
 
 
 
