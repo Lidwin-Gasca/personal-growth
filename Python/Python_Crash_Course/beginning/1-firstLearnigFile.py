@@ -1202,3 +1202,105 @@ print(f"You ordered a {pizza['crust']}-crust pizza"
 for topping in pizza['toppings']:
     print(f"\t{topping}")
 
+
+
+
+#Puede anidar una lista dentro de un diccionario cada vez que desee asociar más de un valor con una sola clave en un diccionario. 
+# En el ejemplo anterior de los lenguajes de programación favoritos, si tuviéramos que almacenar las respuestas de cada persona 
+# en una lista, las personas podrían elegir más de un lenguaje favorito. Cuando recorremos el diccionario, el valor asociado con 
+# cada persona sería una lista de idiomas en lugar de un solo idioma. Dentro del bucle for del diccionario, usamos otro bucle for 
+# para recorrer la lista de idiomas asociados con cada persona:
+favorite_languages = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+}
+
+for name, languages in favorite_languages.items():
+    print(f"\n{name.title()}'s favorite languages are:")
+    for language in languages:
+        print(f"\t{language.title()}")
+#Para refinar aún más este programa, puede incluir una instrucción if al principio del bucle for del diccionario para ver 
+# si cada persona tiene más de un idioma favorito examinando el valor de len (idiomas). Si una persona tiene más de un favorito, 
+# el resultado sería el mismo. Si la persona solo tiene un idioma favorito, puede cambiar la redacción para reflejar eso. 
+# Por ejemplo, podría decir que el idioma favorito de Sarah es C.
+
+#NOTE
+#No debe anidar listas y diccionarios demasiado profundamente. 
+# Si está anidando elementos mucho más profundamente que lo que 
+# ve en los ejemplos anteriores o está trabajando con el código 
+# de otra persona con niveles significativos de anidamiento, lo 
+# más probable es que exista una forma más sencilla de resolver 
+# el problema.
+
+
+
+
+
+
+    #A Dictionary In A Dictionary
+
+#Puede anidar un diccionario dentro de otro diccionario, pero su código puede complicarse rápidamente cuando lo hace. 
+# Por ejemplo, si tiene varios usuarios para un sitio web, cada uno con un nombre de usuario único, puede usar los nombres 
+# de usuario como claves en un diccionario. A continuación, puede almacenar información sobre cada usuario mediante el 
+# uso de un diccionario como el valor asociado con su nombre de usuario. En la siguiente lista, almacenamos tres 
+# datos sobre cada usuario: su nombre, apellido y ubicación. Accederemos a esta información recorriendo los nombres 
+# de usuario y el diccionario de información asociado con cada nombre de usuario:
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+    },
+}
+
+for username, user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['first']} {user_info['last']}"
+    location = user_info['location']
+
+    print(f"\tFull name: {full_name.title()}")
+    print(f"\tLocation: {location.title()}")
+    #Observe que la estructura del diccionario de cada usuario es idéntica. 
+    # Aunque Python no lo requiere, esta estructura facilita el trabajo con los diccionarios anidados. 
+    # Si el diccionario de cada usuario tuviera claves diferentes, el código dentro del ciclo for sería más complicado.
+
+#Sumario:
+        #En este ⬆ capítulo aprendió cómo definir un diccionario y cómo trabajar con la información almacenada en un diccionario. 
+        # Aprendió cómo acceder y modificar elementos individuales en un diccionario y cómo recorrer toda la información en un diccionario. 
+        # Aprendió a recorrer los pares clave-valor de un diccionario, sus claves y sus valores. 
+        # También aprendió cómo anidar varios diccionarios en una lista, anidar listas en un 
+        # diccionario y anidar un diccionario dentro de un diccionario.
+
+#En el próximo capítulo ⬇ aprenderás sobre los bucles while y cómo aceptar entradas de personas que están usando sus programas. 
+# Este será un capítulo emocionante, porque aprenderá a hacer que todos sus programas sean interactivos: 
+# podrán responder a las entradas del usuario.
+
+
+
+
+
+
+
+
+
+            #CAPITULO 7         
+#  🐍                     USER INPUT AND WHILE LOOPS
+
+
+#La mayoría de los programas están escritos para resolver el problema de un usuario final. 
+# Para hacerlo, generalmente necesita obtener cierta información del usuario. 
+# Para un ejemplo simple, digamos que alguien quiere saber si tiene la edad suficiente para votar.
+#Si escribe un programa para responder a esta pregunta, necesita saber la edad del usuario antes de poder proporcionar una respuesta. 
+# El programa deberá pedirle al usuario que ingrese/'input', su edad; una vez que el programa tiene esta entrada, 
+# puede compararla con la edad de votación para determinar si el usuario tiene la edad suficiente y luego informar el resultado.
+
+#En este capítulo, aprenderá cómo aceptar la entrada del usuario para que su programa pueda trabajar con ella. 
+# Cuando su programa necesite un nombre, podrá pedirle al usuario un nombre. Cuando su programa necesite una 
+# lista de nombres, podrá solicitar al usuario una serie de nombres. Para ello, utilizará la función input().
+
+
+
+
+
