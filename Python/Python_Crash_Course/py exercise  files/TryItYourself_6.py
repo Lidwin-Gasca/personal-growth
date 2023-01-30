@@ -16,6 +16,8 @@ padre['edad'] = 51
 padre['ciudad'] = 'las golondrinas'
 
 print(f"Mi padre se llama {padre['nombre'].title()} {padre['apellido'].title()} {padre['ape_materno'].title()}, tiene {padre['edad']} anos de edad y reside en {padre['ciudad'].title()}.")
+#podemos usarr cualquiera de estos dos "print()"
+print(f"Mi padre se llama {persona[0]['nombre'].title()} {persona[0]['apellido'].title()} {persona[0]['ape_materno'].title()}, tiene {persona[0]['edad']} anos de edad y reside en {persona[0]['ciudad'].title()}.")
 
 
 
@@ -155,11 +157,40 @@ if 'erin' not in favorite_languages.keys():
 #Comience con el programa que escribió para el ejercicio 6-1 (página 99). 
 # Cree dos nuevos diccionarios que representen a diferentes personas y almacene los tres diccionarios en una lista llamada personas. 
 # Recorra su lista de personas. Mientras recorre la lista, imprima todo lo que sabe sobre cada persona. 
+personas = []
+padre = {}
+madre = {}
+hermano = {}
+personas.append(padre)
+personas.append(madre)
+personas.append(hermano)
 
 
+padre['nombre'] = 'luis'
+padre['apellido'] = 'gasca'
+padre['ape_materno'] = 'castillo'
+padre['edad'] = 51
+padre['ciudad'] = 'las golondrinas'
+padre['parentesco'] = 'padre'
+
+madre['nombre'] = 'patricia'
+madre['apellido'] = 'garcia'
+madre['ape_materno'] = 'leon'
+madre['edad'] = 49
+madre['ciudad'] = 'michoacan'
+madre['parentesco'] = 'madre'
 
 
+hermano['nombre'] = 'javier'
+hermano['apellido'] = 'garcia'
+hermano['ape_materno'] = 'leon'
+hermano['edad'] = 28
+hermano['ciudad'] = 'norte carolina'
+hermano['parentesco'] = 'hermano'
 
+
+for cada_persona in personas:
+    print(f"Mi {cada_persona['parentesco']} se llama {cada_persona['nombre'].title()} {cada_persona['apellido'].title()} {cada_persona['ape_materno'].title()}, tiene {cada_persona['edad']} anos de edad y reside en {cada_persona['ciudad'].title()}.")
 
 
 
@@ -230,3 +261,39 @@ if 'erin' not in favorite_languages.keys():
 #Ahora estamos trabajando con ejemplos que son lo suficientemente complejos como para que puedan extenderse de muchas maneras. 
 # Utilice uno de los programas de ejemplo de este capítulo y amplíelo agregando nuevas claves y valores, 
 # cambiando el contexto del programa o mejorando el formato de la salida.
+
+
+
+
+
+
+
+
+
+
+    #7-1. Rental Car:
+
+#Escriba un programa que le pregunte al usuario qué tipo de coche de alquiler le gustaría.
+# Imprime un mensaje sobre ese auto, como "Déjame ver si puedo encontrarte un Subaru".
+
+
+
+
+
+
+
+    #7-2. Restaurant Seating:
+
+#Escriba un programa que le pregunte al usuario cuántas personas hay en su grupo de cena. 
+# Si la respuesta es más de ocho, imprima un mensaje diciendo que tendrán que esperar por una mesa. 
+# De lo contrario, informe que su mesa está lista.
+
+
+
+
+
+
+
+    #7-3. Multiples of Ten:
+
+#Solicite al usuario un número y luego informe si el número es un múltiplo de 10 o no.
