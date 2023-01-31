@@ -196,11 +196,59 @@ for cada_persona in personas:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     #6-8. Pets:
 
 #Haga varios diccionarios, donde cada diccionario represente una mascota diferente. 
 # En cada diccionario, incluya el tipo de animal y el nombre del dueño. Guarde estos diccionarios en una lista llamada mascotas. 
 # A continuación, recorra su lista y, mientras lo hace, imprima todo lo que sepa sobre cada mascota.
+mascotas = []
+perro = {}
+gato = {}
+venado = {}
+mascotas.append(perro)
+mascotas.append(gato)
+mascotas.append(venado)
+
+perro['nombre'] = 'rosmi'
+perro['edad'] = '18'
+perro['dueño'] = 'adriana'
+perro['caracter'] = 'agotado'
+perro['mascota'] = 'perro'
+perro['parentescoDelDueño'] = 'prima'
+
+gato['nombre'] = 'sombra'
+gato['edad'] = '16'
+gato['dueño'] = 'paola'
+gato['caracter'] = 'agotado'
+gato['mascota'] = 'gato'
+gato['parentescoDelDueño'] = 'prima'
+
+venado['nombre'] = 'bambi'
+venado['edad'] = '5'
+venado['dueño'] = 'guillermo'
+venado['caracter'] = 'territorial'
+venado['mascota'] = 'venado'
+venado['parentescoDelDueño'] = 'abuelo'
+
+for each in mascotas:
+    print(f"El {each['mascota']} de mi {each['parentescoDelDueño']} {each['dueño'].title()} se llama {each['nombre'].title()}, tiene {each['edad']} años de edad, y es de caracter {each['caracter']}.") 
+
+
+
 
 
 
