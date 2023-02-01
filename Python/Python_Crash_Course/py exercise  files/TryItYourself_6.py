@@ -266,7 +266,13 @@ for each in mascotas:
 # Piense en tres nombres para usar como claves en el diccionario y almacene de uno a tres lugares favoritos para cada persona. 
 # Para hacer este ejercicio un poco más interesante, pídales a algunos amigos que mencionen algunos de sus lugares favoritos. 
 # Recorre el diccionario e imprime el nombre de cada persona y sus lugares favoritos.
+lugares_favoritos = {}
+lugares_favoritos['jhon'] = 'hogar'
+lugares_favoritos['limber'] = 'cyber'
+lugares_favoritos['nacaranda'] = 'mar'
 
+for clave, valor in lugares_favoritos.items():
+    print(f"A mi amistad {clave.title()} le gusta el {valor} como su lugar favorito.")
 
 
 
