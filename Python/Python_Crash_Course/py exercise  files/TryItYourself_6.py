@@ -286,6 +286,24 @@ for clave, valor in lugares_favoritos.items():
 
 #Modifique su programa del Ejercicio 6-2 (página 99) para que cada persona pueda tener más de un número favorito. 
 # Luego escriba el nombre de cada persona junto con sus números favoritos.
+personas = []
+
+for persona in range(3):
+    nueva_persona = {'nombre': '', 'numero_favorito': '', 'num_fav_2': ''}
+    personas.append(nueva_persona)
+
+personas[0]['nombre'] = 'Lucia'
+personas[1]['nombre'] = 'Fernando'
+personas[2]['nombre'] = 'Hernesto'
+personas[0]['numero_favorito'] = 1
+personas[1]['numero_favorito'] = 3
+personas[2]['numero_favorito'] = 5
+personas[0]['num_fav_2'] = 2
+personas[1]['num_fav_2'] = 4
+personas[2]['num_fav_2'] = 6
+
+for cada_persona in personas:
+    print(f"A mi amistad {cada_persona['nombre'].title()} le encanta el numero {cada_persona['num_fav_2']}, pero su numero favorito es {cada_persona['numero_favorito']}.")
 
 
 
