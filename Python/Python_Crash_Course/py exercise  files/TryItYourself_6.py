@@ -47,7 +47,7 @@ print(f"Mi padre se llama {persona[0]['nombre'].title()} {persona[0]['apellido']
 glosario = {}
 glosario['get()'] = 'En lenguaje de programacion Python:\nEs el metodo que se utiliza para llamar el valor de una clave que no existe en un diccionario.'
 glosario['item()'] = 'En lenguaje de programacion Python:\nUn metodo que retorna un listado de las parejas clave-valor de un diccionario/dictionary.'
-glosario['key()'] = 'En lenguaje de programacion Python:\nEl metodo key() se usa para extraer solo la/las claves de un diccionario/dictionary. Comun en loops "for".'
+glosario['key()'] = 'En lenguaje de programacion Python:\nEl metodo key() se usa para extraer solo las claves/keys de un diccionario/dictionary. Comun en loops "for".'
 glosario['value()'] = 'En lenguaje de programacion Python:\nSimilar al metodo key(), este extre solo los valores dentro de un diccionario/dictionary.'
 glosario['set()'] = 'En lenguaje de programacion Python:\n[puede ser usado en la misma linea de codigo que los otros metodos enlistados en este glosario] \nEs una coleccion de item, las cueles deben ser unicos e irrepetibles. La lista cuyos items queres\norganizar en un set(), ira envuelto dentro de esta misma:\n     set(lista)' 
 
@@ -313,13 +313,44 @@ for cada_persona in personas:
 
 
 
+
+
+
+
+
+
+
     #6-11 Cities:
 
 #Haz un diccionario llamado ciudades. Usa los nombres de tres ciudades como claves en tu diccionario. 
 # Cree un diccionario de información sobre cada ciudad e incluya el país en el que se encuentra la 
 # ciudad, su población aproximada y un dato sobre esa ciudad. Las claves para el diccionario de cada 
-# ciudad deben ser algo como país, población y hecho. Imprime el nombre de cada ciudad y toda la 
+# ciudad deben ser algo como país, población y un hecho curioso de tal ciudad. Imprime el nombre de cada ciudad y toda la 
 # información que tengas guardada sobre ella.
+cities = {
+    "London": {
+        "country": "England",
+        "population": 8787892,
+        "fact": "London is home to the Big Ben and the Tower of London."
+    },
+    "Paris": {
+        "country": "France",
+        "population": 2141000,
+        "fact": "Paris is known as the City of Love and is famous for its Eiffel Tower."
+    },
+    "Tokyo": {
+        "country": "Japan",
+        "population": 13395000,
+        "fact": "Tokyo is the most populous city in the world and is known for its technology and vibrant street life."
+    }
+}
+
+for city in cities:
+    print(f"City: {city}")
+    print(f"Country: {cities[city]['country']}")
+    print(f"Population: {cities[city]['population']}")
+    print(f"Fact: {cities[city]['fact']}")
+    print("\n")
 
 
 
@@ -334,7 +365,7 @@ for cada_persona in personas:
 # Utilice uno de los programas de ejemplo de este capítulo y amplíelo agregando nuevas claves y valores, 
 # cambiando el contexto del programa o mejorando el formato de la salida.
 
-
+ 
 
 
 
