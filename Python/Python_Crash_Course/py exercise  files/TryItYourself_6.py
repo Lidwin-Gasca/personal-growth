@@ -364,8 +364,24 @@ for city in cities:
 #Ahora estamos trabajando con ejemplos que son lo suficientemente complejos como para que puedan extenderse de muchas maneras. 
 # Utilice uno de los programas de ejemplo de este capítulo y amplíelo agregando nuevas claves y valores, 
 # cambiando el contexto del programa o mejorando el formato de la salida.
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+        'sexo': 'masculino',   #⬅linea agregada.
+    },
+}
 
- 
+for username, user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['first']} {user_info['last']}"
+    location = user_info['location']
+    sexo = user_info['sexo']
+
+    print(f"\tFull name: {full_name.title()}")
+    print(f"\tLocation: {location.title()}")
+    print(f"\tSexo: {sexo.title()}")
 
 
 
