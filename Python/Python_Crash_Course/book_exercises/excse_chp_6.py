@@ -282,6 +282,9 @@ for clave, valor in lugares_favoritos.items():
 
 
 
+
+
+
     #6-10. Favorite Numbers:
 
 #Modifique su programa del Ejercicio 6-2 (página 99) para que cada persona pueda tener más de un número favorito. 
@@ -385,40 +388,3 @@ for username, user_info in users.items():
     print(f"\tLocation: {location.title()}")
     print(f"\tSexo: {sexo.title()}")    #⬅linea agregada.
 
-
-
-
-
-
-
-
-
-
-
-
-    #7-1. Rental Car:
-
-#Escriba un programa que le pregunte al usuario qué tipo de coche de alquiler le gustaría.
-# Imprime un mensaje sobre ese auto, como "Déjame ver si puedo encontrarte un Subaru".
-
-
-
-
-
-
-
-    #7-2. Restaurant Seating:
-
-#Escriba un programa que le pregunte al usuario cuántas personas hay en su grupo de cena. 
-# Si la respuesta es más de ocho, imprima un mensaje diciendo que tendrán que esperar por una mesa. 
-# De lo contrario, informe que su mesa está lista.
-
-
-
-
-
-
-
-    #7-3. Multiples of Ten:
-
-#Solicite al usuario un número y luego informe si el número es un múltiplo de 10 o no.
