@@ -359,6 +359,8 @@ for city in cities:
 
 
 
+
+
     #6-12. Extensions:
 
 #Ahora estamos trabajando con ejemplos que son lo suficientemente complejos como para que puedan extenderse de muchas maneras. 
@@ -381,7 +383,11 @@ for username, user_info in users.items():
 
     print(f"\tFull name: {full_name.title()}")
     print(f"\tLocation: {location.title()}")
-    print(f"\tSexo: {sexo.title()}")
+    print(f"\tSexo: {sexo.title()}")    #⬅linea agregada.
+
+
+
+
 
 
 
