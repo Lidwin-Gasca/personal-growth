@@ -26,7 +26,7 @@
 
 
 
-        #HOW THE INPUT() FUNTION WORKS
+        #🦚HOW THE INPUT() FUNTION WORKS
 
 #La función input() pausa su programa y espera a que el usuario ingrese algún texto. 
 # Una vez que Python recibe la entrada del usuario, asigna esa entrada a una variable para que sea conveniente para usted trabajar con ella.
@@ -161,3 +161,237 @@ else:
     print(f"The number {number} is odd.")
 #Los números pares siempre son divisibles por dos, por lo que si el módulo de un número y 
 # dos es cero (aquí, si el número % 2 == 0) el número es par. De lo contrario, es raro.
+
+
+
+
+
+#🦚Introducing "while" Loops
+
+
+
+    #El bucle for toma una colección de elementos y ejecuta un bloque de código una vez para cada elemento de la colección. 
+    # Por el contrario, el bucle while se ejecuta mientras una determinada condición sea verdadera.
+
+
+
+
+
+        #`1- The While Loop in Ation
+
+#Puede usar un bucle while para contar una serie de números. Por ejemplo, el siguiente ciclo while cuenta de 1 a 5:
+current_number = 1
+while current_number <=5:
+    print(current_number)
+    current_number += 1
+#En la primera línea, comenzamos a contar desde 1 asignando número_actual el valor 1. 
+# El ciclo while se configura para seguir ejecutándose siempre que el valor del número actual sea menor o igual a 5. 
+# El código dentro del ciclo imprime el valor de current_number y luego agrega 1 a ese valor con el número actual
+
+#  += 1. (El operador += es una abreviatura de número_actual número actual + 1.) = Python repite el bucle siempre que la 
+# condición número_actual <= 5 sea verdadera. Como 1 es menor que 5, Python imprime 1 y luego suma 1, haciendo el número actual 2. 
+# Como 2 es menor que 5, Python imprime 2 y suma 1 nuevamente, haciendo el número actual 3, y así sucesivamente.
+#  Una vez que el valor de current_number es mayor que 5, el ciclo deja de ejecutarse y el programa finaliza:
+#   |1       |                           ⬇
+#   |2       |                         ↙
+#   |3       |                       ↙
+#   |4       |⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+#   |5       |
+#    ---------
+#Es muy probable que los programas que usa todos los días contengan bucles while. 
+# Por ejemplo, un juego necesita un bucle while para seguir ejecutándose todo el tiempo que desee seguir jugando y, 
+# por lo tanto, puede dejar de ejecutarse tan pronto como le pida que lo abandone. 
+# Los programas no serían divertidos de usar si dejaran de ejecutarse antes de que se lo indiquemos o continuaran 
+# ejecutándose incluso después de que quisiéramos salir, por lo que los bucles while son muy útiles.
+
+
+
+
+    #`2- Letting the User Choose When to Quit
+
+#Podemos hacer que el programa parrot.py se ejecute todo el tiempo que el usuario desee colocando la mayor parte del programa
+#  dentro de un ciclo while. 
+# Definiremos un valor de salida y luego mantendremos el programa ejecutándose mientras el usuario no haya ingresado el valor de salida:
+prompt = "\nTell me somethin, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program."
+message = ""
+
+while message != 'quit':
+    message = input(prompt)
+    print(message)
+#La primera vez que pasa por el ciclo, el mensaje es solo una cadena vacía, por lo que Python ingresa al ciclo. 
+# En la entrada del mensaje (solicitud), Python muestra la solicitud y espera a que el usuario ingrese su entrada. 
+# Todo lo que ingresan se asigna a un mensaje y se imprime; luego, Python vuelve a evaluar la condición en la instrucción while. 
+# Siempre que el usuario no haya ingresado la palabra 'salir', el aviso se muestra nuevamente y Python espera más información. 
+# Cuando el usuario finalmente ingresa 'salir', Python deja de ejecutar el ciclo while y el programa finaliza.
+
+
+
+
+
+#Este programa funciona bien, excepto que imprime la palabra 'salir' como si fuera un mensaje real. 
+# Una simple prueba if soluciona esto:
+prompt = "\nTell me somethin, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program."
+message = ""
+
+while message != 'quit':
+    message = input(prompt)
+
+    if message != 'quit':
+        print(message)
+#Ahora el programa realiza una verificación rápida antes de mostrar el mensaje y solo imprime 
+# el mensaje si no coincide con el valor de salida.
+
+
+
+
+
+
+
+
+
+        #`3- Using a Flag
+
+#En el ejemplo anterior, hicimos que el programa realizara ciertas tareas mientras una condición determinada era verdadera. 
+# Pero, ¿qué pasa con los programas más complicados en los que muchos eventos diferentes pueden hacer que el programa deje de ejecutarse?
+
+#Por ejemplo, en un juego, varios eventos diferentes pueden terminar el juego. 
+# Cuando el jugador se queda sin barcos, se acaba el tiempo o las ciudades que se suponía que debían proteger son destruidas, 
+# el juego debería terminar. Debe terminar si ocurre cualquiera de estos eventos. 
+# Si pueden ocurrir muchos eventos posibles para detener el programa, tratar de probar todas estas condiciones 
+# en una instrucción while se vuelve complicado y difícil.
+
+#Para un programa que debe ejecutarse solo mientras muchas condiciones sean verdaderas, puede definir una variable 
+# que determine si todo el programa está activo o no. Esta variable, llamada bandera, actúa como una señal para el programa. 
+# Podemos escribir nuestros programas para que se ejecuten mientras el indicador esté establecido en Verdadero y 
+# dejen de ejecutarse cuando cualquiera de varios eventos establezca el valor del indicador en Falso. Como resultado, 
+# nuestra declaración while general necesita verificar solo una condición: si la bandera es actualmente True o no.
+#  Luego, todas nuestras otras pruebas (para ver si ha ocurrido un evento que debería establecer el indicador en Falso) 
+# se pueden organizar ordenadamente en el resto del programa.
+
+#Agreguemos una bandera a parrot.py de la sección anterior.
+#  Este indicador, al que llamaremos activo (aunque puede llamarlo como quiera), 
+# controlará si el programa debe continuar ejecutándose o no:
+prompt = "\nTell me somethin, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program."
+
+active = True
+while active:
+    message = input(prompt)
+
+    if message == 'quit':
+        active = False
+    else:
+        print(message)
+#Este programa tiene el mismo resultado que el ejemplo anterior donde colocamos la prueba condicional directamente 
+# en la instrucción while. Pero ahora que tenemos una bandera para indicar si el programa general está en un estado
+# activo, sería fácil agregar más pruebas (como declaraciones elif) para eventos que deberían causar que active se 
+# convierta en False. Esto es útil en programas complicados como juegos en los que puede haber muchos eventos que 
+# deberían hacer que el programa deje de ejecutarse. Cuando cualquiera de estos eventos hace que la bandera activa 
+# se vuelva Falsa, el bucle principal del juego se cerrará, se mostrará un mensaje de Fin del juego y se le dará al
+# jugador la opción de volver a jugar.
+
+
+
+
+
+
+
+        #`4- Using break to Exit a Loop
+
+#Para salir de un ciclo while inmediatamente sin ejecutar ningún código restante en el ciclo, independientemente de 
+# los resultados de cualquier prueba condicional, use la instrucción break. La instrucción break dirige el flujo de 
+# su programa; puede usarlo para controlar qué líneas de código se ejecutan y cuáles no, por lo que el programa solo 
+# ejecuta el código que desea, cuando lo desea.
+
+#Por ejemplo, considere un programa que le pregunta al usuario sobre los lugares que ha visitado. Podemos detener el 
+# ciclo while en este programa llamando a break tan pronto como el usuario ingrese el valor 'quit':
+prompt = "\nPlease enter the name of a city you have visited:"
+prompt += "\n(Enter 'quit' when you are finished.)"
+while True:
+    city = input(prompt)
+
+    if city == 'quit':
+        break
+    else:
+        print(f"I'd love to go to {city.title()}")
+
+#Un ciclo que comienza con while True se ejecutará para siempre a menos que llegue a una declaración de ruptura. 
+# El ciclo en este programa continúa pidiéndole al usuario que ingrese los nombres de las ciudades en las que ha 
+# estado hasta que ingresa 'salir'. 
+# Cuando ingresan "quit", se ejecuta la instrucción break, lo que hace que Python salga del bucle.
+#NOTE:
+#Puede usar la instrucción break en cualquiera de los bucles de Python. 
+# Por ejemplo, podría usar break para salir de un bucle for que está trabajando en una lista o un diccionario.
+
+
+
+
+
+
+
+        #`5-   Using continue in a Loop
+
+#En lugar de salir de un bucle por completo sin ejecutar el resto de su código, puede usar la instrucción 
+# continuar para volver al principio del bucle en función del resultado de una prueba condicional. 
+# Por ejemplo, considere un ciclo que cuenta del 1 al 10 pero imprime solo los números impares en ese rango:
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    print(current_number)
+#Si el módulo es 0 (lo que significa que número_actual es divisible por 2), la declaración de continuación 
+# le dice a Python que ignore el resto del ciclo y regrese al principio. Si el número actual no es divisible 
+# por 2, se ejecuta el resto del ciclo y Python imprime el número actual.
+
+
+
+
+
+
+
+
+        #`6- Avoiding Infinite Loops
+
+# Cada ciclo while necesita una forma de dejar de ejecutarse para que no continúe ejecutándose para siempre. 
+# Por ejemplo, este ciclo de conteo debería contar del 1 al 5:
+x = 1
+while x <= 5:
+    print(x)
+    x += 1
+#Pero si accidentalmente omite la línea x += 1 (como se muestra a continuación), el ciclo se 
+# ejecutará para siempre:
+x = 1 
+while x <= 5:   #este loop/bucle correra por siempre!!!
+    print(x)
+#Ahora el valor de x comenzará en 1 pero nunca cambiará. Como resultado, la prueba condicional x <= 5 siempre 
+# se evaluará como True y el ciclo while se ejecutará para siempre, imprimiendo una serie de 1, como este.
+
+#Todos los programadores escriben accidentalmente un bucle while infinito de vez en cuando, especialmente cuando 
+# los bucles de un programa tienen condiciones de salida sutiles. Si su programa se atasca en un bucle infinito, 
+# presione CTRL-C o simplemente cierre la ventana de terminal que muestra la salida de su programa.
+
+#Para evitar escribir bucles infinitos, pruebe cada bucle while y asegúrese de que el bucle se detenga cuando lo 
+# espere. Si desea que su programa finalice cuando el usuario ingrese un cierto valor de entrada, ejecute el 
+# programa e ingrese ese valor. Si el programa no finaliza, analice la forma en que su programa maneja el valor 
+# que debería causar la salida del ciclo. Asegúrese de que al menos una parte del programa pueda hacer que la 
+# condición del ciclo sea Falsa o que llegue a una declaración de interrupción.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
