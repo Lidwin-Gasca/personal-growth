@@ -40,7 +40,7 @@ else:
     #7-3. Multiples of Ten:
 
 #Solicite al usuario un número y luego informe si el número es un múltiplo de 10 o no.
-user = input("\nEscribame un numero, y yo le devolvere una respuesta afirmando si su numero es multipli de 10 o no.  ")
+user = input("\nEscribame un numero, y yo le devolvere una respuesta afirmando si su numero es multiplo de 10 o no.  ")
 user = int(user)
 
 if user % 10 == 0:
@@ -108,11 +108,14 @@ while True:
 
 
 prompt = "\n\nCual es su edad?.  "
-
+max_ = 0
 while True:
     edad = int(input(prompt))
-    
-    if edad <= -1:
+    max_ = max_ + 1
+    if max_ == 5:
+        print("\nSolo caben 4 personas, vuelva a la fila.")
+        break
+    elif edad <= -1:
         print("\nEsto no es broma, es en serio ( •̀ ω •́ )✧")
     elif edad <= 3:
         print(f"\nSu crio puede entrar gratis.")
@@ -152,7 +155,22 @@ while True:
 
 #   🕳 Use una declaración de interrupción para salir del ciclo cuando el usuario ingrese un valor de 'salir'.
 
+coberturas = []
+prompt = "\nIngrese su coberturas para su pizza."
+prompt += "\n(Escriba 'salir' para dejar de dar coberturas.)\n\t\t\t\t\t\t"
+prompt += "\nPuede tener un maximo de 5 coberturas"
+max_ = 0
+while True:
+    cobertura = input(prompt)
 
+    if cobertura == 'salir' or max_ == 4:                                       #⬅En esta linea de codigo agregue el or max_ == 5 para cumplir
+        print(f"Muy bien las coberturas que escogio son: {coberturas}")        #con la regla "2" de este ejercicio y a su vez cuple la primera
+        break                                                                  #regla, y la tercera ya estaba implementada.
+    else:
+        coberturas.append(cobertura)
+        max_ = max_ + 1
+        print(f"Muy bien, {cobertura.title()} agregado.")
+        print(max_)
 
 
 
@@ -183,3 +201,17 @@ while True:
 
 #Escribe un ciclo que nunca termine y ejecútalo. (Para finalizar el ciclo, presione CTRL-C o cierre la 
 # ventana que muestra la salida).
+max_ = 0
+while max_ < 5:
+    #max_ = max_ + 1
+    print("Este bucle es infinito por que 'max_' vale cero y nunca llegara a valer 5 y para parar el bucle.")
+
+
+#ejemplo dos:
+num = 0
+while True:
+    # num = num + 1
+    if num == 5:
+        break
+    else:
+        print("Este bucle es infinito porque la variable 'num' no puede activar el 'if' si su valor nunca se convierte a 5.")
