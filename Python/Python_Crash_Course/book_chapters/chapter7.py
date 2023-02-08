@@ -387,11 +387,154 @@ while x <= 5:   #este loop/bucle correra por siempre!!!
 
 
 
+    #🦚Using a while Loop with List and Dictionaries
+
+
+#Hasta ahora, hemos trabajado con solo una parte de la información del usuario a la vez. Recibimos la entrada del 
+# usuario y luego imprimimos la entrada o una respuesta. La próxima vez que pasemos por el ciclo while, recibiremos 
+# otro valor de entrada y responderemos a eso. Pero para realizar un seguimiento de muchos usuarios y piezas de 
+# información, necesitaremos usar listas y diccionarios con nuestros bucles while.
+
+#Un bucle for es eficaz para recorrer una lista, pero no debe modificar una lista dentro de un bucle for porque 
+# Python tendrá problemas para realizar un seguimiento de los elementos de la lista. Para modificar una lista mientras 
+# trabaja en ella, use un bucle while. El uso de bucles while con listas y diccionarios le permite recopilar, 
+# almacenar y organizar muchas entradas para examinarlas e informar sobre ellas más adelante.
 
 
 
 
 
 
+
+
+
+
+
+        #`1- Moving Items from One List to Another
+
+#Considere una lista de usuarios recién registrados pero no verificados de un sitio web. Después de verificar estos 
+# usuarios, ¿cómo podemos moverlos a una lista separada de usuarios confirmados? Una forma sería usar un bucle while
+#  para extraer usuarios de la lista de usuarios no confirmados mientras los verificamos y luego los agregamos a una 
+# lista separada de usuarios confirmados. Así es como se vería ese código:
+
+    #Empezaremos con los usuarios que tienen que ser identificados,
+    #y una lista vacia que mantendra los mismos confirmados.
+unconfirmed_users = ['alice', 'brian', 'candance']
+confirmed_users = []
+
+    #vereficamos a cada usuario hasta que no haya usuarios no confirmados sin verificar.
+    #mueve cada usuario verificado hacia la lista de usuarios confimados.
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()   #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅NOTE ESTA LINEA SE ME HACE CURIOSA, es un valor y a su vez una accion.
+
+    print(f"Verificando usuario: {current_user.title()}")
+    confirmed_users.append(current_user)
+
+    #muestra a todos los usuarios confirmados.
+print("\nLos siguientes usuarios han sido confirmados:")
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+#Simulamos la confirmación de cada usuario imprimiendo un mensaje de verificación y luego agregándolos a la lista de usuarios confirmados. 
+# A medida que se reduce la lista de usuarios no confirmados, crece la lista de usuarios confirmados. 
+# Cuando la lista de usuarios no confirmados está vacía, se imprime el bucle y la lista de usuarios confirmados.
+
+
+
+
+
+
+
+
+
+
+
+        #`2- Removing All Instances of specific Values from a List
+
+#En el Capítulo 3 usamos remove() para eliminar un valor específico de una lista. La función remove() funcionó porque el valor que nos 
+# interesaba solo aparecía una vez en la lista. Pero, ¿qué sucede si desea eliminar todas las instancias de un valor de una lista?
+
+#Digamos que tiene una lista de mascotas con el valor 'gato' repetido varias veces. 
+# Para eliminar todas las instancias de ese valor, puede ejecutar un ciclo while hasta 
+# que 'gato' ya no esté en la lista, como se muestra aquí:
+pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat',]
+print(pets)
+
+while 'cat' in pets:
+    pets.remove('cat')
+
+print(pets)
+#Comenzamos con una lista que contiene varias instancias de "gato". 
+# Después de imprimir la lista, Python ingresa al ciclo while porque encuentra el valor 'cat en la lista al menos una vez. 
+# Una vez dentro del bucle, Python elimina la primera instancia de "gato". 
+# vuelve a la línea while y luego vuelve a entrar en el ciclo cuando descubre que 'gato' todavía está en la lista. 
+# Elimina cada instancia de 'gato' hasta que el valor ya no está en la lista, 
+# momento en el que Python sale del ciclo e imprime la lista nuevamente.
+
+
+
+
+
+
+
+
+
+        #`3- Filling a Ditionary with User Input
+    
+#Puede solicitar tanta entrada como necesite en cada paso a través de un bucle while. 
+# Hagamos un programa de encuesta/poll en el que cada paso por el bucle solicite el nombre y la respuesta del participante. 
+# Guardaremos los datos que recopilamos en un diccionario, porque queremos conectar cada respuesta con un usuario en particular:
+responses = {}
+
+#ajustaremos un "flag" para indicar que la encuesta/polling esta activa.
+polling_active = True
+
+while polling_active:
+    #un prompt/mensaje que pida el nombre y response/respuesta de la persona usuario.
+    name = input("\nCual es tu nombre? ")
+    response = input("Que montaña te gustaria escalar algun dia? ")
+
+    #almacena la response/respuesta en el diccionario/dictionary.
+    responses[name] = response
+
+    #distingue si alguien mas va a tomar la encuesta.
+    repeat = input("Te gustaria que otra persona responda? (si/no) ")
+    if repeat == "no":
+        polling_active = False
+
+#la encuesta esta completa. Mostrar resultados.
+print("\n--- Resultado de Encuesta ---")
+for name, response in responses.items():
+    print(f"A {name} le gustaria escalar {response}.")
+
+#El programa primero define un diccionario vacío (respuestas) y establece una bandera
+# (polling_active) para indicar que la encuesta está activa. Mientras polling_active
+# es verdadero, Python ejecutará el código en el ciclo while.
+
+
+
+
+
+
+
+
+
+
+
+                    #Summary / sumario
+
+#En este capítulo, aprendió a usar input() para permitir que los usuarios proporcionen su propia información en sus programas. 
+
+# Aprendió a trabajar con entrada de texto y numérica y cómo usar bucles while para hacer que sus 
+# programas se ejecuten tanto tiempo como los usuarios lo deseen. Viste varias formas de controlar 
+# el flujo de un ciclo while configurando un indicador activo, usando la instrucción break y uti- 
+# lizando la instrucción continuar. Aprendió cómo usar un ciclo while para mover elementos de una 
+# lista a otra y cómo eliminar todas las instancias de un valor de una lista. También aprendió 
+# cómo se pueden usar los bucles while con los diccionarios.
+
+#En el Capítulo 8 aprenderá acerca de las funciones. Las funciones le permiten dividir sus programas 
+# en partes pequeñas, cada una de las cuales realiza un trabajo específico. Puede llamar a una función 
+# tantas veces como desee y puede almacenar sus funciones en archivos separados. Mediante el uso de 
+# funciones, podrá escribir un código más eficiente que sea más fácil de solucionar y mantener y que 
+# se pueda reutilizar en muchos programas diferentes.
 
 
