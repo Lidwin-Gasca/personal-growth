@@ -359,3 +359,33 @@ while True:
 print("\n---Resultados de Encuesta---\n")
 for nombre, respuesta in encuesta.items():
     print(f"A {nombre.title()} le gustaria ir a  {respuesta} de vacaciones")
+
+
+
+
+
+
+
+
+#💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥
+#💥puede ser como arriba o como abajo, los dos son buenos                💢
+#💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥💢💢💥
+
+
+
+    encuesta = {}
+
+encuesta_activa = True
+
+while encuesta_activa:
+    nombre = input("Como te llamas? ")
+    respuesta = input("A donde te gustaria ir de vacariones? ")
+    repetir = input("Alguien mas tomara la encuesta? (si / no) ")
+    encuesta[nombre] = respuesta
+
+    if repetir.lower() == 'no':
+        encuesta_activa = False
+
+print("\n---Resultados de Encuesta---\n")
+for nombre, respuesta in encuesta.items():
+    print(f"A {nombre.title()} le gustaria ir {respuesta} de vacaciones")

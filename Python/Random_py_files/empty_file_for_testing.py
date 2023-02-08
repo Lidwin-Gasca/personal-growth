@@ -20,17 +20,5 @@
 #     time.sleep(60)
 
 
-encuesta = {}
 
-while True:
-    nombre = input("Como te llamas? ")
-    respuesta = input("A donde te gustaria ir de vacariones? ")
-    repetir = input("Alguien mas tomara la encuesta? (si / no) ")
-    encuesta[nombre] = respuesta
 
-    if repetir.lower() == 'no':
-        break
-
-print("\n---Resultados de Encuesta---\n")
-for nombre, respuesta in encuesta.items():
-    print(f"A {nombre.title()} le gustaria ir {respuesta} de vacaciones")
