@@ -215,3 +215,147 @@ while True:
         break
     else:
         print("Este bucle es infinito porque la variable 'num' no puede activar el 'if' si su valor nunca se convierte a 5.")
+
+
+
+
+
+
+
+
+
+
+
+
+    #7-8. Deli: 
+    
+# Haga una lista llamada sandwich_orders y llénela con los nombres de varios sándwiches. 
+# Luego haga una lista vacía llamada sándwiches_terminados. 
+# Recorra la lista de pedidos de sándwiches e imprima un mensaje para cada pedido, como "Hice su sándwich de atún". 
+# A medida que se prepara cada sándwich, muévalo a la lista de sándwiches terminados. 
+# Después de que se hayan hecho todos los sándwiches, imprima un mensaje que enumere cada sándwich que se preparó.
+
+sandwich_orders = []
+sandwich_terminados = []
+
+sandwich_orders.append("jamon")
+sandwich_orders.append("pollo")
+sandwich_orders.append("atun")
+sandwich_orders.append("filete")
+sandwich_orders.append("tocino")
+
+while sandwich_orders:
+    orden = sandwich_orders.pop()
+    sandwich_terminados.append(orden)
+    print(f"Preparando sandwich de {orden}")
+
+print("\n--- Sandiches Preparados ---")
+for cada in sandwich_terminados:
+    print(f"Sandwich de {cada}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #7-9. No Pastrami:
+
+#Usando la lista sandwich_orders del Ejercicio 7-8, asegúrese de que el sándwich 'pastrami' aparezca en la lista al menos tres veces.
+# Agregue código cerca del comienzo de su programa para imprimir un mensaje que diga que la charcutería/Deli se quedó sin pastrami,
+# y luego use un bucle while para eliminar todas las apariciones de 'pastrami' de sandwich_orders.
+# Asegúrese de que ningún sándwich de pastrami termine en un sándwich terminado.
+
+sandwich_orders = []
+sandwich_terminados = []
+
+sandwich_orders.append("pastrami")  #⬅
+sandwich_orders.append("jamon")
+sandwich_orders.append("pollo")
+sandwich_orders.append("pastrami")  #⬅
+sandwich_orders.append("atun")
+sandwich_orders.append("pastrami")  #⬅
+sandwich_orders.append("filete")
+sandwich_orders.append("tocino")
+
+print("oh no, se nos ha acabado el Pastrami!!!\n")    #⬅
+
+while "pastrami" in sandwich_orders:    #⬅
+    sandwich_orders.remove("pastrami")  #⬅
+
+while sandwich_orders:
+    orden = sandwich_orders.pop()
+    sandwich_terminados.append(orden)
+    print(f"Preparando sandwich de {orden}")
+
+print("\n--- Sandiches Preparados ---")
+for cada in sandwich_terminados:
+    print(f"Sandwich de {cada}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #7-10. Dream Vacation:
+    
+# Escriba un programa que haga encuestas a los usuarios sobre las vacaciones de sus sueños. 
+# Escribe un mensaje similar a Si pudieras visitar un lugar en el mundo, ¿a dónde irías? 
+# Incluya un bloque de código que imprima los resultados de la encuesta.
+
+
+encuesta = {}
+
+while True:
+    nombre = input("Como te llamas? ")
+    respuesta = input("A donde te gustaria ir de vacariones? ")
+    repetir = input("Alguien mas tomara la encuesta? (si / no) ")
+    encuesta[nombre] = respuesta
+
+    if repetir.lower() == 'no':
+        break
+
+print("\n---Resultados de Encuesta---\n")
+for nombre, respuesta in encuesta.items():
+    print(f"A {nombre.title()} le gustaria ir a  {respuesta} de vacaciones")
