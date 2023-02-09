@@ -38,7 +38,7 @@
 
 
 
-#   🦚  Defining a Funtion
+# 🦚      Defining a Funtion
 
     #Aqui hay una funcion/function llamado greet_user() que imprime saludos (en ingles).
     
@@ -330,3 +330,167 @@ describe_pet(pet_name='harry', animal_type='hamster')
     #Por ejemplo, si observa que la mayoría de las llamadas a describe_pet() se utilizan para describir perros, 
     # puede establecer el valor predeterminado de animal_type en 'perro'. 
     # Ahora cualquiera que llame a describe_pet() para un perro puede omitir esa información:
+def describe_pet(pet_name, animal_type='dog'):
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}")
+
+describe_pet(pet_name='willie')
+    #Cambiamos la definición de describe_pet() para incluir un valor predeterminado, 'perro', para animal_type. 
+    # Ahora, cuando se llama a la función sin especificar animal_type, Python sabe usar el valor 'perro' para este parámetro:
+    #           >>> I have a dog.
+    #           >>> My dog's name is Willie.
+    #
+    #Tenga en cuenta que se tuvo que cambiar el orden de los parámetros en la definición de la función. 
+    # Debido a que el valor predeterminado hace innecesario especificar un tipo de animal como argumento, 
+    # el único argumento que queda en la llamada de función es el nombre de la mascota. 
+    # Python todavía interpreta esto como un argumento posicional, por lo que si se llama a la función 
+    # solo con el nombre de una mascota, ese argumento coincidirá con el primer parámetro enumerado en 
+    # la definición de la función. Esta es la razón por la que el primer parámetro debe ser pet_name.
+    #
+    #La forma más sencilla de usar esta función ahora es proporcionar solo el nombre de un perro en la llamada a la función:
+    #
+    #           desribe_pet('willie')
+    #
+    #Esta llamada de función tendría el mismo resultado que el ejemplo anterior. 
+    # El único argumento proporcionado es 'willie', por lo que se compara con el primer parámetro de la definición, pet_name. 
+    # Debido a que no se proporciona ningún argumento para animal_type, Python usa el valor predeterminado 'perro'.
+    #
+    #Para describir un animal que no sea un perro, podría usar una llamada de función como esta:
+    #       
+    #           describe_pet(pet_name='harry', animal_type='hamster')
+    #
+    #Debido a que se proporciona un argumento explícito para animal_type, Python ignora el valor predeterminado del parámetro.
+    #
+    #   NOTE:
+    #       Cuando usa valores predeterminados, 
+    #       cualquier parámetro con un valor 
+    #       predeterminado debe aparecer después 
+    #       de todos los parámetros que no tienen 
+    #       valores predeterminados. Esto le 
+    #       permite a Python continuar 
+    #       interpretando correctamente los 
+    #       argumentos posicionales.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`9- Equivalent Function Calls
+
+    #Debido a que los argumentos posicionales, los argumentos de palabras clave y los valores predeterminados se pueden usar juntos, a menudo tendrá 
+    # varias formas equivalentes de llamar a una función. Considere la siguiente definición para describe_pet() con un valor predeterminado provisto:
+    #
+    #           def describe_pet(pet_name, animal_type='dog'):
+    #
+    #Con esta definición, siempre se debe proporcionar un argumento para pet_name, y este valor se puede proporcionar utilizando el formato posicional 
+    # o de palabra clave. Si el animal que se describe no es un perro, se debe incluir un argumento para animal_type en la llamada, y este argumento 
+    # también se puede especificar usando el formato posicional o de palabra clave.
+    #Todas las siguientes llamadas funcionarían para esta función:
+    #
+    # A dog named Willie. 
+describe_pet('willie')
+describe_pet (pet_name='willie')
+    #
+    # A hamster named Harry. 
+describe_pet('harry', 'hamster') 
+describe_pet (pet_name='harry', animal_type='hamster') 
+describe_pet (animal_type='hamster', pet_name='harry')
+    # Cada una de estas llamadas de función tendría el mismo resultado que los ejemplos anteriores.
+    #NOTE:
+    #       Realmente no importa qué estilo de llamada uses. 
+    #       Siempre que sus llamadas de función produzcan la 
+    #       salida que desea, use el estilo que le resulte 
+    #       más fácil de entender.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`10- Avoiding Arguments Errors
+
+    #Cuando comience a usar, no se sorprenda si encuentra errores sobre argumentos no coincidentes. 
+    # Los argumentos no coincidentes ocurren cuando proporciona menos o más argumentos de los que necesita una función para hacer su trabajo. 
+    # Por ejemplo, esto es lo que sucede si tratamos de llamar a describe_pet() sin argumentos:
+def describe_pet(pet_name, animal_type='dog'):
+    """Display information about a pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}")
+describe_pet()
+    #Python reconoce que falta cierta información en la llamada a la función, y el rastreo nos dice que:
+    #
+    #
+    #        Traceback (most recent call last):
+    # (1)        File "c:\Users\memit\OneDrive\Documents\GitHub\personal-growth\Python\Python_Crash_Course\book_chapters\tempCodeRunnerFile.py", line 5, in <module>
+    # (2)            describe_pet()
+    # (3)    TypeError: describe_pet() missing 1 required positional argument: 'pet_name'
+    #
+    #
+    #
+    #
+    #En ➡(1)⬅, el rastreo nos dice la ubicación del problema, lo que nos permite mirar hacia atrás y ver que algo salió mal en nuestra llamada de función. 
+    # En ➡(2)⬅, la llamada a la función infractora se escribe para que la veamos. 
+    # En ➡(3)⬅, el rastreo nos dice que a la llamada le faltan dos argumentos e informa los nombres de los argumentos que faltan. 
+    # Si esta función estuviera en un archivo separado, probablemente podríamos reescribir 
+    # la llamada correctamente sin tener que abrir ese archivo y leer el código de la función.
+    #
+    #Python es útil porque lee el código de la función por nosotros y nos dice los nombres de los argumentos que debemos proporcionar. 
+    # Esta es otra motivación para darle a sus variables y funciones nombres descriptivos. Si lo hace, 
+    # los mensajes de error de Python serán más útiles para usted y cualquier otra persona que pueda usar su código.
+    #
+    #Si proporciona demasiados argumentos, debería obtener un seguimiento similar que pueda ayudarlo 
+    # a hacer coincidir correctamente su llamada de función con la definición de función.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #   🦚 Return Values
+
+    #Una función no siempre tiene que mostrar su salida directamente. 
+    # En su lugar, puede procesar algunos datos y luego devolver un valor o un conjunto de valores. 
+    # El valor que devuelve la función se llama valor de retorno. 
+    # La declaración de retorno toma un valor desde dentro de una función y lo envía de vuelta a la línea que llamó a la función. 
+    # Los valores devueltos le permiten mover gran parte del trabajo duro de su programa a funciones, lo que puede simplificar el cuerpo de su programa.
+
+
+
+
+
+
+
+
+
+
+
+        #`1- Returning a Simple Value
+
+#Veamos una función que toma un nombre y apellido, y devuelve un nombre completo con un formato limpio:
