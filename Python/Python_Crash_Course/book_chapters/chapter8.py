@@ -494,3 +494,256 @@ describe_pet()
         #`1- Returning a Simple Value
 
 #Veamos una función que toma un nombre y apellido, y devuelve un nombre completo con un formato limpio:
+def get_formatted_name(first_name, last_name):  #(1)
+    """Return a full name, neatly formatted."""
+    full_name = f"{first_name} {last_name}"     #(2)
+    return full_name.title()                    #(4)
+
+musician = get_formatted_name('jimi', 'hendrix')#(4)
+print(musician)
+    #La definición de get_formatted_name() toma como parámetros un nombre y apellido ➡(1)⬅. 
+    # La función combina estos dos nombres, agrega un espacio entre ellos y asigna el resultado a full_name ➡(2)⬅. 
+    # El valor de full_name se convierte en mayúsculas y minúsculas y luego se devuelve a la línea de llamada en ➡(3)⬅.
+    #Cuando llama a una función que devuelve un valor, debe proporcionar una variable a la que se le pueda asignar el valor devuelto. 
+    # En este caso, el valor devuelto se asigna a la variable músico en ➡(4)⬅. 
+    # El resultado muestra un nombre perfectamente formateado formado por las partes del nombre de una persona:
+    #
+    #           >>> Jimi Hendrix
+    #
+    #Esto puede parecer mucho trabajo para obtener un nombre bien formateado cuando podríamos haber escrito simplemente:
+    #           >>> print("Jimi Hendrix")
+    #
+    #Pero cuando considera trabajar con un programa grande que necesita almacenar muchos nombres y apellidos por separado, 
+    # funciones como get_formatted_name() se vuelven muy útiles. 
+    # Usted almacena el nombre y el apellido por separado y luego llama a esta función cada vez que desea mostrar un nombre completo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`2- Making an Argument Optional
+
+    #A veces tiene sentido hacer que un argumento sea opcional para que las personas que usan la función puedan optar por proporcionar 
+    # información adicional solo si así lo desean. Puede usar valores predeterminados para hacer que un argumento sea opcional.
+    #
+    #Por ejemplo, digamos que queremos expandir get_formatted_name() para manejar también los segundos nombres. 
+    # Un primer intento de incluir segundos nombres podría verse así:
+def get_formatted_name(first_name, middle_name, last_name):
+    """Return a full name, neatly formatted."""
+    full_name = f"{first_name} {middle_name} {last_name}"
+    return full_name.title()
+
+musician = get_formatted_name('jhon', 'lee', 'hooker')
+print(musician)
+
+    #Esta función funciona cuando se le asigna un nombre, un segundo nombre y un apellido. 
+    # La función toma las tres partes de un nombre y luego construye una cadena a partir de ellas. 
+    # La función agrega espacios cuando corresponde y convierte el nombre completo en mayúsculas y minúsculas:
+    #
+    #           >>> Jhon Lee Hooker
+    #
+    #Pero los segundos nombres no siempre son necesarios, y esta función, tal como está escrita, 
+    # no funcionaría si intentara llamarla solo con un nombre y un apellido. Para hacer que el 
+    # segundo nombre sea opcional, podemos darle al argumento segundo_nombre un valor predeterminado 
+    # vacío e ignorar el argumento a menos que el usuario proporcione un valor. Para hacer que 
+    # get_formatted_name() funcione sin un segundo nombre, establecemos el valor predeterminado 
+    # de middle_name en una cadena vacía y lo movemos al final de la lista de parámetros:
+def get_formatted_name(first_name, last_name, middle_name=''):  #(1)
+    """Return a full name, neatly formatted"""
+    if middle_name:                                             #(2)
+        full_name = f"{first_name} {middle_name} {last_name}"
+    else:                                                       #(3)
+        full_name = f"{first_name} {last_name}"
+        return full_name.title()
+
+    musician = get_formatted_name("jimi", 'hendrix')
+    print(musician)
+
+    musician = get_formatted_name('jhon', 'hooker', 'lee')      #(4)
+    print(musician)
+
+    #En este ejemplo, el nombre se construye a partir de tres partes posibles. 
+    # Debido a que siempre hay un nombre y un apellido, estos parámetros se enumeran primero en la definición de la función. 
+    # El segundo nombre es opcional, por lo que aparece en último lugar en la definición y su valor predeterminado es una cadena vacía ➡(1)⬅.
+    #
+    #En el cuerpo de la función, verificamos si se ha proporcionado un segundo nombre. 
+    # Python interpreta las cadenas no vacías como True, por lo que si middle_name se 
+    # evalúa como True si un argumento de segundo nombre está en la llamada de función ➡(2)⬅.
+    #Si se proporciona un segundo nombre, el nombre, el segundo nombre y el apellido se combinan 
+    # para formar un nombre completo. Luego, este nombre se cambia a mayúsculas y minúsculas y se 
+    # devuelve a la línea de llamada de función donde se asigna a la variable músico y se imprime. 
+    # Si no se proporciona un segundo nombre, la cadena vacía falla la prueba if y el bloque else 
+    # ejecuta ➡(3)⬅. El nombre completo se crea con solo un nombre y un apellido, y el nombre 
+    # formateado se devuelve a la línea de llamada donde se asigna al músico y se imprime.
+    #
+    #Llamar a esta función con un nombre y apellido es sencillo. Sin embargo, si usamos un segundo nombre, 
+    # debemos asegurarnos de que el segundo nombre sea el último argumento pasado para que Python haga 
+    # coincidir los argumentos posicionales correctamente ➡(4)⬅.
+    #
+    #Esta versión modificada de nuestra función funciona para personas que solo tienen un nombre y 
+    # apellido, y también funciona para personas que tienen un segundo nombre:
+    #           >>> Jimi Hendrix
+    #           >>> Jhon Lee Hooker
+    #
+    #Los valores opcionales permiten que las funciones manejen una amplia gama de casos de uso 
+    # mientras permiten que las llamadas a funciones sean lo más simples posible.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`3- Returning a Dictionary
+
+    #Una función puede devolver cualquier tipo de valor que necesite, incluidas estructuras de datos más complicadas 
+    # como listas y diccionarios. Por ejemplo, la siguiente función toma partes de un nombre y devuelve un diccionario 
+    # que representa a una persona:
+def build_person(first_name, last_name):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}           #(1)
+    return person                                               #(2)
+
+musician = build_person('jimi', 'hendrix')
+print(musician)                                                 #(3)
+
+    #La función build_person() toma un nombre y apellido, y coloca estos valores en un diccionario en ➡(1)⬅. 
+    # El valor de first_name se almacena con la clave 'first', y el valor de last_name se almacena con la clave 'last'. 
+    # El diccionario completo que representa a la persona se devuelve en ➡(2)⬅. 
+    # El valor de retorno se imprime en ➡(3)⬅ con las dos piezas originales de información textual ahora almacenadas en un diccionario:
+    #
+    #           >>> Jimi Hendrix
+    #           >>> Jhon Lee Hooker
+    #
+    #Esta función toma información textual simple y la coloca en una estructura de datos más significativa que 
+    # le permite trabajar con la información más allá de simplemente imprimirla. Las cadenas 'jimi' y 'hendrix' 
+    # ahora están etiquetadas como nombre y apellido. Puede extender fácilmente esta función para aceptar valores 
+    # opcionales como un segundo nombre, una edad, una ocupación o cualquier otra información que desee almacenar 
+    # sobre una persona. Por ejemplo, el siguiente cambio también le permite almacenar la edad de una persona:
+def vuil_person(first_name, last_name, age=None):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
+    if age:
+        person['age'] = age
+    return person
+
+musician = build_person('jimi', 'hendix', age=27)
+print(musician)
+
+    #Agregamos un nuevo parámetro opcional edad a la definición de la función y asignamos al parámetro el valor especial Ninguno, 
+    # que se usa cuando una variable no tiene un valor específico asignado. Puede pensar en Ninguno como un valor de marcador de posición. 
+    # En las pruebas condicionales, Ninguno se evalúa como Falso. Si la llamada a la función incluye un valor para la edad, ese valor 
+    # se almacena en el diccionario. Esta función siempre almacena el nombre de una persona, pero también se puede modificar para 
+    # almacenar cualquier otra información que desee sobre una persona.
+
+
+
+
+
+
+
+
+
+
+        #`4- Using a Funtion with a while Loop
+
+    #Puede usar funciones con todas las estructuras de Python que ha aprendido hasta ahora. 
+    # Por ejemplo, usemos la función get_formatted_name() con un ciclo while para saludar a los usuarios de manera más formal. 
+    # Aquí hay un primer intento de saludar a las personas usando su nombre y apellido:
+def build_person(first_name, last_name, age=None):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
+    return person
+
+            #Este es un bucle/loop infinito!!!!
+while True:
+    print("\nPlease tell me your name:")                            #(1)
+    f_name = input("First name: ")
+    l_name = input("Last name: ")
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    print(f"\nHello, {formatted_name}!")
+
+    #Para este ejemplo, usamos una versión simple de get_formatted_name() que no involucra segundos nombres. 
+    # El ciclo while le pide al usuario que ingrese su nombre, y le solicitamos su nombre y apellido por separado ➡(1)⬅.
+
+    #Pero hay un problema con este bucle while: 
+    # no hemos definido una condición de salida. 
+    # ¿Dónde coloca una condición de salida cuando solicita una serie de entradas? 
+    # Queremos que el usuario pueda salir lo más fácilmente posible, por lo que cada mensaje debe ofrecer una forma de salir. 
+    # La instrucción break ofrece una forma sencilla de salir del ciclo en cualquiera de los dos indicadores:
+def build_person(first_name, last_name, age=None):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
+    return person
+
+            
+while True:
+    print("\nPlease tell me your name:")
+    prit("(enter 'q' at any time to quit)")
+
+    f_name = input("First name ")
+    if f_name == 'q':
+        break
+    l_name = input("Last name: ")
+    if l_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    print(f"\nHello, {formatted_name}!")
+
+    #Agregamos un mensaje que informa al usuario cómo salir y luego salimos del ciclo si el usuario 
+    # ingresa el valor de salida en cualquiera de las indicaciones. Ahora el programa continuará 
+    # saludando a las personas hasta que alguien ingrese 'q' para cualquiera de los nombres:
+    #
+    #           >>> Please tell me your name: 
+    #           >>> (enter 'q' at any time to quit) 
+    #           >>> First name: eric
+    #           >>> Last name: matthes
+    #
+    #           >>> Hello, Eric Matthes!
+    #
+    #           >>> Please tell me your name: 
+    #           >>> (enter 'q' at any time to quit) 
+    #           >>> First name: q
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    #   🦚 Passing a List
+
+    #
+    #
