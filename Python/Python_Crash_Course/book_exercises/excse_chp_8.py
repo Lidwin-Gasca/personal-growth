@@ -95,3 +95,68 @@ describe_city('nueva york', 'EUA')
 
 
 
+    #8-6. City Names:
+
+#Escribe una función llamada city country() que tome el nombre de una ciudad y su país. 
+# La función debería devolver una cadena/string con el formato siguiente:
+#
+#           >>> "Santiago, Chile"
+#
+#Llame a su función con al menos tres pares de ciudades y países e imprima los valores que se devuelven.
+def city_country(city, country):
+    """Takes the name and country, and formats it"""
+    formatted_city_country = f"{city.title()} {country.title()}"
+    return formatted_city_country
+
+place = city_country("santiago", 'chile')
+print(place)
+
+
+
+
+
+
+
+
+
+
+
+    #8-7. Album:
+
+#Escriba una función llamada make_album() que cree un diccionario que describa un álbum de música. 
+# La función debe tomar el nombre de un artista y el título de un álbum, y debe devolver un diccionario que contenga estos dos datos. 
+# Utilice la función para crear tres diccionarios que representen diferentes álbumes. 
+# Imprima cada valor de retorno para mostrar que los diccionarios están almacenando la información del álbum correctamente.
+
+#Use Ninguno para agregar un parámetro opcional para hacer album() que le permita almacenar la cantidad de canciones en un álbum. 
+# Si la línea de llamada incluye un valor para el número de canciones, agregue ese valor al diccionario del álbum. 
+# Realice al menos una nueva llamada de función que incluya la cantidad de canciones en un álbum.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #8-8. User Albums:
+
+#Comience con su programa del ejercicio 8-7. Escriba un ciclo while que 
+# permita a los usuarios ingresar el artista y el título de un álbum. 
+# Una vez que tenga esa información, llame a make_album() con la entrada del usuario e imprima el diccionario que se crea. 
+# Asegúrese de incluir un valor de salida en el ciclo while.
+
+
+
+
+
+
