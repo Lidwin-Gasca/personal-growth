@@ -105,13 +105,17 @@ describe_city('nueva york', 'EUA')
 #Llame a su función con al menos tres pares de ciudades y países e imprima los valores que se devuelven.
 def city_country(city, country):
     """Takes the name and country, and formats it"""
-    formatted_city_country = f"{city.title()} {country.title()}"
-    return formatted_city_country
+    formatted_city_country = f"{city} {country}"
+    return formatted_city_country.title()
 
 place = city_country("santiago", 'chile')
 print(place)
 
+place = city_country("cdmx", 'mexico')
+print(place)
 
+place = city_country("buenos aires", 'argentina')
+print(place)
 
 
 
@@ -131,6 +135,29 @@ print(place)
 #Use Ninguno para agregar un parámetro opcional para hacer album() que le permita almacenar la cantidad de canciones en un álbum. 
 # Si la línea de llamada incluye un valor para el número de canciones, agregue ese valor al diccionario del álbum. 
 # Realice al menos una nueva llamada de función que incluya la cantidad de canciones en un álbum.
+albumes = []
+
+def make_album(name, artist=None, songs=None):
+    """Returning a album"""
+    album = {'name': name}
+    if artist:
+        album['artist'] = artist
+    if songs:
+        album['songs'] = songs
+    
+    albumes.append(album)
+    return album
+
+new_album = make_album('death bed','whisky hell child', 13)
+new_album = make_album('residente','calle 13')
+new_album = make_album('pamela chu','tangari')
+
+for album in albumes:
+    name = album['name']
+    artist = album.get('artist', 'Unknown Artist')
+    songs = album.get('songs', 'Unknown')
+    print(f"\nAlbum: {name.title()}\nBand/Artist: {artist.title()}\nNumber of Songs: {songs}")
+
 
 
 
@@ -155,8 +182,41 @@ print(place)
 # Una vez que tenga esa información, llame a make_album() con la entrada del usuario e imprima el diccionario que se crea. 
 # Asegúrese de incluir un valor de salida en el ciclo while.
 
+albumes = []
+
+def make_album(name, artist=None, songs=None):
+    """Returning a album"""
+    album = {'name': name}
+    if artist:
+        album['artist'] = artist
+    if songs:
+        album['songs'] = songs
+    
+    albumes.append(album)
+    return album
 
 
+while True:
+    print("\n\t---Describa un album---")
+    print("(ingrese la letra 'q' en cualquier momento para cerrar el programa)\n")
 
+    n_album = input("El nombre del album: ")
+    if n_album == 'q'.lower():
+        break
+    a_album = input("El artista/banda del album: ")
+    if a_album == 'q'.lower():
+        make_album(n_album)
+        break
+    s_album = input("Cuantas pistas/canciones tiene el album: ")
+    if s_album == 'q'.lower():
+        make_album(n_album, a_album)
+        break
+    make_album(n_album, a_album, s_album)
+
+for album in albumes:
+    name = album['name']
+    artist = album.get('artist', 'Unknown Artist')
+    songs = album.get('songs', 'Unknown')
+    print(f"\nAlbum: {name.title()}\nBand/Artist: {artist.title()}\nNumber of Songs: {songs}")
 
 
