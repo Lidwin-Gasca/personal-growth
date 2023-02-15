@@ -746,4 +746,102 @@ while True:
                     #   🦚 Passing a List
 
     #
+    #A menudo le resultará útil pasar una lista a una función, ya sea una lista de nombres, números u objetos más complejos, como diccionarios. 
+    # Cuando pasa una lista a una función, la función obtiene acceso directo al contenido de la lista.
+    #  Usemos funciones para que trabajar con listas sea más eficiente.
     #
+    #Digamos que tenemos una lista de usuarios y queremos imprimir un saludo para cada uno. 
+    # El siguiente ejemplo envía una lista de nombres a una función llamada greeting_users(), 
+    # que saluda a cada persona en la lista individualmente:
+def greet_users(names):
+    """Print a simple greeting to each user in the list."""
+    for name in names:
+        msg = f"Hello, {name.title()}!"
+        print(msg)
+usernames = ['hannah', 'ty', 'margot']          #(1)
+greet_users(usernames)
+
+    #Definimos greeting_users() para que espere una lista de nombres, que asigna a los nombres de los parámetros. 
+    # La función recorre la lista que recibe e imprime un saludo para cada usuario. 
+    # En ➡(1)⬅ definimos una lista de usuarios y luego pasamos la lista de nombres de usuario 
+    # para saludar a los usuarios() en nuestra llamada de función:
+    #
+    #           >>> Hello, Hannah!
+    #           >>> Hello, Ty!
+    #           >>> Hello, Margot!
+    #
+    #Esta es la salida que queríamos. 
+    # Cada usuario ve un saludo personalizado y puede llamar a la función 
+    # en cualquier momento que desee saludar a un grupo específico de usuarios.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`1- Modifying a List in a Function
+
+    #Cuando pasa una lista a una función, la función puede modificar la lista. Cualquier cambio realizado 
+    # en la lista dentro del cuerpo de la función es permanente, lo que le permite trabajar de manera 
+    # eficiente incluso cuando se trata de grandes cantidades de datos.
+
+    #Considere una empresa que crea modelos impresos en 3D de los diseños que envían los usuarios. 
+    # Los diseños que deben imprimirse se almacenan en una lista y, después de imprimirse, se mueven 
+    # a una lista separada. El siguiente código hace esto sin usar funciones:
+
+#start with some designs that need o be printed.
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+#simulate printing each design, until none are left.
+# move each design to completed_models after printing.
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print(f"Printing model: {current_design}")
+    completed_models.append(current_design)
+
+#Display all completed models.
+print("\nThe following models have been printed:")
+for completed_model in completed_models:
+    print(completed_model)
+
+    #Este programa comienza con una lista de diseños que deben imprimirse y una lista vacía llamada complete_models 
+    # a la que se moverá cada diseño después de que se haya impreso. Siempre que los diseños permanezcan en unprinted_designs, 
+    # el bucle while simula la impresión de cada diseño eliminando un diseño del final de la lista, almacenándolo en 
+    # current_design y mostrando un mensaje de que se está imprimiendo el diseño actual. Luego agrega el diseño a la 
+    # lista de modelos completos. Cuando el bucle termina de ejecutarse, se muestra una lista de los diseños que se han impreso.
+    #
+    #
+    #Podemos reorganizar este código escribiendo dos funciones, cada una de las cuales hace un trabajo específico. 
+    # La mayor parte del código no cambiará; simplemente lo estamos estructurando con más cuidado. 
+    # La primera función se encargará de imprimir los diseños, y la segunda resumirá las impresiones que se han realizado:
+def print_models(unprinted_designs, completed_models):
+    """
+    Simulate printing each design, until non are left.
+    Move each desing to completed_models afer printing.
+    """
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+    """Show all the models that were printed."""
+    print("\nThe following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
