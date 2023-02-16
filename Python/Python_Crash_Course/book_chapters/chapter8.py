@@ -824,7 +824,8 @@ for completed_model in completed_models:
     #Podemos reorganizar este código escribiendo dos funciones, cada una de las cuales hace un trabajo específico. 
     # La mayor parte del código no cambiará; simplemente lo estamos estructurando con más cuidado. 
     # La primera función se encargará de imprimir los diseños, y la segunda resumirá las impresiones que se han realizado:
-def print_models(unprinted_designs, completed_models):
+
+def print_models(unprinted_designs, completed_models):          #(1)
     """
     Simulate printing each design, until non are left.
     Move each desing to completed_models afer printing.
@@ -834,7 +835,7 @@ def print_models(unprinted_designs, completed_models):
         print(f"Printing model: {current_design}")
         completed_models.append(current_design)
 
-def show_completed_models(completed_models):
+def show_completed_models(completed_models):                    #(2)
     """Show all the models that were printed."""
     print("\nThe following models have been printed:")
     for completed_model in completed_models:
@@ -845,3 +846,215 @@ completed_models = []
 
 print_models(unprinted_designs, completed_models)
 show_completed_models(completed_models)
+
+    #At ➡(1)⬅ we define the function print_models() with two parameters: 
+    # a list of designs that need to be printed and a list of completed models. 
+    # Given these two lists, the function simulates printing each design by emptying 
+    # the list of unprinted designs and filling up the list of completed models. 
+    # At ➡(2)⬅ we define the function show completed models() with one parameter: 
+    # the list of completed models. Given this list, show_completed_models() displays the name of each model that was printed.
+    #
+    #This program has the same output as the version without functions, but the code is much more organized. 
+    # The code that does most of the work has been moved to two separate functions, which makes the main part 
+    # of the program easier to understand. Look at the body of the program to see how much easier it is to 
+    # understand what this program is doing:
+    #
+    #           >>> unprinted designs ['phone case', 'robot pendant', 'dodecahedron'] 
+    #           >>> completed models []
+    #           >>> 
+    #           >>> print_models (unprinted designs, completed_models) 
+    #           >>> show_completed models (completed_models)
+    #
+    #Configuramos una lista de diseños sin imprimir y una lista vacía que contendrá los modelos Completados.
+    # Entonces, como ya hemos definido nuestras dos funciones, todo lo que tenemos que hacer es llamarlas y pasarles los argumentos correctos.
+    # Llamamos modelos de impresión) y le pasamos las dos listas que necesita; Como era de esperar, print_models() mula la impresión de los diseños.
+    # Luego llamamos a mostrar modelos completos () y le pasamos la lista de modelos completos para que pueda informar los modelos que se han impreso.
+    # Los nombres de funciones descriptivos permiten que otros lean este código y lo entiendan, incluso sin comentarios.
+    #
+    #Este programa es más fácil de ampliar y mantener que la versión sin funciones.
+    # Si necesitamos imprimir más diseños más adelante, simplemente podemos volver a llamar a print models().
+    # Si nos damos cuenta de que el código de impresión debe modificarse, podemos cambiar el código una vez, y
+    # nuestros cambios tendrán lugar en todas partes donde se llame a la función.
+    # Esta técnica es más eficiente que tener que actualizar el código por separado en varios lugares del programa.
+    #
+    #Este ejemplo también demuestra la idea de que cada función debe tener un trabajo específico.
+    # La primera función imprime cada diseño y la segunda muestra los modelos completos.
+    # Esto es más beneficioso que usar una función para hacer ambos trabajos.
+    # Si está escribiendo una función y nota que la función está haciendo demasiadas tareas diferentes,
+    # intenta dividir el código en dos funciones.
+    # Recuerde que siempre puede llamar a una función desde otra función, lo que puede ser útil
+    # al dividir una tarea compleja en una serie de pasos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`2- Preventing a Function from Modifying a List
+
+    #A veces querrá evitar que una función modifique una lista. 
+    # Por ejemplo, suponga que comienza con una lista de diseños sin imprimir y escribe una función para 
+    # moverlos a una lista de modelos completos, como en el ejemplo anterior. 
+    # Puede decidir que, aunque haya impreso todos los diseños, desea conservar la lista original de diseños no impresos para sus registros.
+    #
+    #Pero debido a que movió todos los nombres de diseño fuera de unprinted_designs, la lista 
+    # ahora está vacía y la lista vacía es la única versión que tiene; el original ha desaparecido. 
+    # En este caso, puede solucionar este problema pasando a la función una copia de la lista, no el original. 
+    # Cualquier cambio que la función haga en la lista afectará solo a la copia, dejando intacta la lista original.
+    #
+    #Puede enviar una copia de una lista a una función como esta:
+function_name(list_name[:])
+    #The slice notation [:] makes a copy of the list to send to the function. 
+    # If we didn't want to empty the list of unprinted designs in printing_models.py we could call print_models () like this:
+print_models(unprinted_designs[:], completed_models)
+    #La función print_models() puede hacer su trabajo porque todavía recibe los nombres de todos los diseños no impresos. 
+    # Pero esta vez usa una copia de la lista original de diseños no impresos, no la lista actual de diseños no impresos. 
+    # La lista de modelos completados se llenará con los nombres de los modelos impresos como antes, pero la lista original
+    #  de diseños no impresos no se verá afectada por la función.
+
+    #Aunque puede conservar el contenido de una lista pasando una copia a sus funciones, debe pasar la lista original 
+    # a funciones a menos que tenga una razón específica para pasar una copia. Es más eficiente que una función trabaje 
+    # con una lista existente para evitar usar el tiempo y la memoria necesarios para hacer una copia separada, 
+    # especialmente cuando trabaja con listas grandes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                # 🦚    Passing an Arbitarary Number of Arguments
+        
+    #A veces, no sabrá de antemano cuántos argumentos debe aceptar una función.
+    # Afortunadamente, Python permite que una función recopile un número arbitrario de argumentos de la declaración de llamada.
+    #
+    #Por ejemplo, considere una función que construye una pizza. 
+    # Necesita aceptar una cantidad de ingredientes, pero no se puede saber de antemano cuántos ingredientes querrá una persona. 
+    # La función del siguiente ejemplo tiene un parámetro, *toppings, pero este parámetro 
+    # recopila tantos argumentos como proporciona la línea de llamada:
+
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    print(toppings)
+
+    make_pizza('pepperoni')
+    make('mushrooms', 'green peppers', 'extra cheese')
+
+    #El asterisco en el nombre del parámetro "toppings" le dice a Python que cree una tupla vacía llamada toppings
+    # y empaquete cualquier valor que reciba en esta tupla. 
+    # La llamada print() en el cuerpo de la función produce un resultado que muestra que Python puede manejar 
+    # una llamada de función con un valor y una llamada con tres valores. Trata las diferentes llamadas de manera similar. 
+    # Tenga en cuenta que Python empaqueta los argumentos en una tupla, incluso si la función recibe solo un valor:
+    #
+    #           >>> ('pepperoni',)
+    #           >>> ('mushrooms', 'green peppers', 'extra cheese')
+    #
+    #Ahora podemos reemplazar la llamada print() con un bucle que recorre la lista de ingredientes y describe la pizza que se pide:
+
+def make_pizza(*toppings):
+    """Summarize the pizza we are about to make."""
+    print("\nMaking a pizza with the follolwing toppings:")
+    for topping in toppings:
+        print(f"- {toppings}")
+
+    make_pizza('pepperoni')
+    make('mushrooms', 'green peppers', 'extra cheese')
+
+    #La función responde apropiadamente, ya sea que reciba un valor o tres valores:
+    #
+    #           >>> Making a pizza with the following toppings:
+    #           >>> - pepperoni
+    #
+    #           >>> Making a pizza with the following toppings:
+    #           >>> - mushrooms
+    #           >>> - green peppers=
+    #           >>> - extra cheese
+    #
+    #Esta sintaxis funciona sin importar cuántos argumentos reciba la función.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`1- Mixing Positional and Arbitrary Arguments
+
+    #Si desea que una función acepte varios tipos diferentes de argumentos, el parámetro que acepta un número 
+    # arbitrario de argumentos debe colocarse en último lugar en la definición de la función. 
+    # Python primero hace coincidir los argumentos posicionales y de palabras clave y luego recopila los 
+    # argumentos restantes en el parámetro final.
+
+    #Por ejemplo, si la función necesita tomar un tamaño para la pizza, ese parámetro debe estar antes del parámetro *toppings:
+def make_pizza(size, *toppings):
+    """ Summarize the pizza we are about to make."""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {toppings}")
+
+make_pizza(16,'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+    #En la definición de la función, Python asigna el primer valor que recibe al tamaño del parámetro. 
+    # Todos los demás valores que vienen después se almacenan en la tupla the toppings. 
+    # Las llamadas de función incluyen un argumento para el tamaño primero, seguido de tantos ingredientes como sea necesario.
+    #
+    #Ahora cada pizza tiene un tamaño y una cantidad de ingredientes, y cada información se 
+    # imprime en el lugar adecuado, mostrando el tamaño primero y los ingredientes después:
+    #
+    #           >>> Making a 16-inch pizza with the following toppings: - pepperoni
+    #
+    #           >>> Making a 12-inch pizza with the following toppings:
+    #           >>> - mushrooms
+    #           >>> - green peppers
+    #           >>> - extra cheese
+    #NOTE: A menudo verá el nombre de parámetro genérico *args, que recopila argumentos posicionales arbitrarios como este.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`2- Using Arbitrary Keyword Arguments
+    
+    #A veces querrá aceptar un número arbitrario de argumentos, pero no sabrá de antemano qué tipo de información se pasará a la función. 
+    # En este caso, puede escribir funciones que acepten tantos pares clave-valor como proporcione la declaración de llamada. 
+    # Un ejemplo implica la creación de perfiles de uso: sabe que obtendrá información sobre un usuario, pero no está seguro de qué tipo de información recibirá. 
+    # La función build profile() en el siguiente ejemplo siempre toma un nombre y apellido, pero también acepta un número arbitrario de argumentos de palabras clave:
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user"""
+    

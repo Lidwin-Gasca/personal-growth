@@ -220,3 +220,47 @@ for album in albumes:
     print(f"\nAlbum: {name.title()}\nBand/Artist: {artist.title()}\nNumber of Songs: {songs}")
 
 
+
+
+
+
+
+
+
+
+
+    #8-9. Messages:
+
+#Haz una lista que contenga una serie de mensajes de texto cortos. 
+# Pasa la lista a una función llamada show_messages(), que imprime cada mensaje de texto.
+
+
+
+
+
+
+
+
+
+
+    #8-10. Sending Messages:
+
+#Comience con una copia de su programa del Ejercicio 8-9. 
+# Escriba una función llamada enviar mensajes () que imprima cada mensaje de texto y mueva cada mensaje a una
+#  nueva lista llamada mensajes enviados a medida que se imprime. 
+# Después de llamar a la función, imprima ambas listas para asegurarse de que los mensajes se movieron correctamente.
+
+
+
+
+
+
+
+
+
+
+    #8-11. Archived Messages:
+
+#Comience con su trabajo del Ejercicio 8-10. Llame a la función enviar mensajes() con una copia de la lista de mensajes. 
+# Después de llamar a la función, imprima ambas listas para mostrar que la lista original ha conservado sus mensajes.
+
