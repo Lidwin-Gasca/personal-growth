@@ -234,9 +234,25 @@ for album in albumes:
 #Haz una lista que contenga una serie de mensajes de texto cortos. 
 # Pasa la lista a una función llamada show_messages(), que imprime cada mensaje de texto.
 
+lista_de_compra = []
+producto_comprado = []
 
+lista_de_compra.append('disco duro')
+lista_de_compra.append('teclado')
+lista_de_compra.append('raton')
+lista_de_compra.append('monitor')
+lista_de_compra.append('tarjeta grafica')
+lista_de_compra.append('placa madre')
+lista_de_compra.append('fuente de poder')
 
+while lista_de_compra:
+    compra_del_momento = lista_de_compra.pop()
+    print(f"Comprando: {compra_del_momento}")
+    producto_comprado.append(compra_del_momento)
 
+print("\n\t---Lista de compras---")
+for item in producto_comprado:
+    print(f"\t   - {item}")
 
 
 
@@ -250,6 +266,26 @@ for album in albumes:
 #  nueva lista llamada mensajes enviados a medida que se imprime. 
 # Después de llamar a la función, imprima ambas listas para asegurarse de que los mensajes se movieron correctamente.
 
+        ###creo es lo mismo  que hice arriba###
+lista_de_compra = []
+producto_comprado = []
+
+lista_de_compra.append('disco duro')
+lista_de_compra.append('teclado')
+lista_de_compra.append('raton')
+lista_de_compra.append('monitor')
+lista_de_compra.append('tarjeta grafica')
+lista_de_compra.append('placa madre')
+lista_de_compra.append('fuente de poder')
+
+while lista_de_compra:
+    compra_del_momento = lista_de_compra.pop()
+    print(f"Comprando: {compra_del_momento}")
+    producto_comprado.append(compra_del_momento)
+
+print("\n\t---Lista de compras---")
+for item in producto_comprado:
+    print(f"\t   - {item}")
 
 
 
