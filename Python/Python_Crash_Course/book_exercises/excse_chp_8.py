@@ -278,16 +278,17 @@ lista_de_compra.append('tarjeta grafica')
 lista_de_compra.append('placa madre')
 lista_de_compra.append('fuente de poder')
 
-while lista_de_compra:
-    compra_del_momento = lista_de_compra.pop()
-    print(f"Comprando: {compra_del_momento}")
-    producto_comprado.append(compra_del_momento)
+def mensaje():
+    while lista_de_compra:
+        compra_del_momento = lista_de_compra.pop()
+        print(f"Comprando: {compra_del_momento}")
+        producto_comprado.append(compra_del_momento)
 
-print("\n\t---Lista de compras---")
-for item in producto_comprado:
-    print(f"\t   - {item}")
+    print("\n\t---Lista de compras---")
+    for item in producto_comprado:
+        print(f"\t   - {item}")
 
-
+mensaje()
 
 
 
@@ -300,3 +301,34 @@ for item in producto_comprado:
 #Comience con su trabajo del Ejercicio 8-10. Llame a la función enviar mensajes() con una copia de la lista de mensajes. 
 # Después de llamar a la función, imprima ambas listas para mostrar que la lista original ha conservado sus mensajes.
 
+def mensaje(lista_de_compra, producto_comprado):
+    while lista_de_compra:
+        compra_del_momento = lista_de_compra.pop()
+        print(f"Comprando: {compra_del_momento}")
+        producto_comprado.append(compra_del_momento)
+
+def lista_comprado():
+    print("\n\t---Lista de compras---")
+    for item in producto_comprado:
+        print(f"\t   - {item}")
+    print("\n\t---Lista de compra original---")
+    for item in lista_de_compra:
+        print(f"\t   - {item}")
+
+
+
+lista_de_compra = []
+producto_comprado = []
+
+lista_de_compra.append('disco duro')
+lista_de_compra.append('teclado')
+lista_de_compra.append('raton')
+lista_de_compra.append('monitor')
+lista_de_compra.append('tarjeta grafica')
+lista_de_compra.append('placa madre')
+lista_de_compra.append('fuente de poder')
+
+
+
+mensaje(lista_de_compra[:], producto_comprado)       #    ⬅⬅⬅⬅⬅⬅⬅⬅ aqui lo que hace que funcione, el [:] crea una copia de el original.
+lista_comprado()
