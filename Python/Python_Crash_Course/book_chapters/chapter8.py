@@ -1058,3 +1058,32 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 def build_profile(first, last, **user_info):
     """Build a dictionary containing everything we know about a user"""
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                # 🦚    Passing an Arbitrary Number of Arguments
+
+    # A veces no sabrá de antemano cuántos argumentos debe aceptar una función. 
+    # Afortunadamente, Python permite que una función recopile un número arbitrario de argumentos de la declaración de llamada.
+
+    #Por ejemplo, considere una función que construye una pizza. 
+    # Necesita aceptar una cantidad de ingredientes, pero no se puede saber de antemano cuántos ingredientes querrá una persona. 
+    # La función del siguiente ejemplo tiene el parámetro *toppings, pero este parámetro recopila tantos argumentos como proporciona la línea de llamada:
+
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    print(toppings)
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
