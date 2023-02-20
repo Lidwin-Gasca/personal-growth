@@ -1079,7 +1079,8 @@ def build_profile(first, last, **user_info):
 
     #Por ejemplo, considere una función que construye una pizza. 
     # Necesita aceptar una cantidad de ingredientes, pero no se puede saber de antemano cuántos ingredientes querrá una persona. 
-    # La función del siguiente ejemplo tiene el parámetro *toppings, pero este parámetro recopila tantos argumentos como proporciona la línea de llamada:
+    # La función del siguiente ejemplo tiene el parámetro *toppings, pero este parámetro recopila tantos argumentos como 
+    # proporciona la línea de llamada:
 
 def make_pizza(*toppings):
     """Print the list of toppings that have been requested."""
@@ -1087,3 +1088,25 @@ def make_pizza(*toppings):
 
 make_pizza('pepperoni')
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+    #El asterisco en el nombre del parámetro *toppings le dice a Python que haga una tupla vacía llamada toppings y empaquete 
+    # cualquier valor que reciba en esta tupla. La llamada a print() en el cuerpo de la función produce una salida que muestra 
+    # que Python puede manejar una llamada de función con un valor y una llamada con tres valores. Trata las diferentes 
+    # llamadas de manera similar. Tenga en cuenta que Python empaqueta los argumentos en una tupla, incluso si la función 
+    # recibe solo un valor:
+    #
+    #           >>> ('pepperoni')
+    #           >>> ('mushrooms', 'green peppers', 'extra cheese')
+    #
+    #Ahora podemos reemplazar la llamada print() con un bucle que recorre la lista de ingredientes y describe la pizza que se pide:
+
+def make_pizza(*toppings):
+    """Summarize the pizza we are about to make."""
+    print("\nMaking a pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+    #Esta sintaxis funciona sin importar cuantos argumentos introduzca a la funcion.
