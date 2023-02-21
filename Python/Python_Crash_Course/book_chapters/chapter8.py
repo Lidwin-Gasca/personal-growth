@@ -1110,3 +1110,73 @@ make_pizza('pepperoni')
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
 
     #Esta sintaxis funciona sin importar cuantos argumentos introduzca a la funcion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`1- Mixing Positional and Arbitrary Arguments
+    #Si desea que una función acepte varios tipos diferentes de argumentos, el parámetro que acepta un número arbitrario 
+    # de argumentos debe colocarse en último lugar en la definición de la función. Python primero hace coincidir los 
+    # argumentos posicionales y de palabras clave y luego recopila los argumentos restantes en el parámetro final.
+    #
+    #For example, if the function needs to take in a size for the pizza, that parameter must come before the parameter *toppings:
+def make_pizza(size, *toppings):
+    """Summarize the pizza we are about to make."""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+    #In the function definition, Python assigns the first value it receives to the parameter size. 
+    # All other values that come after are stored in the tuple toppings. 
+    # The function calls include an argument for the size first, followed by as many toppings as needed.
+
+    #Now each pizza has a size and a number of toppings, and each piece of 
+    # information is printed in the proper place, showing size first and toppings after:
+    #
+    #           >>> Making a 16-inch pizza with the following toppings:
+    #           >>> - pepperoni
+    #
+    #           >>> Making a 12-inch pizza with the following toppings:
+    #           >>> - mushrooms
+    #           >>> - green peppers
+    #           >>> - extra cheese
+    #
+    #   NOTE: 
+    #   A menudo verá el nombre de parámetro 
+    #   genérico *args, que recopila argumentos 
+    #   posicionales arbitrarios como este.
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`2- Using Arbitrary Arguments
+
+    #
