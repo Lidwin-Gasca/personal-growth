@@ -1179,4 +1179,46 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
         #`2- Using Arbitrary Arguments
 
+    #A veces querrá aceptar un número arbitrario de argumentos, pero no sabrá de antemano qué tipo de información se
+    #  pasará a la función. En este caso, puede escribir funciones que acepten tantos pares clave-valor como proporcione 
+    # la declaración de llamada. Un ejemplo implica la creación de perfiles de usuario: sabe que obtendrá información 
+    # sobre un usuario, pero no está seguro de qué tipo de información recibirá. La función build profile() en el siguiente 
+    # ejemplo siempre toma un nombre y apellido, pero también acepta un número arbitrario de argumentos de palabras clave:
+
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    user_info['first_name'] = first     #(1)
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile('albert', 'einstein',
+                             location='princeton',
+                             field='physics')
+print(user_profile)
+
+    #La definición de build_profile() espera un nombre y apellido, y luego le permite al usuario pasar tantos pares de nombre-valor como quiera.
+    #  Los asteriscos dobles antes del parámetro **user_info hacen que Python cree un diccionario vacío llamado user_info y empaquete 
+    # cualquier par de nombre-valor que reciba en este diccionario. Dentro de la función, puede acceder a los pares clave-valor en 
+    # user_info tal como lo haría con cualquier diccionario.
     #
+    #En el cuerpo de build_profile(), agregamos el nombre y apellido al diccionario de información de usuario porque siempre recibiremos 
+    # estos dos datos del usuario ➡(1)⬅, y aún no se han colocado en el diccionario. . Luego devolvemos el diccionario user_info a la 
+    # línea de llamada de función. Llamamos a build profile(), pasándole el primer nombre 'albert, el último nombre 'einstein', y los dos
+    #  pares clave-valor ubicación="princeton' y campo='física'. Asignamos el perfil devuelto al perfil de usuario e imprimimos perfil 
+    # del usuario:
+    #
+    #           >>> {'location': 'princeton', 'field': 'physics', 'first_name': 'albert', 'last_name': 'einstein'}
+    #
+    #El diccionario devuelto contiene el nombre y apellido del usuario y, en este caso, también la ubicación y el campo de estudio. 
+    # La función funcionaría sin importar cuántos pares clave-valor adicionales se proporcionen en la llamada a la función.
+    #
+    #Puede mezclar valores posicionales, de palabra clave y arbitrarios de muchas maneras diferentes al escribir sus propias funciones. 
+    # Es útil saber que existen todos estos tipos de argumentos porque los verá con frecuencia cuando comience a leer el código de otras 
+    # personas. Se necesita práctica para aprender a usar los diferentes tipos correctamente y saber cuándo usar cada tipo. 
+    # Por ahora, recuerde usar el enfoque más simple que haga el trabajo. 
+    # A medida que progrese, aprenderá a usar el enfoque más eficiente cada vez.
+
+    #           NOTE:
+    #           A menudo verá el nombre del parámetro 
+    #           **kwargs utilizado para recopilar palabras 
+    #           clave no específicas argumentos.
