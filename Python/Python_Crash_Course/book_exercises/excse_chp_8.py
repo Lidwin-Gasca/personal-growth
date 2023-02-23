@@ -332,3 +332,47 @@ lista_de_compra.append('fuente de poder')
 
 mensaje(lista_de_compra[:], producto_comprado)       #    ⬅⬅⬅⬅⬅⬅⬅⬅ aqui lo que hace que funcione, el [:] crea una copia de el original.
 lista_comprado()
+
+
+
+
+
+
+
+
+
+
+    #8-12.  Sandwiches:
+
+#Escribe una función que acepte una lista de artículos que una persona quiere en un sándwich. 
+# La función debe tener un parámetro que recopile tantos elementos como proporcione la llamada a la función, 
+# y debe imprimir un resumen del sándwich que se está ordenando. 
+# Llame a la función tres veces, usando un número diferente de argumentos cada vez.
+
+
+
+
+
+
+
+
+    #8-13.  User Profile:
+
+#Comience con una copia de user profile.py de la página 149. 
+# Cree un perfil de usted mismo llamando a build profile(), usando su nombre y apellido y otros tres pares clave-valor que lo describan.
+
+
+
+
+
+    #8-14.  Cars:
+
+#Escriba una función que almacene información sobre un automóvil en un diccionario. 
+# La función siempre debe recibir un fabricante y un nombre de modelo. 
+# Entonces debería aceptar un número arbitrario de argumentos de palabras clave. 
+# Llame a la función con la información requerida y otros dos pares de nombre y valor, como un color o una característica opcional. 
+# Su función debería funcionar para una llamada como esta:
+#
+#           >>> car = make_car('subaru', 'outback', color='blue', tow_package=True)
+#
+#Imprima el diccionario que se devuelve para asegurarse de que toda la información se almacenó correctamente.
