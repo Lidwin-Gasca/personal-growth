@@ -348,10 +348,37 @@ lista_comprado()
 # La función debe tener un parámetro que recopile tantos elementos como proporcione la llamada a la función, 
 # y debe imprimir un resumen del sándwich que se está ordenando. 
 # Llame a la función tres veces, usando un número diferente de argumentos cada vez.
+def preparar_sandwiches(*ingredientes):
+    """
+    regresaremos los ingredientes al usuario
+    """
+    print(ingredientes)
 
+preparar_sandwiches('jamon', 'queso', 'pan', 'jitomate',  'mayonesa')
 
+  #----------------------------------------------------------------------------------------------------------- 
 
+def preparar_sandwiches(*ingredientes):
+    """
+    regresaremos los ingredientes al usuario
+    """
+    print("\nCreando un sandwich con los siguientes ingredientes")
+    for ingrediente in ingredientes:
+        print(f"- {ingrediente}")
 
+preparar_sandwiches('jamon', 'queso', 'pan', 'jitomate',  'mayonesa')
+
+   #----------------------------------------------------------------------------------------------------------- 
+
+def preparar_sandwiches(tamaño, *ingredientes):
+    """
+    regresaremos los ingredientes al usuario
+    """
+    print(f"\nCreando un sandwich tamaño {tamaño} con los siguientes ingredientes")
+    for ingrediente in ingredientes:
+        print(f"- {ingrediente}")
+
+preparar_sandwiches('grande', 'jamon', 'queso', 'pan', 'jitomate',  'mayonesa')
 
 
 
@@ -361,7 +388,22 @@ lista_comprado()
 #Comience con una copia de user profile.py de la página 149. 
 # Cree un perfil de usted mismo llamando a build profile(), usando su nombre y apellido y otros tres pares clave-valor que lo describan.
 
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
 
+user_profile = build_profile('albert', 'einstein',
+                             location='princeton',
+                             field='physics',
+                             )
+user_profile_1 = build_profile('Lidwin', 'Gasca',               #           ⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+                               locacion='Ejido las Golondrinas',#           ⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+                               campo='Aprendiz de instalacion de HVAC')#    ⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+
+print(user_profile_1)#          ⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+print(user_profile)
 
 
 
@@ -376,3 +418,24 @@ lista_comprado()
 #           >>> car = make_car('subaru', 'outback', color='blue', tow_package=True)
 #
 #Imprima el diccionario que se devuelve para asegurarse de que toda la información se almacenó correctamente.
+
+descripcion_de_autos = {}
+
+def descripcion_coche(brand, modelo, **mas_info):
+    """construyendo un diccionario que contiene los detalles de un coche."""
+    import time  # Import time module
+    mas_info['car brand'] = brand
+    mas_info['modelo'] = modelo
+    timestamp = time.time()  # Get the current timestamp in seconds    ⬅# Esto es un especie de ID, para que no haya caros repetidos, 
+    key = (brand, modelo, timestamp)                                    # o mejor dicho para que no se sobre escriban.
+    descripcion_de_autos[key] = mas_info
+    return mas_info
+
+car = descripcion_coche('subaru', 'outback', color='blue', tow_package=True)
+car1 = descripcion_coche('honda', 'civic', color='white', tow_package=True)
+car2 = descripcion_coche('yoyota', 'tacoma', color='sand', tow_package=True)
+car3 = descripcion_coche('nissan', 'versa', color='gray', tow_package=True)
+car4 = descripcion_coche('honda', 'accord', color='black', tow_package=True)
+
+for clave, valor in descripcion_de_autos.items():  # Agregamos el metodo .items()
+    print(f"\n{clave}\n - {valor}")
