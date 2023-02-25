@@ -439,3 +439,64 @@ car4 = descripcion_coche('honda', 'accord', color='black', tow_package=True)
 
 for clave, valor in descripcion_de_autos.items():  # Agregamos el metodo .items()
     print(f"\n{clave}\n - {valor}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #8-15.  Printing Models:
+
+#Coloque las funciones para el ejemplo de impresión de modelos.py en un archivo separado llamado funciones_de_impresión.py. 
+# Escriba una declaración de importación en la parte superior de los modelos de impresión py y modifique 
+# el archivo para usar las funciones importadas.
+
+
+
+
+
+
+
+
+
+    #8-16.  Imports:
+
+#Usando un programa que escribió que tiene una función, almacene esa función en un archivo separado. 
+# Importe la función a su archivo de programa principal y llame a la función utilizando cada uno de estos enfoques:
+
+import module_name
+from module_name import function_name
+from module_name import function_name as fn
+import module_name as mn
+from module_name import *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #8-17.  Sytling Functions:
+
+#Choose any three programs you wrote for this chapter, and make sure they follow the styling guidelines described in this section.

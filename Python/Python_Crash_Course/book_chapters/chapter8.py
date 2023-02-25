@@ -1222,3 +1222,354 @@ print(user_profile)
     #           A menudo verá el nombre del parámetro 
     #           **kwargs utilizado para recopilar palabras 
     #           clave no específicas argumentos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    # 🦚    Storing Your Function in Modules
+
+    #Una ventaja de las funciones es la forma en que separan los bloques de código de su programa principal. 
+    # Al usar nombres descriptivos para sus funciones, su programa principal será mucho más fácil de seguir. 
+    # Puede ir un paso más allá almacenando sus funciones en un archivo separado llamado módulo y luego importando 
+    # ese módulo a su programa principal. Una declaración de importación le dice a Python que haga que el código 
+    # en un módulo esté disponible en el archivo de programa que se está ejecutando actualmente.
+    #
+    #Almacenar sus funciones en un archivo separado le permite ocultar los detalles del código de su programa y 
+    # enfocarse en su lógica de nivel superior. También le permite reutilizar funciones en muchos programas diferentes. 
+    # Cuando almacena sus funciones en archivos separados, puede compartir esos archivos con otros programadores 
+    # sin tener que compartir todo su programa. Saber cómo importar funciones también le permite usar bibliotecas 
+    # de funciones que otros programadores han escrito.
+    #
+    #Hay varias formas de importar un módulo y las mostraré brevemente.
+
+
+
+
+
+
+
+
+        #`1- Importing an Entire Module
+    
+    #Para comenzar a importar funciones, primero debemos crear un módulo. 
+    # Un módulo es un archivo que termina en .py y que contiene el código que desea importar a su programa. 
+    # Hagamos un módulo que contenga la función make_pizza(). 
+    # Para hacer este módulo, eliminaremos todo del archivo pizza.py excepto la función make_pizza():
+
+def make_pizza(size, *toppings):
+    """Summarize the pizza we are about to make"""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+    #Ahora crearemos un archivo separado llamado making pizzas.py en el mismo directorio que pizza.py. 
+    # Este archivo importa el módulo que acabamos de crear y luego realiza dos llamadas a make_pizza():
+
+import pizza
+
+pizza.make_pizza(16, 'pepperoni')       #(1)
+pizza.make_pizza(12, 'mushrooms', 'green pepers', 'extra cheese')
+
+    #Cuando Python lee este archivo, la línea import pizza le dice a Python que abra el archivo pizza.py y copie 
+    # todas las funciones de este en este programa. En realidad, no ve el código que se copia entre archivos porque 
+    # Python copia el código detrás de escena justo antes de que se ejecute el programa. Todo lo que necesita saber
+    #  es que cualquier función definida en pizza.py ahora estará disponible para hacer pizzas.py
+    #
+    # Para llamar a una función desde un módulo importado, ingresa el nombre del módulo que importaste, pizza, 
+    # seguido del nombre de la función, make pizza(), separados por un punto ➡(1)⬅. Este código produce el mismo 
+    # resultado que el programa original que no importó un módulo:
+    #
+    #           >>> Making a 16-inch pizza with the following toppings:
+    #           >>> - pepperoni
+    #           >>>  
+    #           >>> Making a 12-inch pizza with the following toppings:
+    #           >>> - mushrooms
+    #           >>> - green peppers
+    #           >>> - extra cheese
+    #
+    # Este primer enfoque de importación, en el que simplemente escribe import seguido del nombre del módulo, 
+    # hace que todas las funciones del módulo estén disponibles en su programa. 
+    # Si usa este tipo de declaración de importación para importar un módulo completo llamado module_name.py, 
+    # cada función en el módulo está disponible a través de la siguiente sintaxis:
+module_name.function_name()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`2- Importing Specific Functions
+
+    #También puede importar una función específica de un módulo. Aquí está la sintaxis general para este enfoque:
+from mudule_name import function_name
+
+    #You can import as many functions as you want from a module by sepa- rating each function's name with a comma:
+from module_name import function_0, function_1, function_2
+
+    #The making pizzas.py example would look like this if we want to import just the function we're going to use:
+from pizza import make_pizza
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green pepers', 'extra cheese')
+
+    #Con esta sintaxis, no necesita usar la notación de puntos cuando llama a una función. Debido a que 
+    # importamos explícitamente la función make_pizza() en la declaración de importación, 
+    # podemos llamarla por su nombre cuando usamos la función.
+
+
+
+
+
+
+
+
+
+
+
+
+        #`3- Using as to Give a function an Alias
+
+    #Si el nombre de una función que está importando puede entrar en conflicto con un nombre existente en su programa o si 
+    # el nombre de la función es largo, puede usar un alias corto y único, un nombre alternativo similar a un apodo para la función. 
+    # Le dará a la función este apodo especial cuando importe la función.
+
+    #Aquí le damos a la función make_pizza() un alias, mp(), importando make pizza como mp. 
+    # La palabra clave as cambia el nombre de una función utilizando el alias que proporciona:
+from pizza import make_pizza as mp
+
+mp(16, 'pepperoni')
+mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+    #La declaración de importación que se muestra aquí cambia el nombre de la función make_pizza() a mp() en este programa. 
+    # Cada vez que queramos llamar a make_pizza() podemos simplemente escribir mp() en su lugar, 
+    # y Python ejecutará el código en make_pizza() mientras evita cualquier confusión con 
+    # otra función make_pizza() que podría haber escrito en este archivo de programa .
+    #
+    #La sintaxis general para proporcionar un alias es:
+from module_name import function_name as fn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #`4- Using as to Give a Module an Alias
+    
+    #You can also provide an alias for a module name. Giving a module a short alias, like p for pizza, 
+    # allows you to call the module's functions more quickly. Calling p.make_pizza() is more concise than calling pizza.make pizza():
+import pizza as p
+
+p.make_pizza(16, 'pepperoni')
+p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+    #El módulo pizza recibe el alias p en la declaración de importación, pero todas las funciones del módulo conservan sus nombres originales. 
+    # Llamar a las funciones escribiendo p.make_pizza() no solo es más conciso que escribir pizza.make_pizza(). 
+    # pero también redirige su atención desde el nombre del módulo y le permite concentrarse en los nombres descriptivos de sus funciones. 
+    # Estos nombres de funciones, que le indican claramente lo que hace cada función, 
+    # son más importantes para la legibilidad de su código que usar el nombre completo del módulo.
+    #
+    #La sintaxis general para este enfoque es:
+import module_name as mn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+        #`5- Importing All Functions in a Module
+
+    #Puede decirle a Python que importe cada función en un módulo usando el operador de asterisco (*):
+from pizza import *
+
+make_pizza(16, 'pepperoni')
+p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+    #El asterisco en la declaración de importación le dice a Python que copie todas las funciones del módulo pizza en este archivo de programa. 
+    # Debido a que cada función se importa, puede llamar a cada función por su nombre sin usar la notación de puntos. 
+    # Sin embargo, es mejor no usar este enfoque cuando trabaja con módulos más grandes que no escribió: 
+    # si el módulo tiene un nombre de función que coincide con un nombre existente en su proyecto, puede obtener algunos resultados inesperados.
+    #  Python puede ver varias funciones o variables con el mismo nombre y, en lugar de importar todas las funciones por separado, 
+    # las sobrescribirá.
+    #
+    #El mejor enfoque es importar la función o funciones que desee, o importar el módulo completo y usar la notación de puntos. 
+    # Esto conduce a un código claro que es fácil de leer y comprender. 
+    # Incluyo esta sección para que reconozca declaraciones de importación como las siguientes cuando las vea en el código de otras personas:
+from module_name import *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    # 🦚    Styling Functions
+
+    # Debe tener en cuenta algunos detalles cuando esté diseñando funciones. 
+    # Las funciones deben tener nombres descriptivos, y estos nombres deben usar letras minúsculas y guiones bajos. 
+    # Los nombres descriptivos lo ayudan a usted y a otros a comprender lo que su código está tratando de hacer. 
+    # Los nombres de los módulos también deben usar estas convenciones.
+    #
+    # Cada función debe tener un comentario que explique de manera concisa lo que hace la función. 
+    # Este comentario debería aparecer inmediatamente después de la definición de la función y usar el formato docstring. 
+    # En una función bien documentada, otros programadores pueden usar la función leyendo solo la descripción en la cadena de documentación. 
+    # Deberían poder confiar en que el código funciona como se describe y, siempre que sepan el 
+    # nombre de la función, los argumentos que necesita y el tipo de valor que devuelve, deberían poder usarlo en sus programas.
+    #
+    #Si especifica un valor predeterminado para un parámetro, no se deben usar espacios a ambos lados del signo igual:
+# def function_name(parameter_0, parameter_1='default value')
+
+    #Se debe usar la misma convención para los argumentos de palabras clave en las llamadas a funciones:
+function_name(value_0, parameter_1='default value')
+
+    #PEP 8 (https://www.python.org/dev/peps/pep-0008/) recomienda que limite las líneas de código a 79 caracteres para que cada línea 
+    # sea visible en una ventana de editor de tamaño razonable. Si un conjunto de parámetros hace que la definición de una función tenga 
+    # más de 79 caracteres, presione ENTER después del paréntesis de apertura en la línea de definición. En la siguiente línea, 
+    # presione TAB dos veces para separar la lista de parámetros del cuerpo de la función, que solo tendrá una sangría de un nivel.
+    #
+    #La mayoría de los editores alinean automáticamente cualquier línea adicional de parámetros para que coincida con la sangría 
+    # que ha establecido en la primera línea:
+def function_name(
+        parameter_0, parameter_1, parameter_2,
+        parameter_3, parameter_4, parameter_5):
+    cuerpo_de_funcion#lo que sea que sea el resto de la funcion.
+    #
+    #Si su programa o módulo tiene más de una función, puede separar cada una con dos líneas en blanco para que sea más fácil 
+    # ver dónde termina una función y comienza la siguiente.
+    #
+    #Todas las declaraciones de importación deben escribirse al principio de un archivo. 
+    # La única excepción es si usa comentarios al comienzo de su archivo para describir el programa general.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            #   SUMARIO
+
+
+            # En este capítulo aprendiste a escribir funciones y pasar argumentos para que tus funciones tengan acceso a la información 
+            # que necesitan para hacer su trabajo. Aprendió a usar argumentos posicionales y de palabras clave, y a aceptar un número 
+            # arbitrario de argumentos. Viste funciones que muestran resultados y funciones que devuelven valores. Aprendió a usar 
+            # funciones con listas, diccionarios, declaraciones if y bucles while. También vio cómo almacenar sus funciones en archivos 
+            # separados llamados módulos, por lo que sus archivos de programa serán más simples y fáciles de entender. Finalmente, 
+            # aprendió a diseñar sus funciones para que sus programas sigan estando bien estructurados y sean tan fáciles de leer como 
+            # sea posible para usted y los demás.
+
+            #Uno de sus objetivos como programador debe ser escribir código simple que haga lo que usted quiere, y las funciones lo 
+            # ayudarán a hacerlo. Le permiten escribir bloques de código y dejarlos solos una vez que sabe que funcionan. Cuando sabe 
+            # que una función hace su trabajo correctamente, puede confiar en que seguirá funcionando y pasará a su siguiente tarea 
+            # de codificación.
+
+            #Las funciones le permiten escribir código una vez y luego reutilizar ese código tantas veces como desee. 
+            # Cuando necesite ejecutar el código en una función, todo lo que necesita hacer es escribir una llamada de una línea 
+            # y la función hace su trabajo. Cuando necesite modificar el comportamiento de una función, solo tiene que modificar 
+            # un bloque de código y su cambio surtirá efecto en todos los lugares donde haya realizado una llamada a esa función.
+
+            #El uso de funciones hace que sus programas sean más fáciles de leer, y los buenos nombres de funciones resumen lo que 
+            # hace cada parte de un programa. Leer una serie de llamadas a funciones le da una idea mucho más rápida de lo que hace 
+            # un programa que leer una larga serie de bloques de código.
+
+            #Las funciones también hacen que su código sea más fácil de probar y depurar. Cuando la mayor parte del trabajo de su 
+            # programa lo realiza un conjunto de funciones, cada una de las cuales tiene un trabajo específico, es mucho más fácil 
+            # probar y mantener el código que ha escrito. Puede escribir un programa separado que llame a cada función y pruebe si 
+            # cada función funciona en todas las situaciones que pueda encontrar. Cuando haga esto, puede estar seguro de que sus 
+            # funciones funcionarán correctamente cada vez que las llame.
+
+            #En el Capítulo 9 aprenderá a escribir clases. Las clases combinan funciones y 
+            # datos en un paquete ordenado que se puede usar de manera flexible y eficiente.
