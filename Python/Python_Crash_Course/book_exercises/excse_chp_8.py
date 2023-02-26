@@ -259,6 +259,14 @@ for item in producto_comprado:
 
 
 
+
+
+
+
+
+
+
+
     #8-10. Sending Messages:
 
 #Comience con una copia de su programa del Ejercicio 8-9. 
@@ -289,6 +297,12 @@ def mensaje():
         print(f"\t   - {item}")
 
 mensaje()
+
+
+
+
+
+
 
 
 
@@ -342,6 +356,11 @@ lista_comprado()
 
 
 
+
+
+
+
+
     #8-12.  Sandwiches:
 
 #Escribe una función que acepte una lista de artículos que una persona quiere en un sándwich. 
@@ -383,6 +402,19 @@ preparar_sandwiches('grande', 'jamon', 'queso', 'pan', 'jitomate',  'mayonesa')
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     #8-13.  User Profile:
 
 #Comience con una copia de user profile.py de la página 149. 
@@ -404,6 +436,13 @@ user_profile_1 = build_profile('Lidwin', 'Gasca',               #           ⬅�
 
 print(user_profile_1)#          ⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
 print(user_profile)
+
+
+
+
+
+
+
 
 
 
@@ -461,8 +500,21 @@ for clave, valor in descripcion_de_autos.items():  # Agregamos el metodo .items(
     #8-15.  Printing Models:
 
 #Coloque las funciones para el ejemplo de impresión de modelos.py en un archivo separado llamado funciones_de_impresión.py. 
-# Escriba una declaración de importación en la parte superior de los modelos de impresión py y modifique 
+# Escriba una declaración de importación en la parte superior de los modelos de impresión .py y modifique 
 # el archivo para usar las funciones importadas.
+
+import sys #este "sys" es para llamar modulos que se encuentran en un directorio distinto a al archivo ejecutandose/(que lo esta llamando).
+sys.path.append("c:/Users/memit/OneDrive/Documents/GitHub/personal-growth/Python/Python_Crash_Course/book_exercises/modules")
+
+import _8_15_funciones_de_impresion
+
+_8_15_funciones_de_impresion.hola_mundo()
+_8_15_funciones_de_impresion.suma_de_dos_numeros(4,5)
+
+
+
+
+
 
 
 
@@ -477,18 +529,30 @@ for clave, valor in descripcion_de_autos.items():  # Agregamos el metodo .items(
 #Usando un programa que escribió que tiene una función, almacene esa función en un archivo separado. 
 # Importe la función a su archivo de programa principal y llame a la función utilizando cada uno de estos enfoques:
 
-import module_name
-from module_name import function_name
-from module_name import function_name as fn
-import module_name as mn
-from module_name import *
+# import module_name
+# from module_name import function_name
+# from module_name import function_name as fn
+# import module_name as mn
+# from module_name import *
 
+import sys
+sys.path.append("c:/Users/memit/OneDrive/Documents/GitHub/personal-growth/Python/Python_Crash_Course/book_exercises/modules")
 
+import _8_15_funciones_de_impresion
+_8_15_funciones_de_impresion.hola_mundo()
 
+from _8_15_funciones_de_impresion import hola_mundo
+hola_mundo()
 
+from _8_15_funciones_de_impresion import suma_de_dos_numeros as suma
+suma(3,6)
 
+import _8_15_funciones_de_impresion as fun_imp
+fun_imp.suma_de_dos_numeros(4,4)
 
-
+from _8_15_funciones_de_impresion import *
+hola_mundo()
+suma_de_dos_numeros(5,7)
 
 
 
@@ -499,4 +563,33 @@ from module_name import *
 
     #8-17.  Sytling Functions:
 
-#Choose any three programs you wrote for this chapter, and make sure they follow the styling guidelines described in this section.
+#Elija cualquiera de los tres programas que escribió para este capítulo y asegúrese de que sigan las pautas de "estilo descritas" en esta sección.
+
+def print_models(unprinted_designs, completed_models):         
+    """
+    Simulate printing each design, until non are left.
+    Move each desing to completed_models afer printing.
+    """
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):                    
+    """Show all the models that were printed."""
+    print("\nThe following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['phone case',
+                     'robot pendant',
+                     'dodecahedron',
+                     ]
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+
+#use el anterior cdodigo de el capitulo ocho y solo ajuste la lista llamada unprinted_designs, le puse un coma(,) despues de 
+# cada item y presione tecla enter para una linea nueva, porque segun el 'estilo descrito' (Styling Functions) no hay que pasarnos de 
+#79 caracteres en una fila.
