@@ -124,3 +124,45 @@ user_2.saludando_usuario()
 
 user_3.describir_usuario()
 user_3.saludando_usuario()
+
+
+
+
+
+
+
+
+
+    #9-4.   Number Served:
+
+#Comience con su programa del Ejercicio 9-1 (página 162). Agregue un atributo llamado número servido con un valor predeterminado de 0. 
+# Cree una instancia llamada restaurante de esta clase. 
+# Imprime el número de clientes que ha servido el restaurante y luego cambia este valor e imprímelo de nuevo. 
+# 
+# Agregue un método llamado set_number_served() que le permita establecer el número 
+# de clientes que han sido atendidos. Llame a este método con un nuevo número y imprimir el valor de nuevo. 
+#
+# Agregue un método llamado increment_number_served() que le permita incrementar la cantidad de clientes que han sido atendidos. 
+# Llame a este método con cualquier número que desee que pueda representar cuántos clientes se atendieron, digamos, en un día hábil.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #9-5.   Login Attemps:
+
+#Agregue un atributo llamado intentos de inicio de sesión a su clase de Usuario del Ejercicio 9-3 (página 162). 
+# Escriba un método llamado increment_login_attempts() que incremente el valor de los intentos de inicio de sesión en 1. 
+# Escriba otro método llamado reset_login_attempts() que restablezca el valor de los intentos de inicio de sesión a 0.
+#
+#Cree una instancia de la clase Usuario y llame a los intentos de inicio de sesión de incremento () varias veces. 
+# Imprima el valor de los intentos de inicio de sesión para asegurarse de que se incrementó correctamente y luego llame a reset_login_attempts(). 
+# Imprima los intentos de inicio de sesión nuevamente para asegurarse de que se restableció a 0.
