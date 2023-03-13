@@ -262,3 +262,93 @@ your_dog.sit()
 # Python aún crearía una instancia separada de la clase Dog. 
 # Puede crear tantas instancias de una clase como necesite, siempre que asigne a 
 # cada instancia un nombre de variable único o que ocupe un lugar único en una lista o diccionario.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        #🦚           Working with Clases and Instances
+
+    #Puede usar clases para representar muchas situaciones del mundo real. Una vez que escriba una clase, 
+    # pasará la mayor parte de su tiempo trabajando con instancias creadas a partir de esa clase. 
+    # Una de las primeras tareas que querrá hacer es modificar los atributos asociados con una instancia en particular. 
+    # Puede modificar los atributos de una instancia directamente o escribir métodos que actualicen los atributos de formas específicas.
+    
+
+
+
+
+
+
+
+
+
+
+
+            #`1- The Car Class
+
+    #Escribamos una nueva clase que represente un automóvil. 
+    # Nuestra clase almacenará información sobre el tipo de automóvil con el 
+    # que estamos trabajando y tendrá un método que resuma esta información:
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):                  #(1)
+        """Initialize attrivutes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def get_descriptive_name(self):                         #(2)
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+my_new_car = Car('audi', 'a4', 2019)                        #(3)
+print(my_new_car.get_descriptive_name())
+    #En ➡(1)⬅ en la clase Car, primero definimos el método _init_() con el parámetro self, tal como lo hicimos antes con nuestra clase Dog. 
+    # También le damos otros tres parámetros: marca, modelo y año. 
+    # El método _init_() toma estos parámetros y los asigna a los atributos que se asociarán con las instancias creadas a partir de esta clase. 
+    # Cuando creamos una nueva instancia de Car, necesitaremos especificar una marca, modelo y año para nuestra instancia.
+    #
+    #En ➡(2)⬅ definimos un método llamado get_descriptive_name() que pone el año, la marca y el modelo de un automóvil en 
+    # una cadena que describe claramente el automóvil. Esto nos evitará tener que imprimir el valor de cada atributo individualmente. 
+    # Para trabajar con los valores de los atributos en este método, usamos self.make, self.model y self.year.
+    #
+    # En ➡(3)⬅ creamos una instancia de la clase Car y la asignamos a la variable my new car. 
+    # Luego llamamos a get_descriptive_name() para mostrar qué tipo de automóvil tenemos:
+    #
+    #           >>> 2019 Audi A4
+    #
+    #Para hacer la clase más interesante, agreguemos un atributo que cambie con el tiempo. 
+    # Agregaremos un atributo que almacene el kilometraje total del automóvil.
