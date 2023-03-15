@@ -352,3 +352,35 @@ print(my_new_car.get_descriptive_name())
     #
     #Para hacer la clase más interesante, agreguemos un atributo que cambie con el tiempo. 
     # Agregaremos un atributo que almacene el kilometraje total del automóvil.
+
+
+
+
+            #`2- Setting a Default Value for an Attribute
+
+    #Cuando se crea una instancia, los atributos se pueden definir sin pasarlos como parámetros. 
+    # Estos atributos se pueden definir en el método __init__(), donde se les asigna un valor predeterminado.
+
+    #Agreguemos un atributo llamado lectura del odómetro que siempre comienza con un valor de 0. 
+    # También agregaremos un método read_odometer() que nos ayuda a leer el odómetro de cada automóvil:
+
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+my_new_car = Car('audi', 'a4', 2019)                        #(3)
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
