@@ -370,17 +370,228 @@ class Car:
         self.make = make
         self.model = model
         self.year = year
-        self.odometer_reading = 0
+        self.odometer_reading = 0                                   #(1)
 
     def get_descriptive_name(self):
         """Return a neatly formatted descriptive name."""
         long_name = f"{self.year} {self.make} {self.model}"
         return long_name.title()
     
-    def read_odometer(self):
+    def read_odometer(self):                                        #(2)
         """Print a statement showing the car's mileage."""
         print(f"This car has {self.odometer_reading} miles on it.")
 
-my_new_car = Car('audi', 'a4', 2019)                        #(3)
+my_new_car = Car('audi', 'a4', 2019)                        
 print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
+
+    #Esta vez, cuando Python llama al método __init__() para crear una nueva instancia, 
+    # almacena los valores de marca, modelo y año como atributos, como lo hizo en el ejemplo anterior. 
+    # Luego, Python crea un nuevo atributo llamado lectura del odómetro y establece su valor inicial en 0 ➡(1)⬅. 
+    # También tenemos un nuevo método llamado read_odometer() en ➡(2)⬅ que facilita la lectura del kilometraje de un automóvil.
+    #
+    #Nuestro coche arranca con un kilometraje de 0:
+    #
+    #           >>> 2019 Audi A4
+    #           >>> This car has 0 miles on it.
+    #
+    #No se venden muchos autos con exactamente 0 millas en el odómetro, 
+    #por lo que necesitamos una forma de cambiar el valor de este atributo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                #🦚           Modifying Attribute Values
+
+    #Puede cambiar el valor de un atributo de tres maneras: puede cambiar el valor directamente a través de una instancia, 
+    # establecer el valor a través de un método o incrementar el valor (agregarle una cierta cantidad) a través de un método. 
+    # Veamos cada uno de estos enfoques.
+
+
+
+
+
+
+
+
+
+
+
+            #`1- Modifying an Attribute's Value Directly
+    
+    #The simplest way to modify the value of an attribute is to access the attribute directly through an instance. 
+    # Here we set the odometer reading to 23 directly:
+
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+my_new_car = Car('audi', 'a4', 2019)                        
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+
+my_new_car.odometer_reading = 23    #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅ #(1)
+my_new_car.read_odometer()          #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+
+    #En ➡(1)⬅ usamos la notación de puntos para acceder al atributo odometer_reading del automóvil y establecer su valor directamente.
+    # Esta línea le dice a Python que tome la instancia my_new_car, encuentre el atributo de odometer_reading asociado con él,
+    # y establezca el valor de ese atributo en 23:
+    #
+    #           >>> 2019 Audi A4
+    #           >>> This car has 23 miles on it.
+    #
+    #A veces querrás acceder a los atributos directamente como este, pero otras veces querrás escribir un método que actualice el valor por ti.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #`2-    Modifying an Attribute's Value Through a Method
+
+    #Puede ser útil tener métodos que actualicen ciertos atributos por usted. 
+    # En lugar de acceder al atributo directamente, pasa el nuevo valor a un método que maneja la actualización internamente. 
+    # Aquí hay un ejemplo que muestra un método llamado update_odometer():
+
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                             #⬅  #(1)
+        """Set the odometer reading in to the given value."""       #⬅
+        self.odometer_reading = mileage                             #⬅
+
+my_new_car = Car('audi', 'a4', 2019)                        
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer()
+
+my_new_car.update_odometer(23)                                       #⬅ #(2)
+my_new_car.read_odometer()
+
+    #La única modificación a Car es la adición de update odometer() en ➡(1)⬅. 
+    # Este método toma un valor de kilometraje y lo asigna a la self.odometer_reading.
+    #  En ➡(2)⬅ llamamos a update_odometer() y le damos 23 como argumento (correspondiente al parámetro de kilometraje en la definición del método). 
+    # Establece read_odometer en 23, y read odometer() imprime la lectura/reading:
+    #
+    #           >>> 2019 Audi A4
+    #           >>> This car has 23 miles on it.
+    #
+    #Podemos extender el método update_odometer() para hacer un trabajo adicional cada vez que se modifica la lectura del odómetro. 
+    # Agreguemos un poco de lógica para asegurarnos de que nadie intente hacer retroceder la lectura del odómetro:
+
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                                 #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅       
+        """
+        Set the odometer reading to the giving value.
+        Reject the chang if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:                            #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅    #(1)
+            self.odometer_reading = mileage                             #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+        else:                                                           #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅    #(2)
+            print("You can't roll back an odometer!")                   #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅
+
+    #Ahora actualizar el odómetro() verifica que la nueva lectura tenga sentido antes de modificar el atributo. 
+    # Si el nuevo kilometraje, el kilometraje, es mayor o igual que el kilometraje existente, la lectura del self.odometer, 
+    # puede actualizar la lectura del odómetro al nuevo kilometraje ➡(1)⬅. 
+    # Si el nuevo kilometraje es menor que el kilometraje existente, recibirá una advertencia de que 
+    # no puede retroceder un odómetro que incremente el valor de un atributo a través de un método ➡(2)⬅.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #`3- Incrementing an Attribute's Value Through a Method
+
+    #
+    
