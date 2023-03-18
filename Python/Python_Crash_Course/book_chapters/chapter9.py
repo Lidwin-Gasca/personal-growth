@@ -593,5 +593,90 @@ class Car:
 
             #`3- Incrementing an Attribute's Value Through a Method
 
+    #A veces querrá incrementar el valor de un atributo en cierta cantidad en lugar de establecer un valor completamente nuevo.
+    # Digamos que compramos un automóvil usado y acumulamos 100 millas entre el momento en que lo compramos y el momento en que lo registramos. 
+    # Aquí hay un método que nos permite pasar esta cantidad incremental y agregar ese valor a la lectura del odómetro:
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                                      
+        """
+        Set the odometer reading to the giving value.
+        Reject the chang if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:                            
+            self.odometer_reading = mileage                             
+        else:                                                          
+            print("You can't roll back an odometer!")
+
+            #⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+    def increment_odometer(self, miles):                                        #(1)
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+        
+my_used_car = Car('subaru', 'outback', 2015)                                    #(2)
+print(my_used_car.get_descriptive_name())
+
+my_used_car.update_odometer(23_500)                                             #(3)
+my_used_car.read_odometer()
+
+my_used_car.increment_odometer(100)                                             #(4)
+my_used_car.read_odometer()
+
+    # El nuevo método de incremento del odómetro() en ➡(1)⬅ toma un número de millas y agrega este valor a la lectura de self.odometer. 
+    # En ➡(2)⬅ creamos un auto usado, my_used_car. 
+    # Establecemos su cuentakilómetros en 23 500 llamando a update_odometer() y pasándole 23 500 en ➡(3)⬅. 
+    # En ➡(4)⬅ llamamos a increment odometer() y le pasamos 100 para sumar las 100 millas que recorrimos entre comprar el auto y registrarlo:
+    #
+    #           >>> 2015 Subaru Outback
+    #           >>> This car has 23500 miles on it.
+    #           >>> This car has 23600 miles on it.
+    #
+    #Puede modificar fácilmente este método para rechazar incrementos negativos para que nadie use esta función para retroceder un odómetro.
+
+
+    #NOTE: 
+    #Puede usar métodos como este para controlar cómo los usuarios de su programa 
+    # actualizan valores como la lectura del odómetro, pero cualquier persona con 
+    # acceso al programa puede establecer la lectura del odómetro en cualquier 
+    # valor accediendo directamente al atributo. 
+    # La seguridad eficaz exige una atención extrema a los detalles además de las 
+    # comprobaciones básicas como las que se muestran aquí.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                #🦚           Inheritance
+
     #
     
