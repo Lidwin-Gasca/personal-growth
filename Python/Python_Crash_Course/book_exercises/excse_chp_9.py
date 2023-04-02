@@ -165,4 +165,4 @@ user_3.saludando_usuario()
 #
 #Cree una instancia de la clase Usuario y llame a los intentos de inicio de sesión de incremento () varias veces. 
 # Imprima el valor de los intentos de inicio de sesión para asegurarse de que se incrementó correctamente y luego llame a reset_login_attempts(). 
-# Imprima los intentos de inicio de sesión nuevamente para asegurarse de que se restableció a 0.
+# Imprima los intentos de inicio de sesión nuevamente para asegurarse de que se restableció a 0. 
