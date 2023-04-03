@@ -1,11 +1,11 @@
 document.addEventListener("mousedown", mouseDown);
 document.addEventListener("mouseup", mouseUp);
 document.addEventListener("mousemove", mouseMove);
-var aDD = document.getElementById("areaDeDibujo");
-var papel = aDD.getContext("2d");
-var click;
-var x;
-var y;
+let aDD = document.getElementById("areaDeDibujo");
+let papel = aDD.getContext("2d");
+let click;
+let x;
+let y;
 function mouseDown(evento){
   click = true;
 
