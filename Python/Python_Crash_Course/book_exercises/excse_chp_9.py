@@ -135,15 +135,47 @@ user_3.saludando_usuario()
 
     #9-4.   Number Served:
 
-#Comience con su programa del Ejercicio 9-1 (página 162). Agregue un atributo llamado número servido con un valor predeterminado de 0. 
+#Comience con su programa del Ejercicio 9-1 (página 162). Agregue un atributo llamado número_servido con un valor predeterminado de 0. 
 # Cree una instancia llamada restaurante de esta clase. 
 # Imprime el número de clientes que ha servido el restaurante y luego cambia este valor e imprímelo de nuevo. 
 # 
-# Agregue un método llamado set_number_served() que le permita establecer el número 
+# Agregue un método llamado establecer_numero_servido() que le permita establecer el número 
 # de clientes que han sido atendidos. Llame a este método con un nuevo número y imprimir el valor de nuevo. 
 #
-# Agregue un método llamado increment_number_served() que le permita incrementar la cantidad de clientes que han sido atendidos. 
+# Agregue un método llamado incrementar_numero_servido() que le permita incrementar la cantidad de clientes que han sido atendidos. 
 # Llame a este método con cualquier número que desee que pueda representar cuántos clientes se atendieron, digamos, en un día hábil.
+
+
+class Restaurante:
+    """Simple descripcion de una cocina."""
+
+    def __init__(self, nombre_restaurante, tipo_de_cocina):
+        self.nombre_restaurante = nombre_restaurante
+        self.tipo_de_cocina = tipo_de_cocina
+        self.numero_servido = 0
+        
+    def descripcion_restaurante(self):
+        print(f"El restaurante {self.nombre_restaurante} se especializa en {self.tipo_de_cocina}.")
+
+    def abierto_restaurante(self):
+        print(f"El restaurante {self.nombre_restaurante} se encuentra abierto en este momento.")
+
+    def establecer_numero_servido(self, num_servido):
+        self.numero_servido = num_servido
+        print(f"El restaurante {self.nombre_restaurante} ha servido a {self.numero_servido} clientes.")
+
+    def incrementar_numero_servido(self, num_inc):
+        self.numero_servido += num_inc
+        print(f"El restaurante {self.nombre_restaurante}, vendio {self.numero_servido} platillos el dia de hoy.")
+
+restaurante_1 = Restaurante('El pollo loco', 'pollo rostizado')
+restaurante_2 = Restaurante('El burrito', 'comida mexicana')
+restaurante_1.descripcion_restaurante()
+restaurante_1.abierto_restaurante()
+restaurante_1.establecer_numero_servido(7)
+restaurante_1.incrementar_numero_servido(2)
+restaurante_2.incrementar_numero_servido(3)
+
 
 
 
