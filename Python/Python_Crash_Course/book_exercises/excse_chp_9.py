@@ -152,7 +152,7 @@ class Restaurante:
     def __init__(self, nombre_restaurante, tipo_de_cocina):
         self.nombre_restaurante = nombre_restaurante
         self.tipo_de_cocina = tipo_de_cocina
-        self.numero_servido = 0
+        self.numero_servido = 0 #⬅codigo nuevo
         
     def descripcion_restaurante(self):
         print(f"El restaurante {self.nombre_restaurante} se especializa en {self.tipo_de_cocina}.")
@@ -160,13 +160,13 @@ class Restaurante:
     def abierto_restaurante(self):
         print(f"El restaurante {self.nombre_restaurante} se encuentra abierto en este momento.")
 
-    def establecer_numero_servido(self, num_servido):
-        self.numero_servido = num_servido
-        print(f"El restaurante {self.nombre_restaurante} ha servido a {self.numero_servido} clientes.")
+    def establecer_numero_servido(self, num_servido):   #⬅codigo nuevo
+        self.numero_servido = num_servido               #⬅codigo nuevo
+        print(f"El restaurante {self.nombre_restaurante} ha servido a {self.numero_servido} clientes.") #⬅codigo nuevo
 
-    def incrementar_numero_servido(self, num_inc):
-        self.numero_servido += num_inc
-        print(f"El restaurante {self.nombre_restaurante}, vendio {self.numero_servido} platillos el dia de hoy.")
+    def incrementar_numero_servido(self, num_inc):      #⬅codigo nuevo
+        self.numero_servido += num_inc                  #⬅codigo nuevo
+        print(f"El restaurante {self.nombre_restaurante}, vendio {self.numero_servido} platillos el dia de hoy.") #⬅codigo nuevo
 
 restaurante_1 = Restaurante('El pollo loco', 'pollo rostizado')
 restaurante_2 = Restaurante('El burrito', 'comida mexicana')
@@ -191,10 +191,97 @@ restaurante_2.incrementar_numero_servido(3)
 
     #9-5.   Login Attemps:
 
-#Agregue un atributo llamado intentos de inicio de sesión a su clase de Usuario del Ejercicio 9-3 (página 162). 
+#Agregue un atributo llamado login_attempts a su clase de Usuario del Ejercicio 9-3 (página 162). 
 # Escriba un método llamado increment_login_attempts() que incremente el valor de los intentos de inicio de sesión en 1. 
 # Escriba otro método llamado reset_login_attempts() que restablezca el valor de los intentos de inicio de sesión a 0.
 #
-#Cree una instancia de la clase Usuario y llame a los intentos de inicio de sesión de incremento () varias veces. 
-# Imprima el valor de los intentos de inicio de sesión para asegurarse de que se incrementó correctamente y luego llame a reset_login_attempts(). 
-# Imprima los intentos de inicio de sesión nuevamente para asegurarse de que se restableció a 0. 
+#Cree una instancia de la clase Usuario y llame a increment_login_attempts() varias veces. 
+# Imprima el valor de los login_attempts para asegurarse de que se incrementó correctamente y luego llame a reset_login_attempts(). 
+# Imprima login_attempts nuevamente para asegurarse de que se restableció a 0. 
+
+
+class Usuario:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.login_attempts = 0                         #⬅codigo nuevo 
+
+    def describir_usuario(self):
+        print(f"\nNombre: {self.nombre}\nApellido: {self.apellido}")
+    
+    def saludando_usuario(self):
+        print(f"\tHola {self.nombre}, bienvenido a Python.\n")
+
+    def increment_login_attempts(self):                 #⬅codigo nuevo
+        self.login_attempts = self.login_attempts + 1   #⬅codigo nuevo
+
+    def reset_login_attempts(self): #⬅codigo nuevo
+        self.login_attempts = 0     #⬅codigo nuevo
+
+
+user_1 = Usuario('Lidwin', 'Gasca')
+user_2 = Usuario('Aritzi', 'Hernandez')
+user_3 = Usuario('Abel', 'Garcia')
+user_4 = Usuario('Yjaira', 'rico')
+
+
+user_1.describir_usuario()
+user_1.saludando_usuario()
+
+user_2.describir_usuario()
+user_2.saludando_usuario()
+
+user_3.describir_usuario()
+user_3.saludando_usuario()
+
+
+print(user_4.login_attempts)        #⬅codigo nuevo
+user_4.increment_login_attempts()   #⬅codigo nuevo
+print(user_4.login_attempts)        #⬅codigo nuevo
+user_4.increment_login_attempts()   #⬅codigo nuevo
+print(user_4.login_attempts)        #⬅codigo nuevo
+user_4.increment_login_attempts()   #⬅codigo nuevo
+print(user_4.login_attempts)        #⬅codigo nuevo
+user_4.increment_login_attempts()   #⬅codigo nuevo
+print(user_4.login_attempts)        #⬅codigo nuevo
+
+user_4.reset_login_attempts()       #⬅codigo nuevo
+print(user_4.login_attempts)        #⬅codigo nuevo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
