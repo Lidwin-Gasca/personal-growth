@@ -676,7 +676,235 @@ my_used_car.read_odometer()
 
 
 
-                #🦚           Inheritance
+                #🦚           Inheritance / Herencia
 
-    #
+    #No siempre tienes que empezar desde cero al escribir una clase. 
+    # Si la clase que está escribiendo es una versión especializada de otra clase que escribió, puede usar la herencia. 
+    # Cuando una clase hereda de otra, toma los atributos y métodos de la primera clase. 
+    # La clase original se llama clase padre y la nueva clase es la clase hija. 
+    # La clase secundaria puede heredar cualquiera o todos los atributos y métodos de su clase principal, 
+    # pero también es libre de definir sus propios atributos y métodos nuevos.
     
+
+
+
+            #`1- The  __init__()Method for a Child Class
+        #Cuando está escribiendo una nueva clase basada en una clase existente, a menudo querrá llamar al método __init__() desde la clase principal. 
+        # Esto inicializará todos los atributos que se definieron en el método parent_init_() y los hará disponibles en la clase secundaria.
+
+        #Como ejemplo, modelemos un coche eléctrico. Un automóvil eléctrico es solo un tipo específico de automóvil, 
+        # por lo que podemos basar nuestra nueva clase "ElectricCar" en la clase "Car" que escribimos anteriormente. 
+        # Entonces solo tendremos que escribir código para los atributos y el comportamiento específico de los autos eléctricos.
+
+    # Comencemos por hacer una versión simple de la clase ElectricCar, que hace todo lo que hace la clase Car:
+class Car:  #(1)
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                                      
+        """
+        Set the odometer reading to the giving value.
+        Reject the chang if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:                            
+            self.odometer_reading = mileage                             
+        else:                                                          
+            print("You can't roll back an odometer!")
+
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+
+
+            #⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+class ElectricCar(Car):                                                 #(2)
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):                              #(3)
+        """Initialize attributes of parent class"""
+        super().__init__(make, model, year)                             #(4)
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)                        #(5)
+print(my_tesla.get_descriptive_name())
+
+    #En ➡(1)⬅ comenzamos con Car. 
+    # Cuando crea una clase secundaria, la clase principal debe ser parte del archivo actual y debe aparecer antes que la clase secundaria en el archivo. 
+    # En ➡(2)⬅ definimos la clase secundaria, ElectricCar. 
+    # El nombre de la clase principal debe incluirse entre paréntesis en la definición de una clase secundaria. 
+    # El método __init__() en ➡(3)⬅ toma la información necesaria para crear una instancia de Car.
+    #
+    #La función super() en ➡(4)⬅ es una función especial que le permite llamar a un método de la clase principal. 
+    # Esta línea le dice a Python que llame al método __init__() desde Car, lo que le da a una instancia de ElectricCar todos los atributos definidos en ese método. 
+    # El nombre super proviene de una convención de llamar a la clase principal una superclase y a la clase secundaria una subclase.
+    #
+    #Probamos si la herencia funciona correctamente al intentar crear un automóvil eléctrico con el mismo tipo de información que proporcionaríamos al 
+    # fabricar un automóvil normal. En ➡(5)⬅creamos una instancia de la clase ElectricCar y la asignamos a mi tesla. 
+    # Esta línea llama al método __init__() definido en ElectricCar, que a su vez le dice a Python que llame al método _init_() definido en la clase padre Car. 
+    # Proporcionamos los argumentos 'tesla', 'model s' y 2019.
+    #
+    #Aparte de_init_(), todavía no hay atributos o métodos que sean particulares de un automóvil eléctrico. 
+    # En este punto, solo nos estamos asegurando de que el automóvil eléctrico tenga los comportamientos de automóvil apropiados:
+    #
+    #           >>> 2019 Tesla Model s
+    # La instancia de ElectricCar funciona como una instancia de Car, por lo que ahora 
+    # podemos comenzar a definir atributos y métodos específicos para autos eléctricos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #`2- Defining Attributes and Methods for the Child Class
+
+        #Una vez que tenga una clase secundaria que herede de una clase principal, puede agregar los 
+        # nuevos atributos y métodos necesarios para diferenciar la clase secundaria de la clase principal.
+
+#Agreguemos un atributo que sea específico para los autos eléctricos (una batería, por ejemplo) y un método para informar sobre este atributo. 
+# Guardaremos el tamaño de la batería y escribiremos un método que imprima una descripción de la batería:
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                                      
+        """
+        Set the odometer reading to the giving value.
+        Reject the chang if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:                            
+            self.odometer_reading = mileage                             
+        else:                                                          
+            print("You can't roll back an odometer!")
+
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery_size = 75          #⬅⬅⬅⬅⬅⬅codigo nuevo (1)
+
+    def describe_battery(self):         #⬅⬅⬅⬅⬅⬅codigo nuevo (2)
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+
+    #En ➡(1)⬅ agregamos un nuevo atributo self.battery_size y establecemos su valor inicial en, por ejemplo, 75. 
+    # Este atributo se asociará con todas las instancias creadas a partir de la clase ElectricCar pero no se asociará con ninguna instancia de Car. 
+    # También agregamos un método llamado describe_battery() que imprime información sobre la batería en ➡(2)⬅. 
+    # Cuando llamamos a este método, obtenemos una descripción que es claramente específica de un coche eléctrico:
+    #
+    #           >>> 2019 Tesla Model S
+    #           >>> This car has a 75-kwh battery.
+    #
+    #No hay límite en cuánto puede especializarse en la clase ElectricCar. 
+    # Puede agregar tantos atributos y métodos como necesite para modelar un automóvil eléctrico con el grado de precisión que necesite. 
+    # Un atributo o método que podría pertenecer a cualquier automóvil, en lugar de uno que sea específico de un automóvil eléctrico, 
+    # debe agregarse a la clase Car en lugar de a la clase ElectricCar. 
+    # Entonces, cualquiera que use la clase Car también tendrá esa funcionalidad disponible, 
+    # y la clase ElectricCar solo contendrá el código para la información y el comportamiento específico de los vehículos eléctricos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #`3- Overriding Methods from the Parent Class
+
+        #Puede anular cualquier método de la clase principal que no se ajuste a lo que intenta modelar con la clase secundaria. 
+        # Para hacer esto, defina un método en la clase secundaria con el mismo nombre que el método que desea anular en la clase principal. 
+        # Python ignorará el método de la clase principal y solo prestará atención al método que defina en la clase secundaria.
+
+#Digamos que la clase Car tenía un método llamado fill_gas_tank(). 
+# Este método no tiene sentido para un vehículo totalmente eléctrico, 
+# por lo que es posible que desee anular este método. Aquí hay una forma de hacerlo:
+class ElectricCar(Car):
+    #--Codigo Recortado--
+    def fill_gas_tank(self):
+        """Electric cars don't have gas tanks."""
+        print("This car doesn't need a gas thank")
+#Ahora, si alguien intenta llamar a fill_gas_tank() con un automóvil eléctrico, 
+# Python ignorará el método fill_gas_tank() en Car y ejecutará este código en su lugar. 
+# Cuando usa la herencia, puede hacer que sus clases secundarias conserven 
+# lo que necesita y anule todo lo que no necesite de la clase principal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            #`4- Instances as Attributes
+
+        #Al modelar algo del mundo real en código, es posible que descubra que está agregando más y más detalles a una clase. 
+        # Descubrirá que tiene una lista creciente de atributos y métodos y que sus archivos son cada vez más largos. 
+        # En estas situaciones, es posible que reconozca que parte de una clase se puede escribir como una clase separada. 
+        # Puede dividir su clase grande en clases más pequeñas que trabajen juntas.
+
+        #Por ejemplo, si continuamos agregando detalles a la clase ElectricCar, podemos notar que estamos agregando muchos atributos y 
+        # métodos específicos para la batería del automóvil. Cuando vemos que esto sucede, podemos detener y mover esos atributos y 
+        # métodos a una clase separada llamada Batería.
+         
+# Entonces podemos usar una instancia de Batería como atributo en la clase ElectricCar:
+
