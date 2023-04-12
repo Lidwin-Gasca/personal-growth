@@ -907,4 +907,192 @@ class ElectricCar(Car):
         # métodos a una clase separada llamada Batería.
          
 # Entonces podemos usar una instancia de Batería como atributo en la clase ElectricCar:
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
 
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                                      
+        """
+        Set the odometer reading to the giving value.
+        Reject the chang if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:                            
+            self.odometer_reading = mileage                             
+        else:                                                          
+            print("You can't roll back an odometer!")
+
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+
+
+
+            #⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+
+class Battery:                                                                                  #(1)
+    """Asimple attemp to model a battery for an electric car."""
+
+    def __init__(self, battery_size=75):                                                          #(2)
+        """Initialize the battery's attributs."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):                                                                 #(3)
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+            #⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆codigo nuevo⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆
+
+
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()       #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅codigo nuevo (5)
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()    #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅codigo nuevo
+
+
+
+
+#En ➡(1)⬅ definimos una nueva clase llamada Batería que no hereda de ninguna otra clase. 
+# El método __init__() en ➡(2)⬅ tiene un parámetro, battery_size, además de self. 
+# Este es un parámetro opcional que establece el tamaño de la batería en 75 si no se proporciona ningún valor. 
+# El método describe_battery() también se ha movido a esta clase ➡(3)⬅.
+
+#En la clase ElectricCar, ahora agregamos un atributo llamado self.battery ➡(4)⬅. 
+# Esta línea le dice a Python que cree una nueva instancia de Batería (con un tamaño predeterminado de 75, 
+# porque no estamos especificando un valor) y asigne esa instancia al atributo self.battery. 
+# Esto sucederá cada vez que se llame al método init_(); cualquier instancia de ElectricCar ahora 
+# tendrá una instancia de batería creada automáticamente.
+
+#Creamos un coche eléctrico y lo asignamos a la variable my_tesla. 
+# Cuando queremos describir la batería, necesitamos trabajar con el atributo de la batería del automóvil:
+my_tesla.battery.describe_battery()
+#Esta línea le dice a Python que mire la instancia my tesla, busque su atributo de batería y llame al 
+# método describe_battery() que está asociado con la instancia de batería almacenada en el atributo.
+
+#La salida es idéntica a lo que vimos anteriormente:
+#
+#           >>> 2019 Tesla Model S
+#           >>> This car has a 75-kwh battery.
+#
+#Esto parece mucho trabajo extra, pero ahora podemos describir la batería con tanto detalle como queramos 
+# sin saturar la clase ElectricCar. Agreguemos otro método a Batería que informe el alcance del automóvil 
+# según el tamaño de la batería:
+class Car:
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0                                   
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+    
+    def read_odometer(self):                                        
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):                                      
+        """
+        Set the odometer reading to the giving value.
+        Reject the chang if it attempts to roll the odometer back.
+        """
+        if mileage >= self.odometer_reading:                            
+            self.odometer_reading = mileage                             
+        else:                                                          
+            print("You can't roll back an odometer!")
+
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+
+
+
+
+class Battery:                                                                              
+    """Asimple attemp to model a battery for an electric car."""
+
+    def __init__(self, battery_size=75):                                                          
+        """Initialize the battery's attributs."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):                                                                 
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+
+            #⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+    def get_range(self):                                                                        #(1)
+        """print a statement about the range this battery provides."""
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 315
+
+        print(f"This car can go about {range} miles on full charge.")
+            #⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆codigo nuevo⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆
+
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()       
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kwh battery.")
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()    
+my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅codigo nuevo          #(2)
+
+#El nuevo método get_range() en ➡(1)⬅ realiza un análisis simple. 
+# Si la capacidad de la batería es de 75 kWh, get_range() establece el alcance en 260 millas, 
+# y si la capacidad es de 100 kWh, establece el alcance en 315 millas. Luego informa este valor. 
+# Cuando queramos usar este método, nuevamente tenemos que llamarlo a través del atributo de batería del automóvil en ➡(2)⬅. 
+# 
+# La salida nos dice la autonomía del coche en función del tamaño de la batería:
+#
+#           >>> 2019 Tesla Model S
+#           >>> This car has a 75-kwh battery.
+#           >>> This car can go about 260 miles on full charge.
+
+
+   
