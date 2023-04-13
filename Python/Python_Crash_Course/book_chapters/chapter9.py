@@ -902,9 +902,9 @@ class ElectricCar(Car):
         # En estas situaciones, es posible que reconozca que parte de una clase se puede escribir como una clase separada. 
         # Puede dividir su clase grande en clases más pequeñas que trabajen juntas.
 
-        #Por ejemplo, si continuamos agregando detalles a la clase ElectricCar, podemos notar que estamos agregando muchos atributos y 
-        # métodos específicos para la batería del automóvil. Cuando vemos que esto sucede, podemos detener y mover esos atributos y 
-        # métodos a una clase separada llamada Batería.
+        #Por ejemplo, si continuamos agregando detalles a la clase ElectricCar, podemos notar que estamos agregando muchos 
+        # atributos y métodos específicos para la batería del automóvil. Cuando vemos que esto sucede, podemos detener y 
+        # mover esos atributos y métodos a una clase separada llamada Batería.
          
 # Entonces podemos usar una instancia de Batería como atributo en la clase ElectricCar:
 class Car:
@@ -1085,8 +1085,10 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
 
 #El nuevo método get_range() en ➡(1)⬅ realiza un análisis simple. 
 # Si la capacidad de la batería es de 75 kWh, get_range() establece el alcance en 260 millas, 
-# y si la capacidad es de 100 kWh, establece el alcance en 315 millas. Luego informa este valor. 
-# Cuando queramos usar este método, nuevamente tenemos que llamarlo a través del atributo de batería del automóvil en ➡(2)⬅. 
+# y si la capacidad es de 100 kWh, establece el alcance en 315 millas. 
+# Luego informa este valor. 
+# Cuando queramos usar este método, nuevamente tenemos que llamarlo a 
+# través del atributo de batería del automóvil en ➡(2)⬅. 
 # 
 # La salida nos dice la autonomía del coche en función del tamaño de la batería:
 #
@@ -1096,3 +1098,35 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
 
 
    
+
+
+
+
+
+
+
+
+            #`5-  Modeling Real-Worls Objects
+
+                #A medida que comience a modelar cosas más complicadas, como automóviles eléctricos, se enfrentará a preguntas 
+                # interesantes. ¿La autonomía de un coche eléctrico es una propiedad de la batería o del coche? Si solo estamos 
+                # describiendo un auto, probablemente esté bien mantener la asociación del método get range() con la clase
+                #  Battery. Pero si estamos describiendo toda la línea de automóviles de un fabricante, probablemente queramos 
+                # mover get_range() a la clase ElectricCar. El método get range() todavía verificaría el tamaño de la batería 
+                # antes de determinar el rango, pero informaría un rango específico para el tipo de automóvil con el que está 
+                # asociado. Alternativamente, podríamos mantener la asociación del método get_range() con la batería pero 
+                # pasarle un parámetro como el modelo de automóvil. El método get_range() luego informaría un rango basado en 
+                # el tamaño de la batería y el modelo de automóvil.
+
+                #Esto te lleva a un punto interesante en tu crecimiento como programador. 
+                # Cuando lucha con preguntas como estas, está pensando en un nivel lógico 
+                # superior en lugar de un nivel centrado en la sintaxis. No estás pensando 
+                # en Python, sino en cómo representar el mundo real en código. 
+                # Cuando llegue a este punto, se dará cuenta de que a menudo no hay enfoques 
+                # correctos o incorrectos para modelar situaciones del mundo real. Algunos 
+                # enfoques son más eficientes que otros, pero se necesita práctica para 
+                # encontrar las representaciones más eficientes. Si tu código funciona como 
+                # quieres, ¡lo estás haciendo bien! No se desanime si descubre que está 
+                # fragmentando sus clases y reescribiéndolas varias veces utilizando diferentes 
+                # enfoques. En la búsqueda de escribir código preciso y eficiente, todo el mundo 
+                # pasa por este proceso.

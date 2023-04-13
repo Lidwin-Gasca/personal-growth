@@ -261,6 +261,131 @@ print(user_4.login_attempts)        #⬅codigo nuevo
 
 
 
+    #9-6.   Ice Cream Stand:
+#Un puesto de helados es un tipo específico de restaurante. Escriba una clase llamada IceCreamStand que herede de la clase 
+# Restaurante que escribió en el Ejercicio 9-1 (página 162) o el Ejercicio 9-4 (página 167). Cualquiera de las versiones de 
+# la clase funcionará, solo elige la que más te guste. Agregue un atributo llamado sabores que almacene una lista de sabores 
+# de helado. Escribe un método que muestre estos sabores. Cree una instancia de IceCreamStand y llame a este método.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #9-7. Admin:
+#Un administrador es un tipo especial de usuario. 
+# Escriba una clase llamada Admin que herede de la clase Usuario que escribió en el Ejercicio 9-3 (página 162)
+# o el Ejercicio 9-5 (página 167). Agregue un atributo, privilegios, que almacene una lista de cadenas como 
+# "puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario", etc. 
+# Escriba un método llamado mostrar privilegios() que enumere el conjunto de privilegios del administrador. 
+# Cree una instancia de Admin y llame a su método.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #9-8.   Privileges:
+#Escriba una clase de Privilegios separada. 
+# La clase debe tener un atributo, privilegios, que almacene una lista de cadenas como se describe en el Ejercicio 9.7. 
+# Mueva el método show_privileges() a esta clase. Cree una instancia de Privilegios como un atributo en la clase Admin. 
+# Cree una nueva instancia de Admin y use su método para mostrar sus privilegios.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #9-9.   Battery Upgrade:
+#Utilice la versión final de electric_car.py de esta sección. Agregue un método a la clase Batería llamado upgrade_battery(). 
+# Este método debería verificar el tamaño de la batería y establecer la capacidad en 100 si aún no lo está. 
+# Haga un automóvil eléctrico con un tamaño de batería predeterminado, llame a get_range() una vez y luego llame a 
+# get range() una segunda vez después de actualizar la batería. Debería ver un aumento en el alcance del automóvil.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
