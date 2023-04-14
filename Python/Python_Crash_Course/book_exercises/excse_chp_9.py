@@ -262,22 +262,76 @@ print(user_4.login_attempts)        #⬅codigo nuevo
 
 
     #9-6.   Ice Cream Stand:
-#Un puesto de helados es un tipo específico de restaurante. Escriba una clase llamada IceCreamStand que herede de la clase 
-# Restaurante que escribió en el Ejercicio 9-1 (página 162) o el Ejercicio 9-4 (página 167). Cualquiera de las versiones de 
+#Un puesto de helados es un tipo específico de restaurante. Escriba una clase llamada IceCreamStand que herede de la clase Restaurante 
+# que escribió en el Ejercicio 9-1 (página 162) o el Ejercicio 9-4 (página 167). Cualquiera de las versiones de 
 # la clase funcionará, solo elige la que más te guste. Agregue un atributo llamado sabores que almacene una lista de sabores 
 # de helado. Escribe un método que muestre estos sabores. Cree una instancia de IceCreamStand y llame a este método.
 
+class Restaurante:
+    """Simple descripcion de una cocina."""
+
+    def __init__(self, nombre_restaurante, tipo_de_cocina):
+        self.nombre_restaurante = nombre_restaurante
+        self.tipo_de_cocina = tipo_de_cocina
+        self.numero_servido = 0
+        
+    def descripcion_restaurante(self):
+        print(f"El restaurante {self.nombre_restaurante} se especializa en {self.tipo_de_cocina}.")
+
+    def abierto_restaurante(self):
+        print(f"El restaurante {self.nombre_restaurante} se encuentra abierto en este momento.")
+
+    def establecer_numero_servido(self, num_servido):
+        self.numero_servido = num_servido            
+        print(f"El establecimiento {self.nombre_restaurante} ha servido a {self.numero_servido} clientes.")
+
+    def incrementar_numero_servido(self, num_inc):   
+        self.numero_servido += num_inc               
+        print(f"El establecimiento {self.nombre_restaurante}, vendio {self.numero_servido} platillos el dia de hoy.")
 
 
 
+            #⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+class IceCreamStand(Restaurante):
+    """
+        Una clase hijo llamado 'IceCreamStand' para la clase Restaurante.
+
+    """
+
+
+    def __init__(self, nombre_restaurante, tipo_de_cocina):
+        super().__init__(nombre_restaurante, tipo_de_cocina)
+        sabores = ['valnilla', 'chocolate', 'fresa']
+        self.sabores = sabores
+
+    def mostrar_sabores(self):
+        """Llamar a imprimir la lista de sabores de helados"""
+        print(f"Lista de sabores: {self.sabores}.")
+
+
+    def descripcion_heladeria(self):
+        print(f"La heladeria {self.nombre_restaurante} se especializa en {self.tipo_de_cocina}.")
+
+    def abierto_heladeria(self):
+        print(f"La heladeria {self.nombre_restaurante} se encuentra abierto en este momento.")
+
+            #⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆codigo nuevo⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆
 
 
 
+restaurante_1 = Restaurante('El pollo loco', 'pollo rostizado')
+restaurante_2 = Restaurante('El burrito', 'comida mexicana')
+restaurante_1.descripcion_restaurante()
+restaurante_1.abierto_restaurante()
+restaurante_1.establecer_numero_servido(7)
 
-
-
-
-
+#⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+heladeria_1 = IceCreamStand('la guadalupana', 'heladeria')
+heladeria_1.descripcion_heladeria()
+heladeria_1.mostrar_sabores()
+heladeria_1.abierto_heladeria()
+heladeria_1.establecer_numero_servido(5)
+#⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆codigo nuevo⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆
 
 
 
