@@ -363,9 +363,52 @@ heladeria_1.establecer_numero_servido(5)
 # Escriba un método llamado mostrar privilegios() que enumere el conjunto de privilegios del administrador. 
 # Cree una instancia de Admin y llame a su método.
 
+class Usuario:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.login_attempts = 0                         #⬅codigo nuevo 
+
+    def describir_usuario(self):
+        print(f"\nNombre: {self.nombre}\nApellido: {self.apellido}")
+    
+    def saludando_usuario(self):
+        print(f"\tHola {self.nombre}, bienvenido a Python.\n")
+
+    def increment_login_attempts(self):                 #⬅codigo nuevo
+        self.login_attempts = self.login_attempts + 1   #⬅codigo nuevo
+
+    def reset_login_attempts(self): #⬅codigo nuevo
+        self.login_attempts = 0     #⬅codigo nuevo
+
+
+user_1 = Usuario('Lidwin', 'Gasca')
+user_2 = Usuario('Aritzi', 'Hernandez')
+user_3 = Usuario('Abel', 'Garcia')
+user_4 = Usuario('Yjaira', 'rico')
 
 
 
+class Admin(Usuario):
+    """
+    El admin tendra privilegios sobre los usuarios.
+    """    
+
+    def __init__(self, nombre, apellido):
+        """Heredamos los atributos de la clase Usuario, y agregamos uno nuevo llamado 'privilegios'."""
+        super().__init__(nombre, apellido)
+        privilegios = ["puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario"]
+        self.privilegios = privilegios
+
+    def mostrar_privilegios(self):
+        """Mostrar un listado de los privilegios de un administrador/Admin."""
+        print(" Privilegios:")
+        for privilegio in self.privilegios:
+             print(f"\t-{privilegio.capitalize()}")
+    
+admin_1 = Admin('Guillermo', 'Gasca')
+
+admin_1.mostrar_privilegios()
 
 
 
