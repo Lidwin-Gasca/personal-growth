@@ -388,6 +388,65 @@ user_3 = Usuario('Abel', 'Garcia')
 user_4 = Usuario('Yjaira', 'rico')
 
 
+#⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇codigo nuevo⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+class Admin(Usuario):
+    """
+    El admin tendra privilegios sobre los usuarios.
+    """    
+
+    def __init__(self, nombre, apellido):
+        """Heredamos los atributos de la clase Usuario, y agregamos uno nuevo llamado 'privilegios'."""
+        super().__init__(nombre, apellido)
+        privilegios = ["puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario"]
+        self.privilegios = privilegios
+
+    def mostrar_privilegios(self):
+        """Mostrar un listado de los privilegios de un administrador/Admin."""
+        print(" Privilegios:")
+        for privilegio in self.privilegios:
+             print(f"\t-{privilegio.capitalize()}")
+    
+admin_1 = Admin('Guillermo', 'Gasca')
+
+admin_1.mostrar_privilegios()
+#⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆codigo nuevo⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆
+
+
+
+
+
+
+    #9-8.   Privileges:
+#Escriba una clase de Privilegios separada. 
+# La clase debe tener un atributo, privilegios, que almacene una lista de cadenas como se describe en el Ejercicio 9.7. 
+# Mueva el método mostrar_privilegios() a esta clase. Cree una instancia de Privilegios como un atributo en la clase Admin. 
+# Cree una nueva instancia de Admin y use su método para mostrar sus privilegios.
+
+
+class Usuario:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.login_attempts = 0                        
+
+    def describir_usuario(self):
+        print(f"\nNombre: {self.nombre}\nApellido: {self.apellido}")
+    
+    def saludando_usuario(self):
+        print(f"\tHola {self.nombre}, bienvenido a Python.\n")
+
+    def increment_login_attempts(self):                 
+        self.login_attempts = self.login_attempts + 1   
+
+    def reset_login_attempts(self): 
+        self.login_attempts = 0     
+
+
+user_1 = Usuario('Lidwin', 'Gasca')
+user_2 = Usuario('Aritzi', 'Hernandez')
+user_3 = Usuario('Abel', 'Garcia')
+user_4 = Usuario('Yjaira', 'rico')
+
 
 class Admin(Usuario):
     """
@@ -411,45 +470,27 @@ admin_1 = Admin('Guillermo', 'Gasca')
 admin_1.mostrar_privilegios()
 
 
+class Privileges(Usuario):
+    """
+    Mostrar privilegios.
+    """    
+
+    def __init__(self, nombre, apellido):
+        """Heredamos los atributos de la clase Usuario, y agregamos uno nuevo llamado 'privilegios'."""
+        super().__init__(nombre, apellido)
+        privilegios = ["puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario"]
+        self.privilegios = privilegios
+
+    def mostrar_privilegios(self):
+        """Mostrar un listado de los privilegios de un administrador/Admin."""
+        print(" Privilegios:")
+        for privilegio in self.privilegios:
+             print(f"\t-{privilegio.capitalize()}")
 
 
+admin_2 = Admin('Lilinit', 'deez')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #9-8.   Privileges:
-#Escriba una clase de Privilegios separada. 
-# La clase debe tener un atributo, privilegios, que almacene una lista de cadenas como se describe en el Ejercicio 9.7. 
-# Mueva el método show_privileges() a esta clase. Cree una instancia de Privilegios como un atributo en la clase Admin. 
-# Cree una nueva instancia de Admin y use su método para mostrar sus privilegios.
-
-
-
-
-
+admin_2.mostrar_privilegios()
 
 
 
