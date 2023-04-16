@@ -448,49 +448,34 @@ user_3 = Usuario('Abel', 'Garcia')
 user_4 = Usuario('Yjaira', 'rico')
 
 
+class Privileges:
+    """Mostrar los privilegios de administrador a aqullos que tienen ese poder"""
+    def __init__(self, privilegios):
+        self.privilegios = privilegios
+
+    def mostrar_privilegios(self):
+        """Mostrar un listado de los privilegios de un administrador/Admin."""
+        print(" Privilegios:")
+        for privilegio in self.privilegios:
+             print(f"\t-{privilegio.capitalize()}")
+
+
 class Admin(Usuario):
     """
     El admin tendra privilegios sobre los usuarios.
     """    
 
-    def __init__(self, nombre, apellido):
+    def __init__(self, nombre, apellido, privilegios):
         """Heredamos los atributos de la clase Usuario, y agregamos uno nuevo llamado 'privilegios'."""
         super().__init__(nombre, apellido)
-        privilegios = ["puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario"]
-        self.privilegios = privilegios
+        self.privilegios = Privileges(privilegios)
+        
 
-    def mostrar_privilegios(self):
-        """Mostrar un listado de los privilegios de un administrador/Admin."""
-        print(" Privilegios:")
-        for privilegio in self.privilegios:
-             print(f"\t-{privilegio.capitalize()}")
+
     
-admin_1 = Admin('Guillermo', 'Gasca')
+admin_1 = Admin('Guillermo', 'Gasca', ["puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario"])
 
-admin_1.mostrar_privilegios()
-
-
-class Privileges(Usuario):
-    """
-    Mostrar privilegios.
-    """    
-
-    def __init__(self, nombre, apellido):
-        """Heredamos los atributos de la clase Usuario, y agregamos uno nuevo llamado 'privilegios'."""
-        super().__init__(nombre, apellido)
-        privilegios = ["puede agregar una publicación", "puede eliminar una publicación", "puede prohibir a un usuario"]
-        self.privilegios = privilegios
-
-    def mostrar_privilegios(self):
-        """Mostrar un listado de los privilegios de un administrador/Admin."""
-        print(" Privilegios:")
-        for privilegio in self.privilegios:
-             print(f"\t-{privilegio.capitalize()}")
-
-
-admin_2 = Admin('Lilinit', 'deez')
-
-admin_2.mostrar_privilegios()
+admin_1.privilegios.mostrar_privilegios()
 
 
 
