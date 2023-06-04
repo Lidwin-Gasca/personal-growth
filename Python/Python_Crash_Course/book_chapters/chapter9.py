@@ -1151,3 +1151,4 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
                                                         # Python le permite almacenar clases en módulos y luego importar las clases que 
                                                         # necesita en su programa principal.
 
+#comando de prueba
