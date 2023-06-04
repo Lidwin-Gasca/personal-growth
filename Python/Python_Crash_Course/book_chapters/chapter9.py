@@ -1130,3 +1130,24 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
                 # fragmentando sus clases y reescribiéndolas varias veces utilizando diferentes 
                 # enfoques. En la búsqueda de escribir código preciso y eficiente, todo el mundo 
                 # pasa por este proceso.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        #🦚           Importing Classes
+
+                                                        #A medida que agrega más funcionalidad a sus clases, sus archivos pueden alargarse, 
+                                                        # incluso cuando usa la herencia correctamente. De acuerdo con la filosofía general 
+                                                        # de Python, querrá mantener sus archivos lo más ordenados posible. Para ayudar, 
+                                                        # Python le permite almacenar clases en módulos y luego importar las clases que 
+                                                        # necesita en su programa principal.
+
