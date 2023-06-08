@@ -1151,4 +1151,10 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
                                                         # Python le permite almacenar clases en módulos y luego importar las clases que 
                                                         # necesita en su programa principal.
 
-#comando de prueba
+                        #`1- Importing a Single Class
+                    ##`5-  Vamos a crear un módulo que contenga solo la clase Car. Esto trae a colación un sutil problema de nomenclatura: 
+                    # ya tenemos un archivo llamado car.py en este capítulo, pero este módulo debería llamarse car.py porque contiene 
+                    # código que representa un auto. Resolveremos este problema de nombres almacenando la clase Car en un módulo 
+                    # llamado car.py, reemplazando el archivo car.py que estábamos usando anteriormente. De ahora en adelante, 
+                    # cualquier programa que use este módulo necesitará un nombre de archivo más específico, como my car.py. 
+                    # Aquí está car.py con solo el código de la clase Car:
