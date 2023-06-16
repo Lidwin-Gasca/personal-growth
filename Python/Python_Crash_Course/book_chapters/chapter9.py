@@ -1158,3 +1158,53 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
                     # llamado car.py, reemplazando el archivo car.py que estábamos usando anteriormente. De ahora en adelante, 
                     # cualquier programa que use este módulo necesitará un nombre de archivo más específico, como my car.py. 
                     # Aquí está car.py con solo el código de la clase Car:
+
+""" A class that can be used to represent a car."""
+
+class Car:
+    """A simple attemp to represent a car."""       #(1)
+
+def __init__(self, make, model, year):
+    """Initialize attributes to describe a car."""
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer_reading = 0
+
+def get_descrptive_name(self):
+    """Return a neatly formatted descriptive name."""
+    long_name = f"{self.year} {self.make} {self.model}"
+    return long_name.title()
+
+def read_odometer(self):
+    """Print a statment showing the car's mileage."""
+    print(f"This car has {self.odometer_reading} miles on it.")
+
+def update_odometer(self, mileage):
+    """
+    Set the odometer reading to the given value.
+    Reject the change if it attemps to roll the odometer back.
+    """
+    if mileage >= self.odometer_reading:
+        self.odometer_mileage = mileage
+
+    else:
+        print("You can't roll back an odometer!")
+
+def increment_odometer(self, miles):
+    """Add the given amount to the odometer reading."""
+
+    #En ➡(1)⬅ incluimos un docstring a nivel de módulo que describe brevemente el contenido de este módulo. 
+    # Debe escribir un documento para cada módulo que cree. 
+    #
+    #POR MI CUENTA INVESTIGE QUE SIGNIFICA docstring Y SIGNIFICA LO SIGIENTE:
+    #   En Python todos los objetos cuentan con una variable especial llamada "doc" gracias a 
+    #   la que podemos describir para qué sirven los y cómo se usan los objetos. Estas variables 
+    #   reciben el nombre de docstrings, cadenas de documentación.
+    #Ahora hacemos un archivo separado llamado my_car.py. 
+    # Este archivo importará la clase Car y, a continuación, creará una instancia a partir de esa clase:
+    #           
+    #           from car import Car
+    #
+    #           my_new_car('audi', 'a4', 2019)
+    #           
