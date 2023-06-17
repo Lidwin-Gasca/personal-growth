@@ -1295,3 +1295,67 @@ class Battery:
 
     def __init__(self, battery_size=75):
         """Initialize the battery's attributes."""
+        self.battary_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement about th range this battery provides."""
+        print(f"This car has a {self.battey_size}-kwh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery size"""
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 315
+
+        print(f"This car can go avout {range} miles on a full charge.")
+
+class ElectricCar(Car):
+    """Models aspects of a car specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then Initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+    #
+    #   Ahora podemos hacer un nuevo archivo llamado my_electric_car.py, e importar 
+    # la clase ElectricCar, y crear un carro electrico:
+    #
+    #(toma en cuenta que el codigo anterior esta en un archivo python 
+    # llamado choche.py "car.py" en ingles)
+    #
+    #   Archivo "my_electric_car.py":
+from chapter9 import ElectricCar        #Estoy poniendo "chapter9" en lugar de "car" porque no 
+                                        #cree un archivo llamado "car.py".
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+
+    #
+    #Esto tiene la misma salida que en el ejercicio anterior, la diferencia es que por ser un
+    #archivo distinto,la gran mayoria de el codigo permanece oculto dentro de el archivo original.
+    #
+    #La salida es la sigiente:
+    #
+    #           2019 Tesla Model S
+    #           This car has a 75-kwh battery.
+    #           This car can go about 260 miles on a full charge.
+    #
+
+
+
+
+
+
+
+
+
+                    #`2.- Importing Multiple Classes from a Module
+
+                    #
