@@ -523,7 +523,8 @@ my_new_car.read_odometer()
 
     #La única modificación a Car es la adición de update odometer() en ➡(1)⬅. 
     # Este método toma un valor de kilometraje y lo asigna a la self.odometer_reading.
-    #  En ➡(2)⬅ llamamos a update_odometer() y le damos 23 como argumento (correspondiente al parámetro de kilometraje en la definición del método). 
+    #  En ➡(2)⬅ llamamos a update_odometer() y le damos 23 como argumento (correspondiente al 
+    # parámetro de kilometraje en la definición del método). 
     # Establece read_odometer en 23, y read odometer() imprime la lectura/reading:
     #
     #           >>> 2019 Audi A4
@@ -689,7 +690,8 @@ my_used_car.read_odometer()
 
 
             #`1- The  __init__()Method for a Child Class
-        #Cuando está escribiendo una nueva clase basada en una clase existente, a menudo querrá llamar al método __init__() desde la clase principal. 
+        #Cuando está escribiendo una nueva clase basada en una clase existente, a menudo querrá llamar al método __init__() desde 
+        # la clase principal. 
         # Esto inicializará todos los atributos que se definieron en el método parent_init_() y los hará disponibles en la clase secundaria.
 
         #Como ejemplo, modelemos un coche eléctrico. Un automóvil eléctrico es solo un tipo específico de automóvil, 
@@ -835,7 +837,8 @@ print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
 
     #En ➡(1)⬅ agregamos un nuevo atributo self.battery_size y establecemos su valor inicial en, por ejemplo, 75. 
-    # Este atributo se asociará con todas las instancias creadas a partir de la clase ElectricCar pero no se asociará con ninguna instancia de Car. 
+    # Este atributo se asociará con todas las instancias creadas a partir de la clase ElectricCar pero no se asociará 
+    # con ninguna instancia de Car. 
     # También agregamos un método llamado describe_battery() que imprime información sobre la batería en ➡(2)⬅. 
     # Cuando llamamos a este método, obtenemos una descripción que es claramente específica de un coche eléctrico:
     #
@@ -1151,8 +1154,17 @@ my_tesla.battery.get_range()  #⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅⬅�
                                                         # Python le permite almacenar clases en módulos y luego importar las clases que 
                                                         # necesita en su programa principal.
 
+
+
+
+
+
                         #`1- Importing a Single Class
-                    ##`5-  Vamos a crear un módulo que contenga solo la clase Car. Esto trae a colación un sutil problema de nomenclatura: 
+
+
+
+
+                    # Vamos a crear un módulo que contenga solo la clase Car. Esto trae a colación un sutil problema de nomenclatura: 
                     # ya tenemos un archivo llamado car.py en este capítulo, pero este módulo debería llamarse car.py porque contiene 
                     # código que representa un auto. Resolveremos este problema de nombres almacenando la clase Car en un módulo 
                     # llamado car.py, reemplazando el archivo car.py que estábamos usando anteriormente. De ahora en adelante, 
@@ -1207,4 +1219,79 @@ def increment_odometer(self, miles):
     #           from car import Car
     #
     #           my_new_car('audi', 'a4', 2019)
-    #           
+    #           print(my_new_car.get_descriptive_name())
+    #
+    #           my_new_car.odometer_reading = 23
+    #           my_new_car.read_odometer()
+    #
+    #La declaración importante en ➡️(1)⬅️ le dice a Python que abra el módulo car e importe el coche de clase. 
+    # Ahora podemos usar la clase Car como si estuviera definida en este archivo. La salida es la misma que 
+    # vimos anteriormente:
+    #
+    #           2019 Audi A4
+    #           This car has 23 miles on it.
+    #
+    #Importar clases es una forma efectiva de programar. Imagínese cuánto tiempo duraría este archivo de programa 
+    # si toda la clase Car a un módulo e importara el módulo, aún obtiene la misma funcionalidad, pero mantiene 
+    # su archivo de programa principal limpio y fácil de leer. También almacena la mayor parte de la lógica en 
+    # archivos separados; Una vez que sus clases funcionen como desea, puede dejar esos archivos solos y 
+    # centrarse en la lógica de nivel superior de su programa principal.
+
+
+
+
+
+
+
+
+
+
+                            #`2- Storing Multiple Classes in a Module
+
+            #Puede almacenar tantas clases como necesite en un solo módulo, aunque cada clase en un módulo debe 
+            # estar relacionada de alguna manera. Las clases Battery y ElectricCar ayudan a representar automóviles, 
+            # así que agreguemos al módulo car.py.
+
+
+"""A set of classes used to represent gas and electric cars."""
+
+class Car:
+        """A simple attemp to represent a car."""       
+def __init__(self, make, model, year):
+    """Initialize attributes to describe a car."""
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer_reading = 0
+
+def get_descrptive_name(self):
+    """Return a neatly formatted descriptive name."""
+    long_name = f"{self.year} {self.make} {self.model}"
+    return long_name.title()
+
+def read_odometer(self):
+    """Print a statment showing the car's mileage."""
+    print(f"This car has {self.odometer_reading} miles on it.")
+
+def update_odometer(self, mileage):
+    """
+    Set the odometer reading to the given value.
+    Reject the change if it attemps to roll the odometer back.
+    """
+    if mileage >= self.odometer_reading:
+        self.odometer_mileage = mileage
+
+    else:
+        print("You can't roll back an odometer!")
+
+def increment_odometer(self, miles):
+    """Add the given amount to the odometer reading."""
+
+
+
+
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
+
+    def __init__(self, battery_size=75):
+        """Initialize the battery's attributes."""
