@@ -1358,4 +1358,8 @@ my_tesla.battery.get_range()
 
                     #`2.- Importing Multiple Classes from a Module
 
+                    #Puede importar cada clase de un módulo usando la siguiente sintaxis:
+                    #                   
+#                   from module_name import*
                     #
+                    
