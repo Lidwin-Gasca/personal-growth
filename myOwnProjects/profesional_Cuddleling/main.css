@@ -1,0 +1,148 @@
+/* p {
+    color:#002aff;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: small;
+} */
+
+body {
+    background-color: rgb(149, 102, 63);
+    font-family: "Inter", sans-serif;
+}
+img {
+  border-radius: 8px;
+  /* border: 1px solid #ddd;
+  padding: 5px; */
+  object-fit: cover;
+  width: 80%;
+  height: 80%;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;  /* no se que significa el fr pero aqui se usa*/
+    grid-template-rows: 1fr 2fr 1fr; /*Aqui tambien*/
+    grid-template-areas: /* esto de aqui es importante, el orden que escribas es el orden que se tomara tus divs en las columnas y filas*/
+      "nav"
+      "main"
+      "footer";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+  }
+
+
+  
+  nav {
+    background: #a7ffeb;
+    grid-area: nav; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    font-family: cursive;
+    font-size: medium;
+  }
+
+  main {
+    background: #84ffff;
+    grid-area: main; /*Esto hara funcionar lo que se encuentra en el codigo de arriba en .container{} "grid-template-areas:"*/
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    font-family: cursive;
+  }
+  
+  footer {
+    background: #1de9b6;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  a {
+    text-align: center;
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  /* On smaller screens, decrease text size */
+  /* @media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+      grid-template-areas:
+        "nav nav"
+        "sidebar main"
+        "sidebar content1"
+        "sidebar content2"
+        "sidebar content3"
+        "footer footer";
+    }
+  } */
+/*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+
+#inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
+    background-color: beige;
+    }
+#inner-grid:hover{
+    background-color: gray;
+}
+  /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+  .buttonRound {border-radius: 12px;}
+
+  .buttonCursor {
+    border: none;
+    padding: 3px 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .buttonBorder {
+    background-color: white;
+    color: black; /*color de la letra en el boton*/
+    border: 2px solid #555555;
+  }
+
+
+  .buttonRoundtemp {border-radius: 12px;}
+
+  .buttonCursortemp {
+    border: none;
+    padding: 3px 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .buttonBordertemp {
+    background-color: white;
+    color: black; /*color de la letra en el boton*/
+    border: 2px solid #555555;
+  }
+
+/*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

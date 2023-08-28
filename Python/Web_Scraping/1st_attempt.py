@@ -10,7 +10,7 @@ mi_url = 'https://books.toscrape.com/'
     #tomamos la paginda web y lo metemos en la variable ➡️ "uclient"
 uClient = uReq(mi_url)
 
-    #vamos a leer y a su vez verrar la pagina web.
+    #vamos a leer y a su vez cerrar la pagina web.
 page_html = uClient.read()
 uClient.close()
 
