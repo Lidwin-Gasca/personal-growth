@@ -5,6 +5,12 @@
     font-size: small;
 } */
 
+
+/*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+/* main grid css code*/
+
+
 body {
     background-color: rgb(149, 102, 63);
     font-family: "Inter", sans-serif;
@@ -87,15 +93,80 @@ img {
 /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
 
 
-#inner-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 5px;
-    background-color: beige;
-    }
-#inner-grid:hover{
-    background-color: gray;
+      /* CODE FOR THE NAVEGATOR PART OF THE GRID */
+
+/* Creating the inner grid */
+.inner-navGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Example column layout for inner grid */
+  grid-template-rows: 1fr; /* Each row in the inner grid takes up equal space */
+  grid-gap: 5px; /* Gap between inner grid items */
+  margin-top: 10px;
+  grid-template-areas:
+    "inner-item nav-selection nav-button"
+}
+
+.nav-logo {
+  border: 1px solid blue;
+  padding: 5px;
+}
+.nav-selection {
+  border: 1px solid blue;
+  padding: 5px;
+}
+
+.with-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+  padding: 5px;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative; /* Important for positioning */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the button */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
+  width: max-content; /* Adjust to the desired width */
+}
+
+.nav-button:hover .dropdown {
+  display: block;
+}
+
+.inner-nav-option-selection-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Example column layout for inner grid */
+  grid-template-rows: 1fr; /* Each row in the inner grid takes up equal space */
+  grid-gap: 5px; /* Gap between inner grid items */
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 550px) {
+  .inner-nav-option-selection-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 }
   /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
 
