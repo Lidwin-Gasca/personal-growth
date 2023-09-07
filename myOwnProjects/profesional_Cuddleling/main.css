@@ -24,11 +24,11 @@ img {
   height: 80%;
 }
 
-.container {
+.mainGrid {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr;  /* no se que significa el fr pero aqui se usa*/
-    grid-template-rows: 1fr 2fr 1fr; /*Aqui tambien*/
+    grid-template-rows: .2fr 2fr 1fr; /*Aqui tambien*/
     grid-template-areas: /* esto de aqui es importante, el orden que escribas es el orden que se tomara tus divs en las columnas y filas*/
       "nav"
       "main"
@@ -75,6 +75,15 @@ img {
     font-weight: bold;
     margin: 1rem;
   }
+
+  .with-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid blue;
+    padding: 5px;
+  }
   
   /* On smaller screens, decrease text size */
   /* @media only screen and (max-width: 550px) {
@@ -111,15 +120,6 @@ img {
   padding: 5px;
 }
 .nav-selection {
-  border: 1px solid blue;
-  padding: 5px;
-}
-
-.with-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border: 1px solid blue;
   padding: 5px;
 }
@@ -169,6 +169,61 @@ img {
   }
 }
   /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
+
+              /*Codigo de el grid central de la pagina web: */
+
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Example column layout for inner grid */
+  grid-template-rows: 1fr; /* Each row in the inner grid takes up equal space */
+  grid-gap: 5px; /* Gap between inner grid items */
+  margin-top: 10px;
+  grid-template-areas:
+    "body-left body-middle body-right"
+}
+
+.body-left{
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.body-middle {
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+.body-right {
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+/* El grid adentro de body-middle */
+.body-middle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Example column layout for inner grid */
+  grid-template-rows: 1fr 1fr 1fr; /* Each row in the inner grid takes up equal space */
+  grid-gap: 5px; /* Gap between inner grid items */
+  margin-top: 10px;
+  grid-template-areas:
+  "1 2 3"
+  "4 5 6"
+  "7 8 9"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢💢*/
 
   .buttonRound {border-radius: 12px;}
 
