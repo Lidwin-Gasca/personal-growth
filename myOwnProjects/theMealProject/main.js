@@ -48,8 +48,8 @@ function check(item){
               if (!secondArray.includes(element)) {
                 allElementsPresent = false;
                 break;
+                }
               }
-            }
             if (allElementsPresent) {
               // Print hamburger image here
               document.getElementById('content1').innerHTML += '<img id="hamburguesa" src="./images/content/hamburger.jpg" alt="Hamburguesa">';
