@@ -426,7 +426,7 @@ describe_pet (animal_type='hamster', pet_name='harry')
 
         #`10- Avoiding Arguments Errors
 
-    #Cuando comience a usar, no se sorprenda si encuentra errores sobre argumentos no coincidentes. 
+    #Cuando comience a usar argumentos, no se sorprenda si encuentra errores sobre argumentos no coincidentes. 
     # Los argumentos no coincidentes ocurren cuando proporciona menos o más argumentos de los que necesita una función para hacer su trabajo. 
     # Por ejemplo, esto es lo que sucede si tratamos de llamar a describe_pet() sin argumentos:
 def describe_pet(pet_name, animal_type='dog'):
@@ -434,7 +434,7 @@ def describe_pet(pet_name, animal_type='dog'):
     print(f"\nI have a {animal_type}.")
     print(f"My {animal_type}'s name is {pet_name.title()}")
 describe_pet()
-    #Python reconoce que falta cierta información en la llamada a la función, y el rastreo nos dice que:
+    #Python reconoce que falta cierta información en la llamada a la función, y el rastreo nos dice lo siguiente:
     #
     #
     #        Traceback (most recent call last):

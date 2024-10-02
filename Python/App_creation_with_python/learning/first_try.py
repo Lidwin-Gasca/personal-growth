@@ -8,4 +8,4 @@ class BasicApp(App): #la palabra App es una subclase de Basic App, asi que lo qu
         return label
     
 app = BasicApp()
-app.run()
+app.run() #aqui podria escribir tambien BasicApp().run y me daria el mismo resultado.

@@ -5,7 +5,7 @@
 #Escriba una función llamada mostrar_mensaje() que imprima una oración que diga a todos lo que está aprendiendo en este capítulo. 
 # Llame a la función y asegúrese de que el mensaje se muestre correctamente.
 def mostrar_mensaje():
-     """Mustra lo aprendo"""
+     """Muestra lo aprendo"""
      print("Tu Estas Aprendiendo Python")
 mostrar_mensaje()
 
